@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en-us,id">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Play with Apache Solr | A Place to Remember
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet/less" href="/css/theme.less">
+  <link rel="stylesheet" href="/css/custom.css">
+
+
+  
+  <script src="/js/less.js" type="text/javascript"></script>
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="/">A Place to Remember</a></h1>
+        <h2>Thoughts, stories and ideas.</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/renodesper" target="_blank">Twitter</a></li>
+          <li><a href="https://facebook.com/renodesper" target="_blank">Facebook</a></li>
+          <li><a href="https://github.com/renodesper" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Play with Apache Solr</h1>
+      <div class="meta">
+        Apr 30, 2014 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>Okay, Solr. It&rsquo;s the first time I play with Solr. I will never know about it if I don&rsquo;t join this company. Let&rsquo;s start with selecting index.</p>
+
+<h2 id="select:8fb92bba12e3221ddb4af206547a25ba">Select</h2>
+
+<p>We can select an index using this command:
+<code>curl http://localhost:8983/solr/{core}/select?q=id:{id}</code></p>
+
+<h2 id="insert-update:8fb92bba12e3221ddb4af206547a25ba">Insert / Update</h2>
+
+<p>There are two commands to insert or update index. Just remember, the structure should be identical.</p>
+
+<h3 id="insert-update-with-json:8fb92bba12e3221ddb4af206547a25ba">Insert / Update with JSON</h3>
+
+<pre><code>curl http://localhost:8983/solr/{core}/update?commit=true -H 'Content-type:application/json' -d 
+'[
+    { 
+        &quot;id&quot;:&quot;{id}&quot;,
+        &quot;desc&quot;:&quot;{description}&quot;
+    }
+]'
+</code></pre>
+
+<h3 id="insert-update-with-xml:8fb92bba12e3221ddb4af206547a25ba">Insert / Update with XML</h3>
+
+<pre><code>curl http://localhost:8983/solr/{core}/update?commit=true -H &quot;Content-Type: text/xml&quot; --data-binary 
+'&lt;add&gt;
+    &lt;doc&gt;
+        &lt;field name=&quot;id&quot;&gt;{id}&lt;/field&gt;
+        &lt;field name=&quot;desc&quot;&gt;{description}&lt;/field&gt;
+    &lt;/doc&gt;
+&lt;/add&gt;'
+</code></pre>
+
+<h2 id="delete:8fb92bba12e3221ddb4af206547a25ba">Delete</h2>
+
+<p>There are also two commands to delete index.</p>
+
+<h3 id="delete-with-json:8fb92bba12e3221ddb4af206547a25ba">Delete with JSON</h3>
+
+<pre><code>curl http://localhost:8983/solr/{core}/update?commit=true -H 'Content-type:application/json' -d 
+'{
+    &quot;delete&quot;:{
+        &quot;id&quot;:&quot;{id}&quot;
+    },
+    &quot;delete&quot;:{
+        &quot;query&quot;:&quot;id:{id}&quot;
+    }
+}'
+</code></pre>
+
+<h3 id="delete-with-xml:8fb92bba12e3221ddb4af206547a25ba">Delete with XML</h3>
+
+<pre><code>curl http://localhost:8983/solr/{core}/update?commit=true -H &quot;Content-Type: text/xml&quot; --data-binary 
+    '&lt;delete&gt;
+        &lt;id&gt;{id}&lt;/id&gt;
+        &lt;query&gt;id:{id}&lt;/query&gt;
+    &lt;/delete&gt;'
+</code></pre>
+
+    </article>
+    
+
+
+<script type="text/javascript">
+     
+    var disqus_shortname = '';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </main>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.jpg" width="64" height="64"><br>
+      Written by Boy Sandy Gladies Arriezona
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

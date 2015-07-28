@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A Place to Remember</title>
+    <link>http://renodesper.com/</link>
+    <description>Recent content on A Place to Remember</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us,id</language>
+    <lastBuildDate>Sun, 12 Jul 2015 11:55:32 +0700</lastBuildDate>
+    <atom:link href="http://renodesper.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Starting Screen in Detach Mode</title>
+      <link>http://renodesper.com/2015/07/12/starting-screen-in-detach-mode/</link>
+      <pubDate>Sun, 12 Jul 2015 11:55:32 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2015/07/12/starting-screen-in-detach-mode/</guid>
+      <description>&lt;p&gt;For a few days I&amp;rsquo;ve been thinking about GNU/screen. I have some scripts that should be run inside screen everytime a reboot happened. I&amp;rsquo;ve been looking in stackoverflow, google, etc but haven&amp;rsquo;t found anything useful. So I&amp;rsquo;ve been stuck with this kind of script:
+&lt;code&gt;screen -dmS screen_name some_command&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;It will create a new screen, run the command inside it and detach the screen. Well, it&amp;rsquo;s pretty good actually. But, when the command is done (finished or killed) then the screen will be terminated. I won&amp;rsquo;t know whether there is an error in my command or not. So, after a bit more googling I found about &lt;strong&gt;-X&lt;/strong&gt; parameter and &lt;strong&gt;stuff&lt;/strong&gt;. And now, my script looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;screen -dmS screen_name
+screen -S screen_name -X stuff &#39;some_command\n&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;the first line will create new screen and give it a name &amp;lsquo;screen_name&amp;rsquo;&lt;/strong&gt;
+&lt;strong&gt;the second line will send &amp;lsquo;some_command\n&amp;rsquo; string to screen which similar with typing some_command and hitting enter&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I can even send break (Ctrl-C) into screen with this:
+&lt;code&gt;screen -S screen_name -X stuff &#39;^C&#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;With this, I can create a script that can modify whatever happen inside the screen. I can combine it with fabric if I want.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Untracking The Tracked Ones</title>
+      <link>http://renodesper.com/2015/06/13/untracking-the-tracked-ones/</link>
+      <pubDate>Sat, 13 Jun 2015 17:53:45 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2015/06/13/untracking-the-tracked-ones/</guid>
+      <description>&lt;p&gt;Sudah beberapa hari saya mempunyai keinginan untuk memperbaiki projek yang saya
+lakukan. Secara tidak sengaja saya memasukkan virtual environment ke dalam
+repositori yang notabene seharusnya hanya diisi oleh projek yang saya kerjakan.
+Alhasil banyak sekali perubahan setiap saya mencoba mengerjakan kembali
+(bahkan) ketika saya tidak mengubah apapun.&lt;/p&gt;
+
+&lt;p&gt;Berikut cara yang saya temukan untuk meng-untrack file / folder yang sudah
+di-track:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git rm --cached -r env
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Setelah itu, folder tersebut bisa kita masukkan ke dalam file &lt;code&gt;.gitignore&lt;/code&gt;
+seperti berikut:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;env/*
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Django Project</title>
+      <link>http://renodesper.com/2015/06/13/django-project/</link>
+      <pubDate>Sat, 13 Jun 2015 02:08:27 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2015/06/13/django-project/</guid>
+      <description>&lt;p&gt;For about a month I&amp;rsquo;ve been busy building a Django project. Even though everyday I work with python, but I never ever try any framework that is build with it. I can not say it&amp;rsquo;s hard, but with all those &amp;ldquo;jobs&amp;rdquo; in my office, this month is the busiest time for me to took another project (I never know that I will this busy).
+Deadline is in the corner and the project is about 75%. I hope I can finish it as fast as possible.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;never stop until the bell ringing&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Migration</title>
+      <link>http://renodesper.com/2015/06/04/migration/</link>
+      <pubDate>Thu, 04 Jun 2015 11:25:10 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2015/06/04/migration/</guid>
+      <description>&lt;p&gt;Jadi begini, rencananya saya menggunakan Ghost sebagai blog adalah untuk belajar NodeJS. Sayangnya saya selalu sibuk dan tidak sempat untuk mempelajari NodeJS sekalipun. Akhirnya saya berpikir, daripada membebani server lebih baik saya ubah saja blog-nya ke sesuatu yang lebih ringan. Static site pun muncul di benak saya. Saya menggunakan Hugo untuk men-generate situs ini.&lt;/p&gt;
+
+&lt;p&gt;Udah sih gitu aja, saya gitu sih orangnya. B|&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Timestamp and Date in Apache Phoenix</title>
+      <link>http://renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix/</link>
+      <pubDate>Fri, 13 Mar 2015 12:12:16 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix/</guid>
+      <description>&lt;p&gt;For a several days I&amp;rsquo;ve played with Apache Phoenix. Instead of playing with HBase directly, Phoenix helped me simplify HBase query (well, just a bit). What I want to tell you now is not about Phoenix in general but the difference between Timestamp and Date in Phoenix.&lt;/p&gt;
+
+&lt;p&gt;I have 2 column which have different format. I thought that both column should have different data type as well. Those format is like this:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;yyyy-MM-dd HH:mm:ss&lt;/li&gt;
+&lt;li&gt;yyyy-MM-dd&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;When I use Date type for the 1st format, it doesn&amp;rsquo;t show me the right result. It only shows me year, month, and day of the data like this: 2015-01-31. But in Timestamp, it shows me the right result. So, my assumption is I should be using Timestamp when I want to include &lt;strong&gt;the time (hour, minute, and second)&lt;/strong&gt; of the data, and the rest should be use Date type.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, I found that my data in HBase is inconsistent. It has 7 hours difference with the actual data. The culprit is the difference of data type. The documentation says that I should include format type and timezone when I want to insert the date with Phoenix (in timestamp). So, instead of &lt;code&gt;to_date(&#39;2015-01-31 13:17:14&#39;)&lt;/code&gt;, I should use &lt;code&gt;to_date(&#39;2015-01-31 13:17:14&#39;, &#39;yyyy-MM-dd HH:mm:ss&#39;, &#39;GMT+7&#39;)&lt;/code&gt;. But that is a bit long and there is too many code to change, also I should remember which column have Timestamp and Date type.&lt;/p&gt;
+
+&lt;p&gt;At last, after hundreds thousand data insertion (wrong data of course), I found that I can also use Date type in every column as long as I explicitly write the format when I try to get the data with Phoenix.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s all I wanna share, I hope it&amp;rsquo;s useful.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>dvorak programmer&#39;s time</title>
+      <link>http://renodesper.com/2015/01/18/dvorak-programmers-time/</link>
+      <pubDate>Sun, 18 Jan 2015 12:13:55 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2015/01/18/dvorak-programmers-time/</guid>
+      <description>&lt;p&gt;Jadi begini, beberapa hari belakangan ini saya sedang menikmati belajar menggunakan layout dvorak programmer. Keycode untuk layout tersebut ada &lt;a href=&#34;https://aur.archlinux.org/packages/programmers-dvorak/&#34;&gt;dvp&lt;/a&gt;. Jujur saja, sangat sulit untuk menggunakan layout tersebut terlebih lagi jika kita sudah terbiasa menggunakan qwerty. Terkadang jadi jemari saya kembali ke tempat dimana huruf tersebut berada di qwerty. Ini yang saya lakukan agar saya tidak terganggu dengan tampilan keyword qwerty yang ada di laptop saya:
+&lt;img src=&#34;http://renodesper.com/images/post/dvorak_keyboard.jpg&#34; alt=&#34;dvorak workaround&#34; /&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Editing Stream like Merlin The Mighty with Sed</title>
+      <link>http://renodesper.com/2014/12/18/editing-stream-like-merlin-the-mighty-with-sed/</link>
+      <pubDate>Thu, 18 Dec 2014 12:18:28 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2014/12/18/editing-stream-like-merlin-the-mighty-with-sed/</guid>
+      <description>&lt;p&gt;We already talk about Vim a couple of time. Let&amp;rsquo;s move to &lt;strong&gt;sed&lt;/strong&gt;. Sed is a stream editor (we already know that) that I used today. This is the case, I have some file (php file) which is badly written by someone (maybe for pissing me off) by changing some characters on it. Let&amp;rsquo;s say they change &amp;ldquo;.php&amp;rdquo; into &amp;ldquo;.rrrr&amp;rdquo; wherever possible. It&amp;rsquo;s not a big deal if the file is only have a few lines, but imagine if it has 2000 lines and I should edit every &amp;ldquo;.rrrr&amp;rdquo; into &amp;ldquo;.php&amp;rdquo;. Let&amp;rsquo;s assume that I&amp;rsquo;m using a server, and even worse there many files that should be edited.&lt;/p&gt;
+
+&lt;p&gt;Enough with the long talk, this is how I roll:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sed -i &#39;s/\.rrrr/\.php/g&#39; file.php
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I also found an interesting &lt;strong&gt;sed&lt;/strong&gt; &amp;amp; &lt;strong&gt;find&lt;/strong&gt; combo, it looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;find folder_path -type f -exec sed -i &#39;s/\.rrrr/\.php/g&#39; {} \;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Neat, isn&amp;rsquo;t it? :)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Menghapus baris di Vim - 2</title>
+      <link>http://renodesper.com/2014/12/09/menghapus-baris-di-vim---2/</link>
+      <pubDate>Tue, 09 Dec 2014 12:45:17 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2014/12/09/menghapus-baris-di-vim---2/</guid>
+      <description>
+
+&lt;h2 id=&#34;case:9a8cd59f551c069dc0e2a68c37efc47d&#34;&gt;Case&lt;/h2&gt;
+
+&lt;p&gt;Terkadang kita ingin menghapus baris-baris tertentu yang hanya mengandung kata-kata yang spesifik. Contohnya jika ingin menghapus log tetapi menyisakan baris yang mengandung kata &amp;ldquo;warning&amp;rdquo; atau &amp;ldquo;error&amp;rdquo; atau lainnya.&lt;/p&gt;
+
+&lt;h2 id=&#34;solution:9a8cd59f551c069dc0e2a68c37efc47d&#34;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;Ada 2 ex command yang dapat kita gunakan yang berhubungan dengan masalah tersebut.
+1. :g/{pola yang ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}
+2. :v/{pola yang tidak ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}&lt;/p&gt;
+
+&lt;h3 id=&#34;example:9a8cd59f551c069dc0e2a68c37efc47d&#34;&gt;Example&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Untuk menghapus setiap baris yang mengandung pola &amp;ldquo;warning&amp;rdquo; kita menggunakan &lt;code&gt;:g/warning/d&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Untuk menghapus setiap baris yang tidak mengandung pola &amp;ldquo;warning&amp;rdquo; kita menggunakan &lt;code&gt;:v/warning/d&lt;/code&gt; atau &lt;code&gt;:g!/warning/d&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Jika ingin mencoba perintah-perintah tersebut saya sarankan untuk menggunakan 1 file yang memiliki banyak kata dan kalimat, contohnya saya menggunakan 1 story yang saya ambil dari &lt;a href=&#34;http://www.booktrust.org.uk/&#34;&gt;booktrust&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;PS: Pola yang dicari bisa juga menggunakan regex&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Menghapus baris di Vim - 1</title>
+      <link>http://renodesper.com/2014/12/04/menghapus-baris-di-vim---1/</link>
+      <pubDate>Thu, 04 Dec 2014 12:49:31 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2014/12/04/menghapus-baris-di-vim---1/</guid>
+      <description>
+
+&lt;h2 id=&#34;case:2caf1b1fe27b3d92b119f3322602f4b0&#34;&gt;Case&lt;/h2&gt;
+
+&lt;p&gt;Terkadang kita perlu menghapus beberapa baris secara berurutan dan secara spesifik. Contohnya adalah jika kita ingin menghapus 491 baris dari baris ke 105. Seperti yang kita tahu, kita bisa menggunakan dd untuk menghapus 1 baris di Vim. Tapi bagaimana untuk kasus di atas? Mengutip dari suatu &lt;a href=&#34;http://danielmiessler.com/study/vim/&#34;&gt;blog&lt;/a&gt;, penggunaan Vim itu (thanks for Daniel Miessler for your awesome post) seperti kita berbahasa. Caranya seperti berikut:&lt;/p&gt;
+
+&lt;h2 id=&#34;solution:2caf1b1fe27b3d92b119f3322602f4b0&#34;&gt;Solution&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;491dd = menghapus &lt;strong&gt;491&lt;/strong&gt; baris ke bawah dengan syarat posisi kita harus ada di baris &lt;strong&gt;105&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;d491j = menghapus &lt;strong&gt;491&lt;/strong&gt; baris ke bawah dengan syarat posisi kita harus ada di baris &lt;strong&gt;105&lt;/strong&gt; dan di posisi paling awal baris, kita juga bisa menghapus ke atas dengan cara mengganti &lt;strong&gt;j&lt;/strong&gt; menjadi &lt;strong&gt;k&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;:105,596d = menghapus &lt;strong&gt;491&lt;/strong&gt; baris dari baris &lt;strong&gt;105&lt;/strong&gt; sampai baris &lt;strong&gt;596&lt;/strong&gt;, kita harus tahu terlebih dahulu akhir baris yang kita inginkan dan harus berada di &lt;em&gt;normal mode&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Mudah kan? Saya juga baru saja mencoba menggunakannya. Just remember guys, practice makes expert.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mengurutkan isi file menggunakan Sort</title>
+      <link>http://renodesper.com/2014/11/27/mengurutkan-isi-file-menggunakan-sort/</link>
+      <pubDate>Thu, 27 Nov 2014 12:51:40 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2014/11/27/mengurutkan-isi-file-menggunakan-sort/</guid>
+      <description>&lt;p&gt;Saya rasa kita semua pernah merasa kesulitan dalam mengurutkan sesuatu. Beberapa waktu yang lalu saya ingin mengurutkan id yang akan saya olah yang sumbernya terdapat dari 2 file. Untuk kasus ini saya menggunakan sort, saya rasa tidak ada yang lebih mudah dari sort untuk melakukan proses ini melalui command line.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://renodesper.com/content/images/2014/11/2014-11-28-090517_204x353_scrot.png&#34; alt=&#34;Sort&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Kita bisa menggunakan parameter &lt;em&gt;-m&lt;/em&gt; untuk melakukan merging ataupun langsung mengarahkan keluarannya ke file yang lain menggunakan simbol &lt;em&gt;&amp;gt;&lt;/em&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My Vim Plugins - 2</title>
+      <link>http://renodesper.com/2014/11/13/my-vim-plugins---2/</link>
+      <pubDate>Thu, 13 Nov 2014 12:53:11 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2014/11/13/my-vim-plugins---2/</guid>
+      <description>
+
+&lt;h2 id=&#34;flazz-vim-colorschemes:93e265370f1257b8fffca3e4b1ab2d3f&#34;&gt;flazz/vim-colorschemes&lt;/h2&gt;
+
+&lt;p&gt;vim-colorschemes is a collection of colorscheme from vim.org. My favorite is &lt;em&gt;Tomorrow-Night-Eighties&lt;/em&gt; which looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://renodesper.com/content/images/2014/11/Selection_001.png&#34; alt=&#34;Tomorrow-Night-Eighties&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;This plugin has a lot of colorschemes, I don&amp;rsquo;t think I will ever have a chance to try all of it&lt;/p&gt;
+
+&lt;h2 id=&#34;eiginn-netrw:93e265370f1257b8fffca3e4b1ab2d3f&#34;&gt;eiginn/netrw&lt;/h2&gt;
+
+&lt;p&gt;netrw is a must-have plugin if you often connect to remote server. Instead of editing file on the remote server, you can use netrw to do some editing right in vim.&lt;/p&gt;
+
+&lt;h2 id=&#34;fholgado-minibufexpl-vim:93e265370f1257b8fffca3e4b1ab2d3f&#34;&gt;fholgado/minibufexpl.vim&lt;/h2&gt;
+
+&lt;p&gt;Looking for buffer in vim is a bit hard for me. I often forget which buffer I&amp;rsquo;m editing and it makes my typespeed a bit slow. minibufexpl helped me a lot with providing tab-like buffer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://renodesper.com/content/images/2014/11/Selection_002.png&#34; alt=&#34;minibufexpl&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;godlygeek-tabular:93e265370f1257b8fffca3e4b1ab2d3f&#34;&gt;godlygeek/tabular&lt;/h2&gt;
+
+&lt;p&gt;Sometimes, we want to align a few line which have a specific character. Let&amp;rsquo;s say that I want to align 5 lines based on equal symbol. After I block those line in visual mode I can use &lt;em&gt;:Tabularize /=&lt;CR&gt;&lt;/em&gt; to align them. We can also map it into another combination. In my case, I use this kind of mapping:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://renodesper.com/content/images/2014/11/Selection_003.png&#34; alt=&#34;tabular&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;groenewege-vim-less:93e265370f1257b8fffca3e4b1ab2d3f&#34;&gt;groenewege/vim-less&lt;/h2&gt;
+
+&lt;p&gt;vim-less give us syntax highlighting, auto completion, and so on. Nothing special but useful when we want to edit .less file.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>New VPS for Node</title>
+      <link>http://renodesper.com/2014/10/15/new-vps-for-node/</link>
+      <pubDate>Wed, 15 Oct 2014 12:54:28 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2014/10/15/new-vps-for-node/</guid>
+      <description>
+
+&lt;p&gt;Kita skip dulu bahasan tentang Vim yang ada di post sebelumnya. Kemarin saya baru saja menyewa sebuah vps yang nantinya akan saya gunakan untuk riset. VPS tersebut saya pasangkan Centos 7 x86_64. Hal pertama yang saya lakukan adalah memasang nodejs dan npm. Berikut langkah - langkah yang saya lakukan.&lt;/p&gt;
+
+&lt;h4 id=&#34;update-sistem:29b599d070ca23c6296113e0e7395cf7&#34;&gt;Update sistem&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;yum update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;instal-epel-extra-packages-for-enterprise-linux-repository:29b599d070ca23c6296113e0e7395cf7&#34;&gt;Instal EPEL (Extra Packages for Enterprise Linux) Repository&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;yum install epel-release
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;instal-node-js-dan-npm:29b599d070ca23c6296113e0e7395cf7&#34;&gt;Instal Node.js dan npm&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;yum install nodejs
+yum install npm
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dokumentasi di situs &lt;strong&gt;Ghost&lt;/strong&gt; mengatakan bahwa versi Node.js dan npm yang direkomendasikan adalah versi 0.10.30 untuk Node.js dan 1.4.21 untuk npm. Oleh karena itu pastikan agar Node.js dan npm yang kita instal sudah sesuai.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My Vim Plugins - 1</title>
+      <link>http://renodesper.com/2014/10/06/my-vim-plugins---1/</link>
+      <pubDate>Mon, 06 Oct 2014 12:54:28 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2014/10/06/my-vim-plugins---1/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction:45fb0dbe467665c98eeb449120891be7&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;First thing first. What is Vim? As far as I can tell, Vim is an imitation of Vi. But **tldr** it is an improved version of Vi now. The last thing that I remember is Vim is not a word processor, it is an editor. You should find the difference yourself.&lt;/p&gt;
+
+&lt;p&gt;So, now I wanna show you all Vim plugins that I used. It&amp;rsquo;s not much but it really help me a lot when I code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot; Color scheme
+NeoBundle &#39;flazz/vim-colorschemes&#39;
+&amp;quot; Network oriented reading, writing, and browsing
+NeoBundle &#39;eiginn/netrw&#39;
+&amp;quot; Elegant buffer explorer
+NeoBundle &#39;fholgado/minibufexpl.vim&#39;
+&amp;quot; Text filtering and alignment
+NeoBundle &#39;godlygeek/tabular&#39;
+&amp;quot; Syntax for LESS (dynamic CSS)
+NeoBundle &#39;groenewege/vim-less&#39;
+&amp;quot; CSS3 syntax support
+NeoBundle &#39;hail2u/vim-css3-syntax&#39;
+&amp;quot; Statusline/tabline for Vim
+NeoBundle &#39;itchyny/lightline.vim&#39;
+&amp;quot; Distraction free
+NeoBundle &#39;junegunn/goyo.vim&#39;
+&amp;quot; Vim motion on speed
+NeoBundle &#39;Lokaltog/vim-easymotion&#39;
+&amp;quot; Python tag list
+NeoBundle &#39;majutsushi/tagbar&#39;
+&amp;quot; Auto close scope (brackets, quotes, etc)
+NeoBundle &#39;Raimondi/delimitMate&#39;
+&amp;quot; Awesome HAML to HTML by CTRL-E on HTML files
+NeoBundle &#39;rstacruz/sparkup&#39;, {&#39;rtp&#39;: &#39;vim/&#39;}
+&amp;quot; Awesome syntax checking plugin
+NeoBundle &#39;scrooloose/syntastic&#39;
+&amp;quot; Snippet engine and snipet lists
+NeoBundle &#39;honza/vim-snippets&#39;
+NeoBundle &#39;SirVer/ultisnips&#39;
+&amp;quot; Visualize your undo tree
+NeoBundle &#39;sjl/gundo.vim&#39;
+&amp;quot; Unite, async and tags support
+NeoBundle &#39;Shougo/neomru.vim&#39;
+NeoBundle &#39;Shougo/unite.vim&#39;
+NeoBundle &#39;Shougo/vimproc.vim&#39;, { &#39;build&#39; : { &#39;unix&#39; : &#39;make -f make_unix.mak&#39;, }, }
+NeoBundle &#39;tsukkee/unite-tag&#39;
+&amp;quot; Expand visual selection by multiple &#39;v&#39;
+NeoBundle &#39;terryma/vim-expand-region&#39;
+&amp;quot; String substitute for singular / plural (context, sensitive)
+NeoBundle &#39;tpope/vim-abolish&#39;
+&amp;quot; Language-agnostic commenting plugin
+NeoBundle &#39;tpope/vim-commentary&#39;
+&amp;quot; Git integration
+NeoBundle &#39;tpope/vim-fugitive&#39;
+&amp;quot; Enable repeating supported plugin
+NeoBundle &#39;tpope/vim-repeat&#39;
+&amp;quot; Quoting/parenthesizing made simple
+NeoBundle &#39;tpope/vim-surround&#39;
+&amp;quot; Awesome completion
+NeoBundle &#39;Valloric/YouCompleteMe&#39;
+&amp;quot;Multiple cursor
+NeoBundle &#39;terryma/vim-multiple-cursors&#39;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pairing Logitech Devices With Solaar</title>
+      <link>http://renodesper.com/2014/09/18/pairing-logitech-devices-with-solaar/</link>
+      <pubDate>Thu, 18 Sep 2014 12:59:20 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2014/09/18/pairing-logitech-devices-with-solaar/</guid>
+      <description>&lt;p&gt;A few minutes ago, a friend of mine shared something good on facebook. He use Solaar to get battery information from his Logitech mouse. So, what is Solaar?&lt;/p&gt;
+
+&lt;p&gt;Quoted from &lt;a href=&#34;http://pwr.github.io/Solaar&#34;&gt;Solaar&lt;/a&gt; website:
+&amp;gt; Solaar is a Linux device manager for Logitech’s Unifying Receiver peripherals.&lt;/p&gt;
+
+&lt;p&gt;It gives you information about your device&amp;rsquo;s technical detail like Wireless PID, Protocol, Polling Rate, Serial number, even your device&amp;rsquo;s firmware. And of course, it gives battery information. I will put a picture as a preview.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://renodesper.com/content/images/2014/10/Selection_001.png&#34; alt=&#34;Solaar&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Nice isn&amp;rsquo;t it? Well, I won&amp;rsquo;t worry about my mouse battery anymore since Solaar also provide an applet.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Menukar Fungsi Tombol Mouse atau Touchpad</title>
+      <link>http://renodesper.com/2014/09/01/menukar-fungsi-tombol-mouse-atau-touchpad/</link>
+      <pubDate>Mon, 01 Sep 2014 13:12:51 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2014/09/01/menukar-fungsi-tombol-mouse-atau-touchpad/</guid>
+      <description>&lt;p&gt;Mungkin ini terdengar aneh, tetapi saya mempunyai kebiasaan untuk menukar fungsi tombol yang ada di mouse walaupun sebetulnya saya bukan &lt;em&gt;left-handed&lt;/em&gt;. Untuk menukar fungsi tombol yang ada di mouse kita bisa menggunakan perintah berikut:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ xmodmap -e &amp;quot;pointer = 3 2 1&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ada masalah yang muncul jika kita menggunakan perintah di atas. Masalahnya adalah perintah tersebut akan menukar fungsi mouse secara umum, maksudnya adalah touchpad yang juga bisa digunakan selain mouse akan tertukar. Lalu bagaimana kita menyiasatinya? Kita bisa menggunakan fungsi &lt;code&gt;xinput&lt;/code&gt;. Sebelumnya kita harus mencari tahu dulu id dari touchpad / mouse yang akan kita tukar fungsi tombolnya.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ xinput list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Fungsi di atas dapat digunakan untuk melihat &lt;em&gt;id&lt;/em&gt; dari device-device yang kita gunakan. Cari &lt;em&gt;id&lt;/em&gt; untuk mouse / touchpad kita lalu gunakan perintah berikut untuk menukar fungsi tombolnya:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ xinput set-button-map {id} 3 2 1
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
