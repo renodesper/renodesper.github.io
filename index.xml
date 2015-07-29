@@ -6,8 +6,23 @@
     <description>Recent content on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us,id</language>
-    <lastBuildDate>Sun, 12 Jul 2015 11:55:32 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2015 00:35:51 +0700</lastBuildDate>
     <atom:link href="http://renodesper.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>My First Time with Awk</title>
+      <link>http://renodesper.com/2015/07/30/my-first-time-with-awk/</link>
+      <pubDate>Thu, 30 Jul 2015 00:35:51 +0700</pubDate>
+      
+      <guid>http://renodesper.com/2015/07/30/my-first-time-with-awk/</guid>
+      <description>&lt;p&gt;Tonight we&amp;rsquo;ll talk about Awk. Actually, I&amp;rsquo;ve know it for a long time but I never had any chance to explore it. A few days ago, I need to remove some duplicate lines from a file &lt;strong&gt;BUT&lt;/strong&gt; it should not be sorted. We can also use &lt;em&gt;sort&lt;/em&gt; and &lt;em&gt;uniq&lt;/em&gt;, but it will end up sorted before we got an actual result. I&amp;rsquo;m using this kind of script to remove it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;awk &#39;!x[$0]++&#39; test_file.log &amp;gt; result_file.log
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How is it? Interested to learn Awk even more?&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Starting Screen in Detach Mode</title>
@@ -372,29 +387,6 @@ NeoBundle &#39;terryma/vim-multiple-cursors&#39;
 &lt;/p&gt;
 
 &lt;p&gt;Nice isn&amp;rsquo;t it? Well, I won&amp;rsquo;t worry about my mouse battery anymore since Solaar also provide an applet.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Menukar Fungsi Tombol Mouse atau Touchpad</title>
-      <link>http://renodesper.com/2014/09/01/menukar-fungsi-tombol-mouse-atau-touchpad/</link>
-      <pubDate>Mon, 01 Sep 2014 13:12:51 +0700</pubDate>
-      
-      <guid>http://renodesper.com/2014/09/01/menukar-fungsi-tombol-mouse-atau-touchpad/</guid>
-      <description>&lt;p&gt;Mungkin ini terdengar aneh, tetapi saya mempunyai kebiasaan untuk menukar fungsi tombol yang ada di mouse walaupun sebetulnya saya bukan &lt;em&gt;left-handed&lt;/em&gt;. Untuk menukar fungsi tombol yang ada di mouse kita bisa menggunakan perintah berikut:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ xmodmap -e &amp;quot;pointer = 3 2 1&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ada masalah yang muncul jika kita menggunakan perintah di atas. Masalahnya adalah perintah tersebut akan menukar fungsi mouse secara umum, maksudnya adalah touchpad yang juga bisa digunakan selain mouse akan tertukar. Lalu bagaimana kita menyiasatinya? Kita bisa menggunakan fungsi &lt;code&gt;xinput&lt;/code&gt;. Sebelumnya kita harus mencari tahu dulu id dari touchpad / mouse yang akan kita tukar fungsi tombolnya.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ xinput list
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Fungsi di atas dapat digunakan untuk melihat &lt;em&gt;id&lt;/em&gt; dari device-device yang kita gunakan. Cari &lt;em&gt;id&lt;/em&gt; untuk mouse / touchpad kita lalu gunakan perintah berikut untuk menukar fungsi tombolnya:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ xinput set-button-map {id} 3 2 1
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
