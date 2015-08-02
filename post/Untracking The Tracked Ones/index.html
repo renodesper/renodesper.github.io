@@ -1,0 +1,175 @@
+    <!DOCTYPE html>
+<html lang="en-us,id">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Boy Sandy Gladies Arriezona">
+		<meta name="description" content="Thoughts, stories, and ideas">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>Untracking The Tracked Ones &middot; A Place to Remember</title>
+		<link rel="shortcut icon" href="http://renodesper.com/images/favicon.ico">
+		<link rel="stylesheet" href="http://renodesper.com/css/style.css">
+		<link rel="stylesheet" href="http://renodesper.com/css/highlight.css">
+		<link href="http://renodesper.com/index.xml" rel="alternate" type="application/rss+xml" title="A Place to Remember" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://renodesper.com/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://renodesper.com/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://renodesper.com/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>Untracking The Tracked Ones</h1>
+                    <h2 class="headline">June 13, 2015</h2>
+                </header>
+                <section id="post-body">
+                    <p>Sudah beberapa hari saya mempunyai keinginan untuk memperbaiki projek yang saya
+lakukan. Secara tidak sengaja saya memasukkan virtual environment ke dalam
+repositori yang notabene seharusnya hanya diisi oleh projek yang saya kerjakan.
+Alhasil banyak sekali perubahan setiap saya mencoba mengerjakan kembali
+(bahkan) ketika saya tidak mengubah apapun.</p>
+
+<p>Berikut cara yang saya temukan untuk meng-untrack file / folder yang sudah
+di-track:</p>
+
+<pre><code>$ git rm --cached -r env
+</code></pre>
+
+<p>Setelah itu, folder tersebut bisa kita masukkan ke dalam file <code>.gitignore</code>
+seperti berikut:</p>
+
+<pre><code>env/*
+</code></pre>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/renodesper">
+                        <img class="avatar" src="http://renodesper.com/images/avatar.png">
+                        <div>
+                            <span class="dark">Boy Sandy Gladies Arriezona</span>
+                            <span>I&#39;m an enthusiastic python programmer.</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http://renodesper.com/http%3a%2f%2frenodesper.com%2fpost%2fUntracking%2520The%2520Tracked%2520Ones%2f - Untracking%20The%20Tracked%20Ones by @renodesper"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+                </section>
+            </footer>
+
+            
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'aplacetoremember';
+        var disqus_developer = 0; 
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://renodesper.com/post/My%20First%20Time%20with%20Awk/">My First Time with Awk<aside class="dates">Jul 30</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://renodesper.com/post/Starting%20Screen%20in%20Detach%20Mode/">Starting Screen in Detach Mode<aside class="dates">Jul 12</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://renodesper.com/post/Django%20Project/">Django Project<aside class="dates">Jun 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://renodesper.com/post/Migration/">Migration<aside class="dates">Jun 4</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://renodesper.com/post/Timestamp%20and%20Date%20in%20Apache%20Phoenix/">Timestamp and Date in Apache Phoenix<aside class="dates">Mar 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://renodesper.com/post/dvorak%20programmer%27s%20time/">dvorak programmer&#39;s time<aside class="dates">Jan 18</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://renodesper.com/post/Editing%20Stream%20like%20Merlin%20The%20Mighty%20with%20Sed/">Editing Stream like Merlin The Mighty with Sed<aside class="dates">Dec 18</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://renodesper.com/post/Menghapus%20baris%20di%20Vim%202/">Menghapus baris di Vim - 2<aside class="dates">Dec 9</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2015 Boy Sandy Gladies Arriezona
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://renodesper.com/js/main.js"></script>
+<script src="http://renodesper.com/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
