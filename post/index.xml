@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on A Place to Remember</title>
-    <link>http://renodesper.com/post/</link>
+    <link>http://blog.renodesper.com/post/</link>
     <description>Recent content in Posts on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us,id</language>
     <lastBuildDate>Thu, 30 Jul 2015 00:35:51 +0700</lastBuildDate>
-    <atom:link href="http://renodesper.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.renodesper.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>My First Time with Awk</title>
-      <link>http://renodesper.com/2015/07/30/my-first-time-with-awk/</link>
+      <link>http://blog.renodesper.com/2015/07/30/my-first-time-with-awk/</link>
       <pubDate>Thu, 30 Jul 2015 00:35:51 +0700</pubDate>
       
-      <guid>http://renodesper.com/2015/07/30/my-first-time-with-awk/</guid>
+      <guid>http://blog.renodesper.com/2015/07/30/my-first-time-with-awk/</guid>
       <description>&lt;p&gt;Tonight we&amp;rsquo;ll talk about Awk. Actually, I&amp;rsquo;ve know it for a long time but I never had any chance to explore it. A few days ago, I need to remove some duplicate lines from a file &lt;strong&gt;BUT&lt;/strong&gt; it should not be sorted. We can also use &lt;em&gt;sort&lt;/em&gt; and &lt;em&gt;uniq&lt;/em&gt;, but it will end up sorted before we got an actual result. I&amp;rsquo;m using this kind of script to remove it:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;awk &#39;!x[$0]++&#39; test_file.log &amp;gt; result_file.log
@@ -26,10 +26,10 @@
     
     <item>
       <title>Starting Screen in Detach Mode</title>
-      <link>http://renodesper.com/2015/07/12/starting-screen-in-detach-mode/</link>
+      <link>http://blog.renodesper.com/2015/07/12/starting-screen-in-detach-mode/</link>
       <pubDate>Sun, 12 Jul 2015 11:55:32 +0700</pubDate>
       
-      <guid>http://renodesper.com/2015/07/12/starting-screen-in-detach-mode/</guid>
+      <guid>http://blog.renodesper.com/2015/07/12/starting-screen-in-detach-mode/</guid>
       <description>&lt;p&gt;For a few days I&amp;rsquo;ve been thinking about GNU/screen. I have some scripts that should be run inside screen everytime a reboot happened. I&amp;rsquo;ve been looking in stackoverflow, google, etc but haven&amp;rsquo;t found anything useful. So I&amp;rsquo;ve been stuck with this kind of script:
 &lt;code&gt;screen -dmS screen_name some_command&lt;/code&gt;&lt;/p&gt;
 
@@ -51,10 +51,10 @@ screen -S screen_name -X stuff &#39;some_command\n&#39;
     
     <item>
       <title>Untracking The Tracked Ones</title>
-      <link>http://renodesper.com/2015/06/13/untracking-the-tracked-ones/</link>
+      <link>http://blog.renodesper.com/2015/06/13/untracking-the-tracked-ones/</link>
       <pubDate>Sat, 13 Jun 2015 17:53:45 +0700</pubDate>
       
-      <guid>http://renodesper.com/2015/06/13/untracking-the-tracked-ones/</guid>
+      <guid>http://blog.renodesper.com/2015/06/13/untracking-the-tracked-ones/</guid>
       <description>&lt;p&gt;Sudah beberapa hari saya mempunyai keinginan untuk memperbaiki projek yang saya
 lakukan. Secara tidak sengaja saya memasukkan virtual environment ke dalam
 repositori yang notabene seharusnya hanya diisi oleh projek yang saya kerjakan.
@@ -77,10 +77,10 @@ seperti berikut:&lt;/p&gt;
     
     <item>
       <title>Django Project</title>
-      <link>http://renodesper.com/2015/06/13/django-project/</link>
+      <link>http://blog.renodesper.com/2015/06/13/django-project/</link>
       <pubDate>Sat, 13 Jun 2015 02:08:27 +0700</pubDate>
       
-      <guid>http://renodesper.com/2015/06/13/django-project/</guid>
+      <guid>http://blog.renodesper.com/2015/06/13/django-project/</guid>
       <description>&lt;p&gt;For about a month I&amp;rsquo;ve been busy building a Django project. Even though everyday I work with python, but I never ever try any framework that is build with it. I can not say it&amp;rsquo;s hard, but with all those &amp;ldquo;jobs&amp;rdquo; in my office, this month is the busiest time for me to took another project (I never know that I will this busy).
 Deadline is in the corner and the project is about 75%. I hope I can finish it as fast as possible.&lt;/p&gt;
 
@@ -90,10 +90,10 @@ Deadline is in the corner and the project is about 75%. I hope I can finish it a
     
     <item>
       <title>Migration</title>
-      <link>http://renodesper.com/2015/06/04/migration/</link>
+      <link>http://blog.renodesper.com/2015/06/04/migration/</link>
       <pubDate>Thu, 04 Jun 2015 11:25:10 +0700</pubDate>
       
-      <guid>http://renodesper.com/2015/06/04/migration/</guid>
+      <guid>http://blog.renodesper.com/2015/06/04/migration/</guid>
       <description>&lt;p&gt;Jadi begini, rencananya saya menggunakan Ghost sebagai blog adalah untuk belajar NodeJS. Sayangnya saya selalu sibuk dan tidak sempat untuk mempelajari NodeJS sekalipun. Akhirnya saya berpikir, daripada membebani server lebih baik saya ubah saja blog-nya ke sesuatu yang lebih ringan. Static site pun muncul di benak saya. Saya menggunakan Hugo untuk men-generate situs ini.&lt;/p&gt;
 
 &lt;p&gt;Udah sih gitu aja, saya gitu sih orangnya. B|&lt;/p&gt;
@@ -102,10 +102,10 @@ Deadline is in the corner and the project is about 75%. I hope I can finish it a
     
     <item>
       <title>Timestamp and Date in Apache Phoenix</title>
-      <link>http://renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix/</link>
+      <link>http://blog.renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix/</link>
       <pubDate>Fri, 13 Mar 2015 12:12:16 +0700</pubDate>
       
-      <guid>http://renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix/</guid>
+      <guid>http://blog.renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix/</guid>
       <description>&lt;p&gt;For a several days I&amp;rsquo;ve played with Apache Phoenix. Instead of playing with HBase directly, Phoenix helped me simplify HBase query (well, just a bit). What I want to tell you now is not about Phoenix in general but the difference between Timestamp and Date in Phoenix.&lt;/p&gt;
 
 &lt;p&gt;I have 2 column which have different format. I thought that both column should have different data type as well. Those format is like this:&lt;/p&gt;
@@ -127,22 +127,22 @@ Deadline is in the corner and the project is about 75%. I hope I can finish it a
     
     <item>
       <title>dvorak programmer&#39;s time</title>
-      <link>http://renodesper.com/2015/01/18/dvorak-programmers-time/</link>
+      <link>http://blog.renodesper.com/2015/01/18/dvorak-programmers-time/</link>
       <pubDate>Sun, 18 Jan 2015 12:13:55 +0700</pubDate>
       
-      <guid>http://renodesper.com/2015/01/18/dvorak-programmers-time/</guid>
+      <guid>http://blog.renodesper.com/2015/01/18/dvorak-programmers-time/</guid>
       <description>&lt;p&gt;Jadi begini, beberapa hari belakangan ini saya sedang menikmati belajar menggunakan layout dvorak programmer. Keycode untuk layout tersebut ada &lt;a href=&#34;https://aur.archlinux.org/packages/programmers-dvorak/&#34;&gt;dvp&lt;/a&gt;. Jujur saja, sangat sulit untuk menggunakan layout tersebut terlebih lagi jika kita sudah terbiasa menggunakan qwerty. Terkadang jadi jemari saya kembali ke tempat dimana huruf tersebut berada di qwerty. Ini yang saya lakukan agar saya tidak terganggu dengan tampilan keyword qwerty yang ada di laptop saya:
-&lt;img src=&#34;http://renodesper.com/images/post/dvorak_keyboard.jpg&#34; alt=&#34;dvorak workaround&#34; /&gt;
+&lt;img src=&#34;http://blog.renodesper.com/images/post/dvorak_keyboard.jpg&#34; alt=&#34;dvorak workaround&#34; /&gt;
 &lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Editing Stream like Merlin The Mighty with Sed</title>
-      <link>http://renodesper.com/2014/12/18/editing-stream-like-merlin-the-mighty-with-sed/</link>
+      <link>http://blog.renodesper.com/2014/12/18/editing-stream-like-merlin-the-mighty-with-sed/</link>
       <pubDate>Thu, 18 Dec 2014 12:18:28 +0700</pubDate>
       
-      <guid>http://renodesper.com/2014/12/18/editing-stream-like-merlin-the-mighty-with-sed/</guid>
+      <guid>http://blog.renodesper.com/2014/12/18/editing-stream-like-merlin-the-mighty-with-sed/</guid>
       <description>&lt;p&gt;We already talk about Vim a couple of time. Let&amp;rsquo;s move to &lt;strong&gt;sed&lt;/strong&gt;. Sed is a stream editor (we already know that) that I used today. This is the case, I have some file (php file) which is badly written by someone (maybe for pissing me off) by changing some characters on it. Let&amp;rsquo;s say they change &amp;ldquo;.php&amp;rdquo; into &amp;ldquo;.rrrr&amp;rdquo; wherever possible. It&amp;rsquo;s not a big deal if the file is only have a few lines, but imagine if it has 2000 lines and I should edit every &amp;ldquo;.rrrr&amp;rdquo; into &amp;ldquo;.php&amp;rdquo;. Let&amp;rsquo;s assume that I&amp;rsquo;m using a server, and even worse there many files that should be edited.&lt;/p&gt;
 
 &lt;p&gt;Enough with the long talk, this is how I roll:&lt;/p&gt;
@@ -161,10 +161,10 @@ Deadline is in the corner and the project is about 75%. I hope I can finish it a
     
     <item>
       <title>Menghapus baris di Vim - 2</title>
-      <link>http://renodesper.com/2014/12/09/menghapus-baris-di-vim---2/</link>
+      <link>http://blog.renodesper.com/2014/12/09/menghapus-baris-di-vim---2/</link>
       <pubDate>Tue, 09 Dec 2014 12:45:17 +0700</pubDate>
       
-      <guid>http://renodesper.com/2014/12/09/menghapus-baris-di-vim---2/</guid>
+      <guid>http://blog.renodesper.com/2014/12/09/menghapus-baris-di-vim---2/</guid>
       <description>
 
 &lt;h2 id=&#34;case:9a8cd59f551c069dc0e2a68c37efc47d&#34;&gt;Case&lt;/h2&gt;
@@ -192,10 +192,10 @@ Deadline is in the corner and the project is about 75%. I hope I can finish it a
     
     <item>
       <title>Menghapus baris di Vim - 1</title>
-      <link>http://renodesper.com/2014/12/04/menghapus-baris-di-vim---1/</link>
+      <link>http://blog.renodesper.com/2014/12/04/menghapus-baris-di-vim---1/</link>
       <pubDate>Thu, 04 Dec 2014 12:49:31 +0700</pubDate>
       
-      <guid>http://renodesper.com/2014/12/04/menghapus-baris-di-vim---1/</guid>
+      <guid>http://blog.renodesper.com/2014/12/04/menghapus-baris-di-vim---1/</guid>
       <description>
 
 &lt;h2 id=&#34;case:2caf1b1fe27b3d92b119f3322602f4b0&#34;&gt;Case&lt;/h2&gt;
@@ -216,13 +216,13 @@ Deadline is in the corner and the project is about 75%. I hope I can finish it a
     
     <item>
       <title>Mengurutkan isi file menggunakan Sort</title>
-      <link>http://renodesper.com/2014/11/27/mengurutkan-isi-file-menggunakan-sort/</link>
+      <link>http://blog.renodesper.com/2014/11/27/mengurutkan-isi-file-menggunakan-sort/</link>
       <pubDate>Thu, 27 Nov 2014 12:51:40 +0700</pubDate>
       
-      <guid>http://renodesper.com/2014/11/27/mengurutkan-isi-file-menggunakan-sort/</guid>
+      <guid>http://blog.renodesper.com/2014/11/27/mengurutkan-isi-file-menggunakan-sort/</guid>
       <description>&lt;p&gt;Saya rasa kita semua pernah merasa kesulitan dalam mengurutkan sesuatu. Beberapa waktu yang lalu saya ingin mengurutkan id yang akan saya olah yang sumbernya terdapat dari 2 file. Untuk kasus ini saya menggunakan sort, saya rasa tidak ada yang lebih mudah dari sort untuk melakukan proses ini melalui command line.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://renodesper.com/content/images/2014/11/2014-11-28-090517_204x353_scrot.png&#34; alt=&#34;Sort&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.renodesper.com/content/images/2014/11/2014-11-28-090517_204x353_scrot.png&#34; alt=&#34;Sort&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Kita bisa menggunakan parameter &lt;em&gt;-m&lt;/em&gt; untuk melakukan merging ataupun langsung mengarahkan keluarannya ke file yang lain menggunakan simbol &lt;em&gt;&amp;gt;&lt;/em&gt;.&lt;/p&gt;
@@ -231,17 +231,17 @@ Deadline is in the corner and the project is about 75%. I hope I can finish it a
     
     <item>
       <title>My Vim Plugins - 2</title>
-      <link>http://renodesper.com/2014/11/13/my-vim-plugins---2/</link>
+      <link>http://blog.renodesper.com/2014/11/13/my-vim-plugins---2/</link>
       <pubDate>Thu, 13 Nov 2014 12:53:11 +0700</pubDate>
       
-      <guid>http://renodesper.com/2014/11/13/my-vim-plugins---2/</guid>
+      <guid>http://blog.renodesper.com/2014/11/13/my-vim-plugins---2/</guid>
       <description>
 
 &lt;h2 id=&#34;flazz-vim-colorschemes:93e265370f1257b8fffca3e4b1ab2d3f&#34;&gt;flazz/vim-colorschemes&lt;/h2&gt;
 
 &lt;p&gt;vim-colorschemes is a collection of colorscheme from vim.org. My favorite is &lt;em&gt;Tomorrow-Night-Eighties&lt;/em&gt; which looks like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://renodesper.com/content/images/2014/11/Selection_001.png&#34; alt=&#34;Tomorrow-Night-Eighties&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.renodesper.com/content/images/2014/11/Selection_001.png&#34; alt=&#34;Tomorrow-Night-Eighties&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;This plugin has a lot of colorschemes, I don&amp;rsquo;t think I will ever have a chance to try all of it&lt;/p&gt;
@@ -254,14 +254,14 @@ Deadline is in the corner and the project is about 75%. I hope I can finish it a
 
 &lt;p&gt;Looking for buffer in vim is a bit hard for me. I often forget which buffer I&amp;rsquo;m editing and it makes my typespeed a bit slow. minibufexpl helped me a lot with providing tab-like buffer.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://renodesper.com/content/images/2014/11/Selection_002.png&#34; alt=&#34;minibufexpl&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.renodesper.com/content/images/2014/11/Selection_002.png&#34; alt=&#34;minibufexpl&#34; /&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&#34;godlygeek-tabular:93e265370f1257b8fffca3e4b1ab2d3f&#34;&gt;godlygeek/tabular&lt;/h2&gt;
 
 &lt;p&gt;Sometimes, we want to align a few line which have a specific character. Let&amp;rsquo;s say that I want to align 5 lines based on equal symbol. After I block those line in visual mode I can use &lt;em&gt;:Tabularize /=&lt;CR&gt;&lt;/em&gt; to align them. We can also map it into another combination. In my case, I use this kind of mapping:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://renodesper.com/content/images/2014/11/Selection_003.png&#34; alt=&#34;tabular&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.renodesper.com/content/images/2014/11/Selection_003.png&#34; alt=&#34;tabular&#34; /&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&#34;groenewege-vim-less:93e265370f1257b8fffca3e4b1ab2d3f&#34;&gt;groenewege/vim-less&lt;/h2&gt;
@@ -272,10 +272,10 @@ Deadline is in the corner and the project is about 75%. I hope I can finish it a
     
     <item>
       <title>New VPS for Node</title>
-      <link>http://renodesper.com/2014/10/15/new-vps-for-node/</link>
+      <link>http://blog.renodesper.com/2014/10/15/new-vps-for-node/</link>
       <pubDate>Wed, 15 Oct 2014 12:54:28 +0700</pubDate>
       
-      <guid>http://renodesper.com/2014/10/15/new-vps-for-node/</guid>
+      <guid>http://blog.renodesper.com/2014/10/15/new-vps-for-node/</guid>
       <description>
 
 &lt;p&gt;Kita skip dulu bahasan tentang Vim yang ada di post sebelumnya. Kemarin saya baru saja menyewa sebuah vps yang nantinya akan saya gunakan untuk riset. VPS tersebut saya pasangkan Centos 7 x86_64. Hal pertama yang saya lakukan adalah memasang nodejs dan npm. Berikut langkah - langkah yang saya lakukan.&lt;/p&gt;
@@ -302,10 +302,10 @@ yum install npm
     
     <item>
       <title>My Vim Plugins - 1</title>
-      <link>http://renodesper.com/2014/10/06/my-vim-plugins---1/</link>
+      <link>http://blog.renodesper.com/2014/10/06/my-vim-plugins---1/</link>
       <pubDate>Mon, 06 Oct 2014 12:54:28 +0700</pubDate>
       
-      <guid>http://renodesper.com/2014/10/06/my-vim-plugins---1/</guid>
+      <guid>http://blog.renodesper.com/2014/10/06/my-vim-plugins---1/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction:45fb0dbe467665c98eeb449120891be7&#34;&gt;Introduction&lt;/h2&gt;
@@ -372,10 +372,10 @@ NeoBundle &#39;terryma/vim-multiple-cursors&#39;
     
     <item>
       <title>Pairing Logitech Devices With Solaar</title>
-      <link>http://renodesper.com/2014/09/18/pairing-logitech-devices-with-solaar/</link>
+      <link>http://blog.renodesper.com/2014/09/18/pairing-logitech-devices-with-solaar/</link>
       <pubDate>Thu, 18 Sep 2014 12:59:20 +0700</pubDate>
       
-      <guid>http://renodesper.com/2014/09/18/pairing-logitech-devices-with-solaar/</guid>
+      <guid>http://blog.renodesper.com/2014/09/18/pairing-logitech-devices-with-solaar/</guid>
       <description>&lt;p&gt;A few minutes ago, a friend of mine shared something good on facebook. He use Solaar to get battery information from his Logitech mouse. So, what is Solaar?&lt;/p&gt;
 
 &lt;p&gt;Quoted from &lt;a href=&#34;http://pwr.github.io/Solaar&#34;&gt;Solaar&lt;/a&gt; website:
@@ -383,7 +383,7 @@ NeoBundle &#39;terryma/vim-multiple-cursors&#39;
 
 &lt;p&gt;It gives you information about your device&amp;rsquo;s technical detail like Wireless PID, Protocol, Polling Rate, Serial number, even your device&amp;rsquo;s firmware. And of course, it gives battery information. I will put a picture as a preview.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://renodesper.com/content/images/2014/10/Selection_001.png&#34; alt=&#34;Solaar&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.renodesper.com/content/images/2014/10/Selection_001.png&#34; alt=&#34;Solaar&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Nice isn&amp;rsquo;t it? Well, I won&amp;rsquo;t worry about my mouse battery anymore since Solaar also provide an applet.&lt;/p&gt;

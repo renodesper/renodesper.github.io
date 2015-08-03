@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on A Place to Remember</title>
-    <link>http://renodesper.com/about/</link>
+    <link>http://blog.renodesper.com/about/</link>
     <description>Recent content in Abouts on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us,id</language>
     <lastBuildDate>Mon, 03 Aug 2015 01:38:02 +0700</lastBuildDate>
-    <atom:link href="http://renodesper.com/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.renodesper.com/about/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About Me</title>
-      <link>http://renodesper.com/about/</link>
+      <link>http://blog.renodesper.com/about/</link>
       <pubDate>Mon, 03 Aug 2015 01:38:02 +0700</pubDate>
       
-      <guid>http://renodesper.com/about/</guid>
+      <guid>http://blog.renodesper.com/about/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;If I don&amp;rsquo;t have to do it, I won&amp;rsquo;t do it.
 If I do have to do it, make it quick.
