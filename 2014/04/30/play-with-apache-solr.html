@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Thoughts, stories and ideas.">
+  <title>Play with Apache Solr</title>
+  <meta name="description" content="Okay, Solr. It’s the first time I play with Solr. I will never know about it if I don’t join this company. Let’s start with selecting index.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://blog.renodesper.com/about/">
+  <link rel="canonical" href="https://blog.renodesper.com/2014/04/30/play-with-apache-solr.html">
   <link rel="alternate" type="application/rss+xml" title="A Place to Remember" href="https://blog.renodesper.com/feed.xml">
 </head>
 
@@ -54,14 +54,70 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">Play with Apache Solr</h1>
+    <p class="post-meta"><time datetime="2014-04-30T00:00:00+07:00" itemprop="datePublished">Apr 30, 2014</time></p>
   </header>
 
-  <div class="post-content">
-    <p>Nothing to do here…</p>
+  <div class="post-content" itemprop="articleBody">
+    <p>Okay, Solr. It’s the first time I play with Solr. I will never know about it if I don’t join this company. Let’s start with selecting index.</p>
+
+<h2 id="select">Select</h2>
+
+<p>We can select an index using this command:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">curl http://localhost:8983/solr/<span class="o">{</span>core<span class="o">}</span>/select?q<span class="o">=</span>id:<span class="o">{</span>id<span class="o">}</span></code></pre></figure>
+
+<h2 id="insert--update">Insert / Update</h2>
+
+<p>There are two commands to insert or update index. Just remember, the structure should be identical.</p>
+
+<h3 id="insert--update-with-json">Insert / Update with JSON</h3>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">curl http://localhost:8983/solr/<span class="o">{</span>core<span class="o">}</span>/update?commit<span class="o">=</span><span class="nb">true</span> -H <span class="s1">'Content-type:application/json'</span> -d 
+<span class="s1">'[
+    { 
+        "id":"{id}",
+        "desc":"{description}"
+    }
+]'</span></code></pre></figure>
+
+<h3 id="insert--update-with-xml">Insert / Update with XML</h3>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">curl http://localhost:8983/solr/<span class="o">{</span>core<span class="o">}</span>/update?commit<span class="o">=</span><span class="nb">true</span> -H <span class="s2">"Content-Type: text/xml"</span> --data-binary 
+<span class="s1">'&lt;add&gt;
+    &lt;doc&gt;
+        &lt;field name="id"&gt;{id}&lt;/field&gt;
+        &lt;field name="desc"&gt;{description}&lt;/field&gt;
+    &lt;/doc&gt;
+&lt;/add&gt;'</span></code></pre></figure>
+
+<h2 id="delete">Delete</h2>
+
+<p>There are also two commands to delete index.</p>
+
+<h3 id="delete-with-json">Delete with JSON</h3>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">curl http://localhost:8983/solr/<span class="o">{</span>core<span class="o">}</span>/update?commit<span class="o">=</span><span class="nb">true</span> -H <span class="s1">'Content-type:application/json'</span> -d 
+<span class="s1">'{
+    "delete":{
+        "id":"{id}"
+    },
+    "delete":{
+        "query":"id:{id}"
+    }
+}'</span></code></pre></figure>
+
+<h3 id="delete-with-xml">Delete with XML</h3>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">curl http://localhost:8983/solr/<span class="o">{</span>core<span class="o">}</span>/update?commit<span class="o">=</span><span class="nb">true</span> -H <span class="s2">"Content-Type: text/xml"</span> --data-binary 
+    <span class="s1">'&lt;delete&gt;
+        &lt;id&gt;{id}&lt;/id&gt;
+        &lt;query&gt;id:{id}&lt;/query&gt;
+    &lt;/delete&gt;'</span></code></pre></figure>
+
 
   </div>
 

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Thoughts, stories and ideas.">
+  <title>Editing Stream like Merlin The Mighty with Sed</title>
+  <meta name="description" content="We already talk about Vim a couple of time. Let’s move to sed. Sed is a stream editor (we already know that) that I used today. This is the case, I have some...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://blog.renodesper.com/about/">
+  <link rel="canonical" href="https://blog.renodesper.com/2014/12/18/editing-stream-likke-merlin-the-mighty-with-sed.html">
   <link rel="alternate" type="application/rss+xml" title="A Place to Remember" href="https://blog.renodesper.com/feed.xml">
 </head>
 
@@ -54,14 +54,25 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">Editing Stream like Merlin The Mighty with Sed</h1>
+    <p class="post-meta"><time datetime="2014-12-18T00:00:00+07:00" itemprop="datePublished">Dec 18, 2014</time></p>
   </header>
 
-  <div class="post-content">
-    <p>Nothing to do here…</p>
+  <div class="post-content" itemprop="articleBody">
+    <p>We already talk about Vim a couple of time. Let’s move to sed. Sed is a stream editor (we already know that) that I used today. This is the case, I have some file (php file) which is badly written by someone (maybe for pissing me off) by changing some characters on it. Let’s say they change <em>.php into *.rrrr</em> wherever possible. It’s not a big deal if the file is only have a few lines, but imagine if it has 2000 lines and I should edit every <em>.rrrr</em> into *.php. Let’s assume that I’m using a server, and even worse there many files that should be edited.</p>
+
+<p>Enough with the long talk, this is how I roll:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">sed -i <span class="s1">'s/\.rrrr/\.php/g'</span> file.php</code></pre></figure>
+
+<p>I also found an interesting sed &amp; find combo, it looks like this:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">find folder_path -type f -exec sed -i <span class="s1">'s/\.rrrr/\.php/g'</span> <span class="o">{}</span> <span class="se">\;</span></code></pre></figure>
+
+<p>Neat, isn’t it? :)</p>
 
   </div>
 

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Thoughts, stories and ideas.">
+  <title>Timestamp and Date in Apache Phoenix</title>
+  <meta name="description" content="For a several days I’ve played with Apache Phoenix. Instead of playing with HBase directly, Phoenix helped me simplify HBase query (well, just a bit). What I...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://blog.renodesper.com/about/">
+  <link rel="canonical" href="https://blog.renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix.html">
   <link rel="alternate" type="application/rss+xml" title="A Place to Remember" href="https://blog.renodesper.com/feed.xml">
 </head>
 
@@ -54,14 +54,29 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">Timestamp and Date in Apache Phoenix</h1>
+    <p class="post-meta"><time datetime="2015-03-13T00:00:00+07:00" itemprop="datePublished">Mar 13, 2015</time></p>
   </header>
 
-  <div class="post-content">
-    <p>Nothing to do here…</p>
+  <div class="post-content" itemprop="articleBody">
+    <p>For a several days I’ve played with Apache Phoenix. Instead of playing with HBase directly, Phoenix helped me simplify HBase query (well, just a bit). What I want to tell you now is not about Phoenix in general but the difference between Timestamp and Date in Phoenix.</p>
+
+<p>I have 2 column which have different format. I thought that both column should have different data type as well. Those format is like this:</p>
+
+<pre><code>1. yyyy-MM-dd HH:mm:ss
+2. yyyy-MM-dd
+</code></pre>
+
+<p>When I use Date type for the 1st format, it doesn’t show me the right result. It only shows me year, month, and day of the data like this: 2015-01-31. But in Timestamp, it shows me the right result. So, my assumption is I should be using Timestamp when I want to include the time (hour, minute, and second) of the data, and the rest should be use Date type.</p>
+
+<p>Unfortunately, I found that my data in HBase is inconsistent. It has 7 hours difference with the actual data. The culprit is the difference of data type. The documentation says that I should include format type and timezone when I want to insert the date with Phoenix (in timestamp). So, instead of <em>to_date(‘2015-01-31 13:17:14’)</em>, I should use <em>to_date(‘2015-01-31 13:17:14’, ‘yyyy-MM-dd HH:mm:ss’, ‘GMT+7’)</em>. But that is a bit long and there is too many code to change, also I should remember which column have Timestamp and Date type.</p>
+
+<p>At last, after hundreds thousand data insertion (wrong data of course), I found that I can also use Date type in every column as long as I explicitly write the format when I try to get the data with Phoenix.</p>
+
+<p>That’s all I wanna share, I hope it’s useful.</p>
 
   </div>
 

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Thoughts, stories and ideas.">
+  <title>Migration</title>
+  <meta name="description" content="Jadi begini, rencananya saya menggunakan Ghost sebagai blog adalah untuk belajar NodeJS. Sayangnya saya selalu sibuk dan tidak sempat untuk mempelajari NodeJ...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://blog.renodesper.com/about/">
+  <link rel="canonical" href="https://blog.renodesper.com/2015/06/04/migration.html">
   <link rel="alternate" type="application/rss+xml" title="A Place to Remember" href="https://blog.renodesper.com/feed.xml">
 </head>
 
@@ -54,14 +54,17 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">Migration</h1>
+    <p class="post-meta"><time datetime="2015-06-04T00:00:00+07:00" itemprop="datePublished">Jun 4, 2015</time></p>
   </header>
 
-  <div class="post-content">
-    <p>Nothing to do here…</p>
+  <div class="post-content" itemprop="articleBody">
+    Jadi begini, rencananya saya menggunakan Ghost sebagai blog adalah untuk belajar NodeJS. Sayangnya saya selalu sibuk dan tidak sempat untuk mempelajari NodeJS sekalipun. Akhirnya saya berpikir, daripada membebani server lebih baik saya ubah saja blog-nya ke sesuatu yang lebih ringan. Static site pun muncul di benak saya. Saya menggunakan Hugo untuk men-generate situs ini.
+
+Udah sih gitu aja, saya gitu sih orangnya. B|
 
   </div>
 

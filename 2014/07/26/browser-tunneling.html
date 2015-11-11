@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Thoughts, stories and ideas.">
+  <title>Browser Tunneling</title>
+  <meta name="description" content="Prolog">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://blog.renodesper.com/about/">
+  <link rel="canonical" href="https://blog.renodesper.com/2014/07/26/browser-tunneling.html">
   <link rel="alternate" type="application/rss+xml" title="A Place to Remember" href="https://blog.renodesper.com/feed.xml">
 </head>
 
@@ -54,14 +54,24 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">Browser Tunneling</h1>
+    <p class="post-meta"><time datetime="2014-07-26T00:00:00+07:00" itemprop="datePublished">Jul 26, 2014</time></p>
   </header>
 
-  <div class="post-content">
-    <p>Nothing to do here…</p>
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="prolog">Prolog</h2>
+
+<p>Okay, we will talk about tunneling. I have a task to do in a few days, I need to remote 3 servers which cannot be accessed from outside of my office. So, I guess I have to use a tunnel. With that being said, this is what I do to achieve that.</p>
+
+<h2 id="workaround">Workaround</h2>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>ssh -D <span class="o">{</span>port<span class="o">}</span> -N <span class="o">{</span>user<span class="o">}</span>@<span class="o">{</span>tunneled-ip-address<span class="o">}</span> -p <span class="o">{</span>tunneled-port<span class="o">}</span></code></pre></figure>
+
+<p>Now, if I want to access some specific web page which can only be accessed from my office I only need to change how my browser connect to the internet. Let’s say that the port I chose is 9999, in firefox I change my network configuration into this:
+Firefox Configuration</p>
 
   </div>
 

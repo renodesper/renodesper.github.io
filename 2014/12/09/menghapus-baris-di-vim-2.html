@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Thoughts, stories and ideas.">
+  <title>Menghapus baris di Vim - 2</title>
+  <meta name="description" content="Case">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://blog.renodesper.com/about/">
+  <link rel="canonical" href="https://blog.renodesper.com/2014/12/09/menghapus-baris-di-vim-2.html">
   <link rel="alternate" type="application/rss+xml" title="A Place to Remember" href="https://blog.renodesper.com/feed.xml">
 </head>
 
@@ -54,14 +54,39 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">Menghapus baris di Vim - 2</h1>
+    <p class="post-meta"><time datetime="2014-12-09T00:00:00+07:00" itemprop="datePublished">Dec 9, 2014</time></p>
   </header>
 
-  <div class="post-content">
-    <p>Nothing to do here…</p>
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="case">Case</h2>
+
+<p>Terkadang kita ingin menghapus baris-baris tertentu yang hanya mengandung kata-kata yang spesifik. Contohnya jika ingin menghapus log tetapi menyisakan baris yang mengandung kata <strong>warning</strong> atau <strong>error</strong> atau lainnya.</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Ada 2 ex command yang dapat kita gunakan yang berhubungan dengan masalah tersebut.</p>
+
+<pre><code>1. :g/{pola yang ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}
+2. :v/{pola yang tidak ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}
+</code></pre>
+
+<h2 id="example">Example</h2>
+
+<pre><code>1. Untuk menghapus setiap baris yang mengandung pola "warning" kita bisa menggunakan:
+   :g/warning/d
+
+2. Untuk menghapus setiap baris yang tidak mengandung pola "warning" kita bisa menggunakan:
+   - :v/warning/d
+   - :g!/warning/d
+</code></pre>
+
+<p>Jika ingin mencoba perintah-perintah tersebut saya sarankan untuk menggunakan 1 file yang memiliki banyak kata dan kalimat, contohnya saya menggunakan 1 story yang saya ambil dari booktrust.</p>
+
+<p><em>PS: Pola yang dicari bisa juga menggunakan regex</em></p>
 
   </div>
 

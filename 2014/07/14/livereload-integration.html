@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Thoughts, stories and ideas.">
+  <title>LiveReload Integration</title>
+  <meta name="description" content="Introduction">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://blog.renodesper.com/about/">
+  <link rel="canonical" href="https://blog.renodesper.com/2014/07/14/livereload-integration.html">
   <link rel="alternate" type="application/rss+xml" title="A Place to Remember" href="https://blog.renodesper.com/feed.xml">
 </head>
 
@@ -54,14 +54,36 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">LiveReload Integration</h1>
+    <p class="post-meta"><time datetime="2014-07-14T00:00:00+07:00" itemprop="datePublished">Jul 14, 2014</time></p>
   </header>
 
-  <div class="post-content">
-    <p>Nothing to do here…</p>
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="introduction">Introduction</h2>
+
+<p>Apa itu livereload? LiveReload adalah sebuah tool yang dapat kita gunakan untuk melakukan reload (refresh) pada browser sesuai dengan trigger tertentu. Misalnya jika sebuah file disimpan, jika ada sebuah GET request, bahkan kita juga bisa menambahkan delay sebelum reload dijalankan. Lalu hal apa saja yang harus kita lakukan untuk dapat menggunakan livereload?
+Sublime Text and LiveReload Integration</p>
+
+<p>Oke, ada 2 pilihan server yang bisa kita (saya sudah coba) gunakan. Yang pertama adalah plugin livereload yang sudah terintegrasi dengan sublime text. Dengan plugin ini, kita bisa menjalankan dan mematikan livereload langsung dari sublime text dan livereload langsung aktif begitu sublime text dinyalakan. Plugin ini bisa didownload di LiveReload.</p>
+
+<h2 id="any-text-editor-and-livereload-integration">Any Text Editor and LiveReload Integration</h2>
+
+<p>Pilihan selanjutnya yang dapat kita gunakan adalah python-livereload. Jika kita memilih untuk menggunakan python-livereload maka kita dapat menggunakan text editor apapun, contohnya kita bisa menggunakan Vim. Yang perlu kita lakukan hanyalah menjalankan livereload dengan menyertakan directory dimana file-file yang digunakan berada. Berikut adalah isi help dari python-livereload:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">usage: livereload <span class="o">[</span>-h] <span class="o">[</span>-p PORT] <span class="o">[</span>directory]
+
+Start a <span class="sb">`</span>livereload<span class="sb">`</span> server
+
+positional arguments:
+  directory             Directory to watch <span class="k">for </span>changes
+
+optional arguments:
+  -h, --help            show this <span class="nb">help </span>message and <span class="nb">exit</span>
+  -p PORT, --port PORT  Port to run <span class="sb">`</span>livereload<span class="sb">`</span> server on</code></pre></figure>
+
 
   </div>
 

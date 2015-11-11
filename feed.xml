@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A Place to Remember</title>
+    <description>Thoughts, stories and ideas.</description>
+    <link>https://blog.renodesper.com/</link>
+    <atom:link href="https://blog.renodesper.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 11 Nov 2015 23:59:06 +0700</pubDate>
+    <lastBuildDate>Wed, 11 Nov 2015 23:59:06 +0700</lastBuildDate>
+    <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>Berbagi Buku</title>
+        <description>&lt;h2 id=&quot;prakata&quot;&gt;Prakata&lt;/h2&gt;
+
+&lt;p&gt;Salam,&lt;/p&gt;
+
+&lt;p&gt;Kebetulan buku2 yang fotonya saya lampirkan di atas sudah jarang saya baca. Oleh karena itu, daripada hanya menjadi memenuhi ruangan di kosan saya, sepertinya akan lebih baik untuk diberikan kepada yang membutuhkan. Membutuhkan di sini bukan berarti “dibaca jika sedang mood” tapi lebih ke membutuhkan karena memang ingin membaca / menggunakan buku tersebut. Harapan saya, jika misalnya buku-buku tersebut udah tidak dibutuhkan lagi nantinya, maka akan lebih baik jika buku tersebut diberikan lagi kepada orang lain oleh orang yang meminjam sebelumnya, semacam chain reaction gitu.&lt;/p&gt;
+
+&lt;p&gt;Maksimal buku yang bisa diminta adalah 3. Jumlah maksimal ini dibutuhkan untuk menghindari adanya buku yang diminta tetapi akhirnya tidak dibaca. Untuk yang berminat cukup mengganti ongkos kirim saja seikhlasnya. Berikut saya sertakan daftar bukunya:&lt;/p&gt;
+
+&lt;h3 id=&quot;daftar-buku&quot;&gt;Daftar Buku&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;1. Algoritma dan Pemrograman - booked by Alisano
+2. Ejaan Bahasa Indonesia - booked by Wahyu Febriyan Ramadhan
+3. Freelance - booked by Jananto
+4. Ilmu Komputer - booked by Alisano
+5. Cisco Introduction - booked by Jananto
+6. Java MySql - booked by Agung Rafiyudin
+7. Learn Python The Hard Way - booked by Fany Hermawan
+8. OOP - C# - booked by Rizal M. S.
+9. Resep Top PHP - booked by Fany Hermawan
+10. Rekayasa Perangkat Lunak - booked by Agung Rafiyudin
+11. Statistika - booked by Wahyu Febriyan Ramadhan
+12. Teknisi Komputer - booked by Jananto
+13. Wimpy Vampire
+14. Unix - booked by Ibnu Daru Aji
+15. The Alchemist - sedang dipinjam
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Jika ada yang berminat kepada buku-buku tersebut silakan kirimkan pesan dengan subjek “Berbagi Buku” yang berisi buku yang diinginkan dan alamat yang dituju (lengkap) ke email berikut: reno.esper@gmail.com&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;~first comes first served~&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 04 Oct 2015 00:00:00 +0700</pubDate>
+        <link>https://blog.renodesper.com/2015/10/04/berbagi-buku.html</link>
+        <guid isPermaLink="true">https://blog.renodesper.com/2015/10/04/berbagi-buku.html</guid>
+        
+        <category>share</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>My First Time with Awk</title>
+        <description>&lt;p&gt;Tonight we’ll talk about Awk. Actually, I’ve know it for a long time but I never had any chance to explore it. A few days ago, I need to remove some duplicate lines from a file BUT it should not be sorted. We can also use sort and uniq, but it will end up sorted before we got an actual result. I’m using this kind of script to remove it:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;awk &lt;span class=&quot;s1&quot;&gt;&#39;!x[$0]++&#39;&lt;/span&gt; test_file.log &amp;gt; result_file.log&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;How is it? Interested to learn Awk even more?&lt;/p&gt;
+</description>
+        <pubDate>Thu, 30 Jul 2015 00:00:00 +0700</pubDate>
+        <link>https://blog.renodesper.com/2015/07/30/my-first-time-with-awk.html</link>
+        <guid isPermaLink="true">https://blog.renodesper.com/2015/07/30/my-first-time-with-awk.html</guid>
+        
+        <category>awk</category>
+        
+        <category>linux</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Starting Screen in Detach Mode</title>
+        <description>&lt;p&gt;For a few days I’ve been thinking about GNU/screen. I have some scripts that should be run inside screen everytime a reboot happened. I’ve been looking in stackoverflow, google, etc but haven’t found anything useful. So I’ve been stuck with this kind of script:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;screen -dmS screen_name some_command&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;It will create a new screen, run the command inside it and detach the screen. Well, it’s pretty good actually. But, when the command is done (finished or killed) then the screen will be terminated. I won’t know whether there is an error in my command or not. So, after a bit more googling I found about -X parameter and stuff. And now, my script looks like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;screen -dmS screen_name
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;screen -S screen_name -X stuff &lt;span class=&quot;s1&quot;&gt;&#39;some_command\n&#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;the first line will create new screen and give it a name ‘screen_name’ the second line will send ‘some_command\n’ string to screen which similar with typing some_command and hitting enter&lt;/p&gt;
+
+&lt;p&gt;I can even send break (Ctrl-C) into screen with this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;screen -S screen_name -X stuff &lt;span class=&quot;s1&quot;&gt;&#39;^C&#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;With this, I can create a script that can modify whatever happen inside the screen. I can combine it with fabric if I want.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 12 Jul 2015 00:00:00 +0700</pubDate>
+        <link>https://blog.renodesper.com/2015/07/12/starting-screen-in-detach-mode.html</link>
+        <guid isPermaLink="true">https://blog.renodesper.com/2015/07/12/starting-screen-in-detach-mode.html</guid>
+        
+        <category>screen</category>
+        
+        <category>linux</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Untracking The Tracked Ones</title>
+        <description>&lt;p&gt;Sudah beberapa hari saya mempunyai keinginan untuk memperbaiki projek yang saya lakukan. Secara tidak sengaja saya memasukkan virtual environment ke dalam repositori yang notabene seharusnya hanya diisi oleh projek yang saya kerjakan. Alhasil banyak sekali perubahan setiap saya mencoba mengerjakan kembali (bahkan) ketika saya tidak mengubah apapun.&lt;/p&gt;
+
+&lt;p&gt;Berikut cara yang saya temukan untuk meng-untrack file / folder yang sudah di-track:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git rm --cached -r env&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Setelah itu, folder tersebut bisa kita masukkan ke dalam file &lt;em&gt;.gitignore&lt;/em&gt; seperti berikut:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;env/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Sat, 13 Jun 2015 00:00:00 +0700</pubDate>
+        <link>https://blog.renodesper.com/2015/06/13/untracking-the-tracked-ones.html</link>
+        <guid isPermaLink="true">https://blog.renodesper.com/2015/06/13/untracking-the-tracked-ones.html</guid>
+        
+        <category>git</category>
+        
+        <category>linux</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Django Project</title>
+        <description>&lt;p&gt;For about a month I’ve been busy building a Django project. Even though everyday I work with python, but I never ever try any framework that is build with it. I can not say it’s hard, but with all those “jobs” in my office, this month is the busiest time for me to took another project (I never know that I will be this busy). Deadline is in the corner and the project is about 75%. I hope I can finish it as fast as possible.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;never stop until the bell ringing&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 13 Jun 2015 00:00:00 +0700</pubDate>
+        <link>https://blog.renodesper.com/2015/06/13/django-project.html</link>
+        <guid isPermaLink="true">https://blog.renodesper.com/2015/06/13/django-project.html</guid>
+        
+        <category>django</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Migration</title>
+        <description>Jadi begini, rencananya saya menggunakan Ghost sebagai blog adalah untuk belajar NodeJS. Sayangnya saya selalu sibuk dan tidak sempat untuk mempelajari NodeJS sekalipun. Akhirnya saya berpikir, daripada membebani server lebih baik saya ubah saja blog-nya ke sesuatu yang lebih ringan. Static site pun muncul di benak saya. Saya menggunakan Hugo untuk men-generate situs ini.
+
+Udah sih gitu aja, saya gitu sih orangnya. B|
+</description>
+        <pubDate>Thu, 04 Jun 2015 00:00:00 +0700</pubDate>
+        <link>https://blog.renodesper.com/2015/06/04/migration.html</link>
+        <guid isPermaLink="true">https://blog.renodesper.com/2015/06/04/migration.html</guid>
+        
+        <category>migrasi</category>
+        
+        <category>ghost</category>
+        
+        <category>hugo</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Timestamp and Date in Apache Phoenix</title>
+        <description>&lt;p&gt;For a several days I’ve played with Apache Phoenix. Instead of playing with HBase directly, Phoenix helped me simplify HBase query (well, just a bit). What I want to tell you now is not about Phoenix in general but the difference between Timestamp and Date in Phoenix.&lt;/p&gt;
+
+&lt;p&gt;I have 2 column which have different format. I thought that both column should have different data type as well. Those format is like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1. yyyy-MM-dd HH:mm:ss
+2. yyyy-MM-dd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When I use Date type for the 1st format, it doesn’t show me the right result. It only shows me year, month, and day of the data like this: 2015-01-31. But in Timestamp, it shows me the right result. So, my assumption is I should be using Timestamp when I want to include the time (hour, minute, and second) of the data, and the rest should be use Date type.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, I found that my data in HBase is inconsistent. It has 7 hours difference with the actual data. The culprit is the difference of data type. The documentation says that I should include format type and timezone when I want to insert the date with Phoenix (in timestamp). So, instead of &lt;em&gt;to_date(‘2015-01-31 13:17:14’)&lt;/em&gt;, I should use &lt;em&gt;to_date(‘2015-01-31 13:17:14’, ‘yyyy-MM-dd HH:mm:ss’, ‘GMT+7’)&lt;/em&gt;. But that is a bit long and there is too many code to change, also I should remember which column have Timestamp and Date type.&lt;/p&gt;
+
+&lt;p&gt;At last, after hundreds thousand data insertion (wrong data of course), I found that I can also use Date type in every column as long as I explicitly write the format when I try to get the data with Phoenix.&lt;/p&gt;
+
+&lt;p&gt;That’s all I wanna share, I hope it’s useful.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 13 Mar 2015 00:00:00 +0700</pubDate>
+        <link>https://blog.renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix.html</link>
+        <guid isPermaLink="true">https://blog.renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix.html</guid>
+        
+        <category>timestamp</category>
+        
+        <category>date</category>
+        
+        <category>apache phoenix</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>dvorak programmer&#39;s time</title>
+        <description>&lt;p&gt;Jadi begini, beberapa hari belakangan ini saya sedang menikmati belajar menggunakan layout dvorak programmer. Keycode untuk layout tersebut ada dvp. Jujur saja, sangat sulit untuk menggunakan layout tersebut terlebih lagi jika kita sudah terbiasa menggunakan qwerty. Terkadang jadi jemari saya kembali ke tempat dimana huruf tersebut berada di qwerty. Ini yang saya lakukan agar saya tidak terganggu dengan tampilan keyword qwerty yang ada di laptop saya: 
+dvorak workaround&lt;/p&gt;
+</description>
+        <pubDate>Sun, 18 Jan 2015 00:00:00 +0700</pubDate>
+        <link>https://blog.renodesper.com/2015/01/18/dvorak-programmers-time.html</link>
+        <guid isPermaLink="true">https://blog.renodesper.com/2015/01/18/dvorak-programmers-time.html</guid>
+        
+        <category>dvorak</category>
+        
+        <category>keyboard layout</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Editing Stream like Merlin The Mighty with Sed</title>
+        <description>&lt;p&gt;We already talk about Vim a couple of time. Let’s move to sed. Sed is a stream editor (we already know that) that I used today. This is the case, I have some file (php file) which is badly written by someone (maybe for pissing me off) by changing some characters on it. Let’s say they change &lt;em&gt;.php into *.rrrr&lt;/em&gt; wherever possible. It’s not a big deal if the file is only have a few lines, but imagine if it has 2000 lines and I should edit every &lt;em&gt;.rrrr&lt;/em&gt; into *.php. Let’s assume that I’m using a server, and even worse there many files that should be edited.&lt;/p&gt;
+
+&lt;p&gt;Enough with the long talk, this is how I roll:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&#39;s/\.rrrr/\.php/g&#39;&lt;/span&gt; file.php&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;I also found an interesting sed &amp;amp; find combo, it looks like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;find folder_path -type f -exec sed -i &lt;span class=&quot;s1&quot;&gt;&#39;s/\.rrrr/\.php/g&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Neat, isn’t it? :)&lt;/p&gt;
+</description>
+        <pubDate>Thu, 18 Dec 2014 00:00:00 +0700</pubDate>
+        <link>https://blog.renodesper.com/2014/12/18/editing-stream-likke-merlin-the-mighty-with-sed.html</link>
+        <guid isPermaLink="true">https://blog.renodesper.com/2014/12/18/editing-stream-likke-merlin-the-mighty-with-sed.html</guid>
+        
+        <category>sed</category>
+        
+        <category>linux</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Menghapus baris di Vim - 2</title>
+        <description>&lt;h2 id=&quot;case&quot;&gt;Case&lt;/h2&gt;
+
+&lt;p&gt;Terkadang kita ingin menghapus baris-baris tertentu yang hanya mengandung kata-kata yang spesifik. Contohnya jika ingin menghapus log tetapi menyisakan baris yang mengandung kata &lt;strong&gt;warning&lt;/strong&gt; atau &lt;strong&gt;error&lt;/strong&gt; atau lainnya.&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;Ada 2 ex command yang dapat kita gunakan yang berhubungan dengan masalah tersebut.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1. :g/{pola yang ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}
+2. :v/{pola yang tidak ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;1. Untuk menghapus setiap baris yang mengandung pola &quot;warning&quot; kita bisa menggunakan:
+   :g/warning/d
+
+2. Untuk menghapus setiap baris yang tidak mengandung pola &quot;warning&quot; kita bisa menggunakan:
+   - :v/warning/d
+   - :g!/warning/d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Jika ingin mencoba perintah-perintah tersebut saya sarankan untuk menggunakan 1 file yang memiliki banyak kata dan kalimat, contohnya saya menggunakan 1 story yang saya ambil dari booktrust.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;PS: Pola yang dicari bisa juga menggunakan regex&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 09 Dec 2014 00:00:00 +0700</pubDate>
+        <link>https://blog.renodesper.com/2014/12/09/menghapus-baris-di-vim-2.html</link>
+        <guid isPermaLink="true">https://blog.renodesper.com/2014/12/09/menghapus-baris-di-vim-2.html</guid>
+        
+        <category>vim</category>
+        
+        <category>linux</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

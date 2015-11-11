@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Thoughts, stories and ideas.">
+  <title>Grep for The World</title>
+  <meta name="description" content="Pernahkah kalian merasa kesulitan saat ingin mencari sebuah file yang kalian tidak tahu nama file-nya tetapi (sedikit) tahu apa isinya? Untuk mencari file ya...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://blog.renodesper.com/about/">
+  <link rel="canonical" href="https://blog.renodesper.com/2014/08/11/grep-for-the-world.html">
   <link rel="alternate" type="application/rss+xml" title="A Place to Remember" href="https://blog.renodesper.com/feed.xml">
 </head>
 
@@ -54,14 +54,19 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">Grep for The World</h1>
+    <p class="post-meta"><time datetime="2014-08-11T00:00:00+07:00" itemprop="datePublished">Aug 11, 2014</time></p>
   </header>
 
-  <div class="post-content">
-    <p>Nothing to do here…</p>
+  <div class="post-content" itemprop="articleBody">
+    <p>Pernahkah kalian merasa kesulitan saat ingin mencari sebuah file yang kalian tidak tahu nama file-nya tetapi (sedikit) tahu apa isinya? Untuk mencari file yang misterius seperti ini kita bisa menggunakan grep. Berikut adalah contoh grep yang baru saja saya gunakan:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>grep -r -i <span class="s2">"INSERT INTO news"</span> <span class="k">*</span>.py</code></pre></figure>
+
+<p>Perintah di atas berguna untuk mencari file berakhiran “.py” yang di dalamnya mengandung kalimat “INSERT INTO news”. Opsi “-r” akan membuat grep dapat mencari file tersebut secara rekursif pada folder tersebut. Opsi “-i” akan memberikan grep kemampuan untuk mencari teks secara “case insensitive”.</p>
 
   </div>
 

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Thoughts, stories and ideas.">
+  <title>My First Time with Awk</title>
+  <meta name="description" content="Tonight we’ll talk about Awk. Actually, I’ve know it for a long time but I never had any chance to explore it. A few days ago, I need to remove some duplicat...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://blog.renodesper.com/about/">
+  <link rel="canonical" href="https://blog.renodesper.com/2015/07/30/my-first-time-with-awk.html">
   <link rel="alternate" type="application/rss+xml" title="A Place to Remember" href="https://blog.renodesper.com/feed.xml">
 </head>
 
@@ -54,14 +54,19 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">My First Time with Awk</h1>
+    <p class="post-meta"><time datetime="2015-07-30T00:00:00+07:00" itemprop="datePublished">Jul 30, 2015</time></p>
   </header>
 
-  <div class="post-content">
-    <p>Nothing to do here…</p>
+  <div class="post-content" itemprop="articleBody">
+    <p>Tonight we’ll talk about Awk. Actually, I’ve know it for a long time but I never had any chance to explore it. A few days ago, I need to remove some duplicate lines from a file BUT it should not be sorted. We can also use sort and uniq, but it will end up sorted before we got an actual result. I’m using this kind of script to remove it:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>awk <span class="s1">'!x[$0]++'</span> test_file.log &gt; result_file.log</code></pre></figure>
+
+<p>How is it? Interested to learn Awk even more?</p>
 
   </div>
 
