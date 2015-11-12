@@ -11,7 +11,7 @@
 
   <title>
     
-      My Vim Plugins - 1 &middot; A Place to Remember
+      A Place to Remember &middot; 
     
   </title>
 
@@ -95,10 +95,129 @@
 
 
     <div class="content container">
-      <div class="post">
-  <h1 class="post-title">My Vim Plugins - 1</h1>
-  <span class="post-date">06 Oct 2014</span>
-  <h2 id="introduction">Introduction</h2>
+      <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2014/12/04/menghapus-baris-di-vim.html">
+        Menghapus baris di Vim - 1
+      </a>
+    </h1>
+
+    <span class="post-date">04 Dec 2014</span>
+
+    <h2 id="case">Case</h2>
+
+<p>Terkadang kita perlu menghapus beberapa baris secara berurutan dan secara spesifik. Contohnya adalah jika kita ingin menghapus 491 baris dari baris ke 105. Seperti yang kita tahu, kita bisa menggunakan dd untuk menghapus 1 baris di Vim. Tapi bagaimana untuk kasus di atas? Mengutip dari suatu blog, penggunaan Vim itu seperti kita berbahasa (thanks for Daniel Miessler for your awesome post). Caranya seperti berikut:</p>
+
+<h2 id="solution">Solution</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1. 491dd = menghapus 491 baris ke bawah dengan syarat posisi kita harus ada di baris 105
+2. d491j = menghapus 491 baris ke bawah dengan syarat posisi kita harus ada di baris 105 dan di posisi paling awal baris, kita juga bisa menghapus ke atas dengan cara mengganti j menjadi k
+3. :105,596d = menghapus 491 baris dari baris 105 sampai baris 596, kita harus tahu terlebih dahulu akhir baris yang kita inginkan dan harus berada di normal mode
+</code></pre>
+</div>
+
+<p>Mudah kan? Saya juga baru saja mencoba menggunakannya. Just remember guys, practice makes expert.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2014/11/27/mengurutkan-isi-file-menggunakan-sort.html">
+        Mengurutkan isi file menggunakan Sort
+      </a>
+    </h1>
+
+    <span class="post-date">27 Nov 2014</span>
+
+    <p>Saya rasa kita semua pernah merasa kesulitan dalam mengurutkan sesuatu. Beberapa waktu yang lalu saya ingin mengurutkan id yang akan saya olah yang sumbernya terdapat dari 2 file. Untuk kasus ini saya menggunakan sort, saya rasa tidak ada yang lebih mudah dari sort untuk melakukan proses ini melalui command line.<br />
+sort image</p>
+
+<p>Kita bisa menggunakan parameter <em>-m</em> untuk melakukan merging ataupun langsung mengarahkan keluarannya ke file yang lain menggunakan simbol <em>&gt;</em>.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2014/11/13/my-vim-plugins-2.html">
+        My Vim Plugins - 2
+      </a>
+    </h1>
+
+    <span class="post-date">13 Nov 2014</span>
+
+    <h2 id="flazzvim-colorschemes">flazz/vim-colorschemes</h2>
+
+<p>vim-colorschemes is a collection of colorscheme from vim.org. My favorite is Tomorrow-Night-Eighties which looks like this:<br />
+Tomorrow-Night-Eighties image</p>
+
+<p>This plugin has a lot of colorschemes, I don’t think I will ever have a chance to try all of it</p>
+
+<h2 id="eiginnnetrw">eiginn/netrw</h2>
+
+<p>netrw is a must-have plugin if you often connect to remote server. Instead of editing file on the remote server, you can use netrw to do some editing right in vim.</p>
+
+<h2 id="fholgadominibufexplvim">fholgado/minibufexpl.vim</h2>
+
+<p>Looking for buffer in vim is a bit hard for me. I often forget which buffer I’m editing and it makes my typespeed a bit slow. minibufexpl helped me a lot with providing tab-like buffer.<br />
+minibufexpl image</p>
+
+<h2 id="godlygeektabular">godlygeek/tabular</h2>
+
+<p>Sometimes, we want to align a few line which have a specific character. Let’s say that I want to align 5 lines based on equal symbol. After I block those line in visual mode I can use :Tabularize /= to align them. We can also map it into another combination. In my case, I use this kind of mapping:<br />
+tabular image</p>
+
+<h2 id="groenewegevim-less">groenewege/vim-less</h2>
+
+<p>vim-less give us syntax highlighting, auto completion, and so on. Nothing special but useful when we want to edit .less file.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2014/10/15/new-vps-for-node.html">
+        New VPS for Node
+      </a>
+    </h1>
+
+    <span class="post-date">15 Oct 2014</span>
+
+    <p>Kita skip dulu bahasan tentang Vim yang ada di post sebelumnya. Kemarin saya baru saja menyewa sebuah vps yang nantinya akan saya gunakan untuk riset. VPS tersebut saya pasangkan Centos 7 x86_64. Hal pertama yang saya lakukan adalah memasang nodejs dan npm. Berikut langkah - langkah yang saya lakukan.</p>
+
+<h2 id="update-sistem">Update sistem</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>yum update
+</code></pre>
+</div>
+
+<h2 id="instal-epel-extra-packages-for-enterprise-linux-repository">Instal EPEL (Extra Packages for Enterprise Linux) Repository</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>yum install epel-release
+</code></pre>
+</div>
+
+<h2 id="instal-nodejs-dan-npm">Instal Node.js dan npm</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>yum install nodejs
+<span class="gp">$ </span>yum install npm
+</code></pre>
+</div>
+
+<p>Dokumentasi di situs Ghost mengatakan bahwa versi Node.js dan npm yang direkomendasikan adalah versi 0.10.30 untuk Node.js dan 1.4.21 untuk npm. Oleh karena itu pastikan agar Node.js dan npm yang kita instal sudah sesuai.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2014/10/06/my-vim-plugins-1.html">
+        My Vim Plugins - 1
+      </a>
+    </h1>
+
+    <span class="post-date">06 Oct 2014</span>
+
+    <h2 id="introduction">Introduction</h2>
 
 <p>First thing first. What is Vim? As far as I can tell, Vim is an imitation of Vi. But <strong>tldr</strong> it is an improved version of Vi now. The last thing that I remember is Vim is not a word processor, it is an editor. You should find the difference yourself.</p>
 
@@ -159,62 +278,20 @@ NeoBundle <span class="s1">'terryma/vim-multiple-cursors'</span>
 </code></pre>
 </div>
 
+  </div>
+  
 </div>
 
-
-<div id="disqus_thread"></div>
-<script>
-	/*
-    var disqus_config = function () {
-        this.page.url = "https://blog.renodesper.com/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
-        var d = document, s = d.createElement('script');
-        
-        s.src = '//aplacetoremember.disqus.com/embed.js';        
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
-<div class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page4">Older</a>
+  
+  
     
-      <li>
-        <h3>
-          <a href="/2015/10/04/berbagi-buku.html">
-            Berbagi Buku
-            <small>04 Oct 2015</small>
-          </a>
-        </h3>
-      </li>
+      <a class="pagination-item newer" href="/page2">Newer</a>
     
-      <li>
-        <h3>
-          <a href="/2015/07/30/my-first-time-with-awk.html">
-            My First Time with Awk
-            <small>30 Jul 2015</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2015/07/12/starting-screen-in-detach-mode.html">
-            Starting Screen in Detach Mode
-            <small>12 Jul 2015</small>
-          </a>
-        </h3>
-      </li>
-    
-  </ul>
+  
 </div>
-
     </div>
 
   </body>

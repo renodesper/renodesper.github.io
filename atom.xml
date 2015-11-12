@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>A Place to Remember</title>
+ <link href="https://blog.renodesper.com/atom.xml" rel="self"/>
+ <link href="https://blog.renodesper.com/"/>
+ <updated>2015-11-13T00:08:56+07:00</updated>
+ <id>https://blog.renodesper.com</id>
+ <author>
+   <name>Boy Sandy Gladies Arriezona</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Berbagi Buku</title>
+   <link href="https://blog.renodesper.com/2015/10/04/berbagi-buku.html"/>
+   <updated>2015-10-04T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2015/10/04/berbagi-buku</id>
+   <content type="html">&lt;h2 id=&quot;prakata&quot;&gt;Prakata&lt;/h2&gt;
+
+&lt;p&gt;Salam,&lt;/p&gt;
+
+&lt;p&gt;Kebetulan buku2 yang fotonya saya lampirkan di atas sudah jarang saya baca. Oleh karena itu, daripada hanya menjadi memenuhi ruangan di kosan saya, sepertinya akan lebih baik untuk diberikan kepada yang membutuhkan. Membutuhkan di sini bukan berarti “dibaca jika sedang mood” tapi lebih ke membutuhkan karena memang ingin membaca / menggunakan buku tersebut. Harapan saya, jika misalnya buku-buku tersebut udah tidak dibutuhkan lagi nantinya, maka akan lebih baik jika buku tersebut diberikan lagi kepada orang lain oleh orang yang meminjam sebelumnya, semacam chain reaction gitu.&lt;/p&gt;
+
+&lt;p&gt;Maksimal buku yang bisa diminta adalah 3. Jumlah maksimal ini dibutuhkan untuk menghindari adanya buku yang diminta tetapi akhirnya tidak dibaca. Untuk yang berminat cukup mengganti ongkos kirim saja seikhlasnya. Berikut saya sertakan daftar bukunya:&lt;/p&gt;
+
+&lt;h3 id=&quot;daftar-buku&quot;&gt;Daftar Buku&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. Algoritma dan Pemrograman - booked by Alisano
+2. Ejaan Bahasa Indonesia - booked by Wahyu Febriyan Ramadhan
+3. Freelance - booked by Jananto
+4. Ilmu Komputer - booked by Alisano
+5. Cisco Introduction - booked by Jananto
+6. Java MySql - booked by Agung Rafiyudin
+7. Learn Python The Hard Way - booked by Fany Hermawan
+8. OOP - C# - booked by Rizal M. S.
+9. Resep Top PHP - booked by Fany Hermawan
+10. Rekayasa Perangkat Lunak - booked by Agung Rafiyudin
+11. Statistika - booked by Wahyu Febriyan Ramadhan
+12. Teknisi Komputer - booked by Jananto
+13. Wimpy Vampire
+14. Unix - booked by Ibnu Daru Aji
+15. The Alchemist - sedang dipinjam
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Jika ada yang berminat kepada buku-buku tersebut silakan kirimkan pesan dengan subjek “Berbagi Buku” yang berisi buku yang diinginkan dan alamat yang dituju (lengkap) ke email berikut: reno.esper@gmail.com&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;~first comes first served~&lt;/strong&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>My First Time with Awk</title>
+   <link href="https://blog.renodesper.com/2015/07/30/my-first-time-with-awk.html"/>
+   <updated>2015-07-30T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2015/07/30/my-first-time-with-awk</id>
+   <content type="html">&lt;p&gt;Tonight we’ll talk about Awk. Actually, I’ve know it for a long time but I never had any chance to explore it. A few days ago, I need to remove some duplicate lines from a file BUT it should not be sorted. We can also use sort and uniq, but it will end up sorted before we got an actual result. I’m using this kind of script to remove it:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;awk &lt;span class=&quot;s1&quot;&gt;&#39;!x[$0]++&#39;&lt;/span&gt; test_file.log &amp;gt; result_file.log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;How is it? Interested to learn Awk even more?&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Starting Screen in Detach Mode</title>
+   <link href="https://blog.renodesper.com/2015/07/12/starting-screen-in-detach-mode.html"/>
+   <updated>2015-07-12T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2015/07/12/starting-screen-in-detach-mode</id>
+   <content type="html">&lt;p&gt;For a few days I’ve been thinking about GNU/screen. I have some scripts that should be run inside screen everytime a reboot happened. I’ve been looking in stackoverflow, google, etc but haven’t found anything useful. So I’ve been stuck with this kind of script:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;screen -dmS screen_name some_command
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It will create a new screen, run the command inside it and detach the screen. Well, it’s pretty good actually. But, when the command is done (finished or killed) then the screen will be terminated. I won’t know whether there is an error in my command or not. So, after a bit more googling I found about -X parameter and stuff. And now, my script looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;screen -dmS screen_name
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;screen -S screen_name -X stuff &lt;span class=&quot;s1&quot;&gt;&#39;some_command\n&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;the first line will create new screen and give it a name ‘screen_name’ the second line will send ‘some_command\n’ string to screen which similar with typing some_command and hitting enter&lt;/p&gt;
+
+&lt;p&gt;I can even send break (Ctrl-C) into screen with this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;screen -S screen_name -X stuff &lt;span class=&quot;s1&quot;&gt;&#39;^C&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With this, I can create a script that can modify whatever happen inside the screen. I can combine it with fabric if I want.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Untracking The Tracked Ones</title>
+   <link href="https://blog.renodesper.com/2015/06/13/untracking-the-tracked-ones.html"/>
+   <updated>2015-06-13T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2015/06/13/untracking-the-tracked-ones</id>
+   <content type="html">&lt;p&gt;Sudah beberapa hari saya mempunyai keinginan untuk memperbaiki projek yang saya lakukan. Secara tidak sengaja saya memasukkan virtual environment ke dalam repositori yang notabene seharusnya hanya diisi oleh projek yang saya kerjakan. Alhasil banyak sekali perubahan setiap saya mencoba mengerjakan kembali (bahkan) ketika saya tidak mengubah apapun.&lt;/p&gt;
+
+&lt;p&gt;Berikut cara yang saya temukan untuk meng-untrack file / folder yang sudah di-track:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git rm --cached -r env
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Setelah itu, folder tersebut bisa kita masukkan ke dalam file &lt;em&gt;.gitignore&lt;/em&gt; seperti berikut:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;env/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Django Project</title>
+   <link href="https://blog.renodesper.com/2015/06/13/django-project.html"/>
+   <updated>2015-06-13T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2015/06/13/django-project</id>
+   <content type="html">&lt;p&gt;For about a month I’ve been busy building a Django project. Even though everyday I work with python, but I never ever try any framework that is build with it. I can not say it’s hard, but with all those “jobs” in my office, this month is the busiest time for me to took another project (I never know that I will be this busy). Deadline is in the corner and the project is about 75%. I hope I can finish it as fast as possible.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;never stop until the bell ringing&lt;/strong&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Migration</title>
+   <link href="https://blog.renodesper.com/2015/06/04/migration.html"/>
+   <updated>2015-06-04T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2015/06/04/migration</id>
+   <content type="html">Jadi begini, rencananya saya menggunakan Ghost sebagai blog adalah untuk belajar NodeJS. Sayangnya saya selalu sibuk dan tidak sempat untuk mempelajari NodeJS sekalipun. Akhirnya saya berpikir, daripada membebani server lebih baik saya ubah saja blog-nya ke sesuatu yang lebih ringan. Static site pun muncul di benak saya. Saya menggunakan Hugo untuk men-generate situs ini.
+
+Udah sih gitu aja, saya gitu sih orangnya. B|
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Timestamp and Date in Apache Phoenix</title>
+   <link href="https://blog.renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix.html"/>
+   <updated>2015-03-13T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix</id>
+   <content type="html">&lt;p&gt;For a several days I’ve played with Apache Phoenix. Instead of playing with HBase directly, Phoenix helped me simplify HBase query (well, just a bit). What I want to tell you now is not about Phoenix in general but the difference between Timestamp and Date in Phoenix.&lt;/p&gt;
+
+&lt;p&gt;I have 2 column which have different format. I thought that both column should have different data type as well. Those format is like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. yyyy-MM-dd HH:mm:ss
+2. yyyy-MM-dd
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;When I use Date type for the 1st format, it doesn’t show me the right result. It only shows me year, month, and day of the data like this: 2015-01-31. But in Timestamp, it shows me the right result. So, my assumption is I should be using Timestamp when I want to include the time (hour, minute, and second) of the data, and the rest should be use Date type.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, I found that my data in HBase is inconsistent. It has 7 hours difference with the actual data. The culprit is the difference of data type. The documentation says that I should include format type and timezone when I want to insert the date with Phoenix (in timestamp). So, instead of &lt;em&gt;to_date(‘2015-01-31 13:17:14’)&lt;/em&gt;, I should use &lt;em&gt;to_date(‘2015-01-31 13:17:14’, ‘yyyy-MM-dd HH:mm:ss’, ‘GMT+7’)&lt;/em&gt;. But that is a bit long and there is too many code to change, also I should remember which column have Timestamp and Date type.&lt;/p&gt;
+
+&lt;p&gt;At last, after hundreds thousand data insertion (wrong data of course), I found that I can also use Date type in every column as long as I explicitly write the format when I try to get the data with Phoenix.&lt;/p&gt;
+
+&lt;p&gt;That’s all I wanna share, I hope it’s useful.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>dvorak programmer's time</title>
+   <link href="https://blog.renodesper.com/2015/01/18/dvorak-programmers-time.html"/>
+   <updated>2015-01-18T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2015/01/18/dvorak-programmers-time</id>
+   <content type="html">&lt;p&gt;Jadi begini, beberapa hari belakangan ini saya sedang menikmati belajar menggunakan layout dvorak programmer. Keycode untuk layout tersebut ada dvp. Jujur saja, sangat sulit untuk menggunakan layout tersebut terlebih lagi jika kita sudah terbiasa menggunakan qwerty. Terkadang jadi jemari saya kembali ke tempat dimana huruf tersebut berada di qwerty. Ini yang saya lakukan agar saya tidak terganggu dengan tampilan keyword qwerty yang ada di laptop saya: &lt;br /&gt;
+dvorak workaround&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Editing Stream like Merlin The Mighty with Sed</title>
+   <link href="https://blog.renodesper.com/2014/12/18/editing-stream-likke-merlin-the-mighty-with-sed.html"/>
+   <updated>2014-12-18T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/12/18/editing-stream-likke-merlin-the-mighty-with-sed</id>
+   <content type="html">&lt;p&gt;We already talk about Vim a couple of time. Let’s move to sed. Sed is a stream editor (we already know that) that I used today. This is the case, I have some file (php file) which is badly written by someone (maybe for pissing me off) by changing some characters on it. Let’s say they change &lt;em&gt;.php into *.rrrr&lt;/em&gt; wherever possible. It’s not a big deal if the file is only have a few lines, but imagine if it has 2000 lines and I should edit every &lt;em&gt;.rrrr&lt;/em&gt; into *.php. Let’s assume that I’m using a server, and even worse there many files that should be edited.&lt;/p&gt;
+
+&lt;p&gt;Enough with the long talk, this is how I roll:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sed -i &lt;span class=&quot;s1&quot;&gt;&#39;s/\.rrrr/\.php/g&#39;&lt;/span&gt; file.php
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I also found an interesting sed &amp;amp; find combo, it looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;find folder_path -type f -exec sed -i &lt;span class=&quot;s1&quot;&gt;&#39;s/\.rrrr/\.php/g&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Neat, isn’t it? :)&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Menghapus baris di Vim - 2</title>
+   <link href="https://blog.renodesper.com/2014/12/09/menghapus-baris-di-vim-2.html"/>
+   <updated>2014-12-09T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/12/09/menghapus-baris-di-vim-2</id>
+   <content type="html">&lt;h2 id=&quot;case&quot;&gt;Case&lt;/h2&gt;
+
+&lt;p&gt;Terkadang kita ingin menghapus baris-baris tertentu yang hanya mengandung kata-kata yang spesifik. Contohnya jika ingin menghapus log tetapi menyisakan baris yang mengandung kata &lt;strong&gt;warning&lt;/strong&gt; atau &lt;strong&gt;error&lt;/strong&gt; atau lainnya.&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;Ada 2 ex command yang dapat kita gunakan yang berhubungan dengan masalah tersebut.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. :g/{pola yang ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}
+2. :v/{pola yang tidak ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. Untuk menghapus setiap baris yang mengandung pola &quot;warning&quot; kita bisa menggunakan:
+   :g/warning/d
+
+2. Untuk menghapus setiap baris yang tidak mengandung pola &quot;warning&quot; kita bisa menggunakan:
+   - :v/warning/d
+   - :g!/warning/d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Jika ingin mencoba perintah-perintah tersebut saya sarankan untuk menggunakan 1 file yang memiliki banyak kata dan kalimat, contohnya saya menggunakan 1 story yang saya ambil dari booktrust.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;PS: Pola yang dicari bisa juga menggunakan regex&lt;/em&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Menghapus baris di Vim - 1</title>
+   <link href="https://blog.renodesper.com/2014/12/04/menghapus-baris-di-vim.html"/>
+   <updated>2014-12-04T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/12/04/menghapus-baris-di-vim</id>
+   <content type="html">&lt;h2 id=&quot;case&quot;&gt;Case&lt;/h2&gt;
+
+&lt;p&gt;Terkadang kita perlu menghapus beberapa baris secara berurutan dan secara spesifik. Contohnya adalah jika kita ingin menghapus 491 baris dari baris ke 105. Seperti yang kita tahu, kita bisa menggunakan dd untuk menghapus 1 baris di Vim. Tapi bagaimana untuk kasus di atas? Mengutip dari suatu blog, penggunaan Vim itu seperti kita berbahasa (thanks for Daniel Miessler for your awesome post). Caranya seperti berikut:&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 491dd = menghapus 491 baris ke bawah dengan syarat posisi kita harus ada di baris 105
+2. d491j = menghapus 491 baris ke bawah dengan syarat posisi kita harus ada di baris 105 dan di posisi paling awal baris, kita juga bisa menghapus ke atas dengan cara mengganti j menjadi k
+3. :105,596d = menghapus 491 baris dari baris 105 sampai baris 596, kita harus tahu terlebih dahulu akhir baris yang kita inginkan dan harus berada di normal mode
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Mudah kan? Saya juga baru saja mencoba menggunakannya. Just remember guys, practice makes expert.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Mengurutkan isi file menggunakan Sort</title>
+   <link href="https://blog.renodesper.com/2014/11/27/mengurutkan-isi-file-menggunakan-sort.html"/>
+   <updated>2014-11-27T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/11/27/mengurutkan-isi-file-menggunakan-sort</id>
+   <content type="html">&lt;p&gt;Saya rasa kita semua pernah merasa kesulitan dalam mengurutkan sesuatu. Beberapa waktu yang lalu saya ingin mengurutkan id yang akan saya olah yang sumbernya terdapat dari 2 file. Untuk kasus ini saya menggunakan sort, saya rasa tidak ada yang lebih mudah dari sort untuk melakukan proses ini melalui command line.&lt;br /&gt;
+sort image&lt;/p&gt;
+
+&lt;p&gt;Kita bisa menggunakan parameter &lt;em&gt;-m&lt;/em&gt; untuk melakukan merging ataupun langsung mengarahkan keluarannya ke file yang lain menggunakan simbol &lt;em&gt;&amp;gt;&lt;/em&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>My Vim Plugins - 2</title>
+   <link href="https://blog.renodesper.com/2014/11/13/my-vim-plugins-2.html"/>
+   <updated>2014-11-13T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/11/13/my-vim-plugins-2</id>
+   <content type="html">&lt;h2 id=&quot;flazzvim-colorschemes&quot;&gt;flazz/vim-colorschemes&lt;/h2&gt;
+
+&lt;p&gt;vim-colorschemes is a collection of colorscheme from vim.org. My favorite is Tomorrow-Night-Eighties which looks like this:&lt;br /&gt;
+Tomorrow-Night-Eighties image&lt;/p&gt;
+
+&lt;p&gt;This plugin has a lot of colorschemes, I don’t think I will ever have a chance to try all of it&lt;/p&gt;
+
+&lt;h2 id=&quot;eiginnnetrw&quot;&gt;eiginn/netrw&lt;/h2&gt;
+
+&lt;p&gt;netrw is a must-have plugin if you often connect to remote server. Instead of editing file on the remote server, you can use netrw to do some editing right in vim.&lt;/p&gt;
+
+&lt;h2 id=&quot;fholgadominibufexplvim&quot;&gt;fholgado/minibufexpl.vim&lt;/h2&gt;
+
+&lt;p&gt;Looking for buffer in vim is a bit hard for me. I often forget which buffer I’m editing and it makes my typespeed a bit slow. minibufexpl helped me a lot with providing tab-like buffer.&lt;br /&gt;
+minibufexpl image&lt;/p&gt;
+
+&lt;h2 id=&quot;godlygeektabular&quot;&gt;godlygeek/tabular&lt;/h2&gt;
+
+&lt;p&gt;Sometimes, we want to align a few line which have a specific character. Let’s say that I want to align 5 lines based on equal symbol. After I block those line in visual mode I can use :Tabularize /= to align them. We can also map it into another combination. In my case, I use this kind of mapping:&lt;br /&gt;
+tabular image&lt;/p&gt;
+
+&lt;h2 id=&quot;groenewegevim-less&quot;&gt;groenewege/vim-less&lt;/h2&gt;
+
+&lt;p&gt;vim-less give us syntax highlighting, auto completion, and so on. Nothing special but useful when we want to edit .less file.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>New VPS for Node</title>
+   <link href="https://blog.renodesper.com/2014/10/15/new-vps-for-node.html"/>
+   <updated>2014-10-15T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/10/15/new-vps-for-node</id>
+   <content type="html">&lt;p&gt;Kita skip dulu bahasan tentang Vim yang ada di post sebelumnya. Kemarin saya baru saja menyewa sebuah vps yang nantinya akan saya gunakan untuk riset. VPS tersebut saya pasangkan Centos 7 x86_64. Hal pertama yang saya lakukan adalah memasang nodejs dan npm. Berikut langkah - langkah yang saya lakukan.&lt;/p&gt;
+
+&lt;h2 id=&quot;update-sistem&quot;&gt;Update sistem&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;yum update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;instal-epel-extra-packages-for-enterprise-linux-repository&quot;&gt;Instal EPEL (Extra Packages for Enterprise Linux) Repository&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;yum install epel-release
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;instal-nodejs-dan-npm&quot;&gt;Instal Node.js dan npm&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;yum install nodejs
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;yum install npm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Dokumentasi di situs Ghost mengatakan bahwa versi Node.js dan npm yang direkomendasikan adalah versi 0.10.30 untuk Node.js dan 1.4.21 untuk npm. Oleh karena itu pastikan agar Node.js dan npm yang kita instal sudah sesuai.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>My Vim Plugins - 1</title>
+   <link href="https://blog.renodesper.com/2014/10/06/my-vim-plugins-1.html"/>
+   <updated>2014-10-06T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/10/06/my-vim-plugins-1</id>
+   <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;First thing first. What is Vim? As far as I can tell, Vim is an imitation of Vi. But &lt;strong&gt;tldr&lt;/strong&gt; it is an improved version of Vi now. The last thing that I remember is Vim is not a word processor, it is an editor. You should find the difference yourself.&lt;/p&gt;
+
+&lt;p&gt;So, now I wanna show you all Vim plugins that I used. It’s not much but it really help me a lot when I code.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot; Color scheme&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;flazz/vim-colorschemes&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Network oriented reading, writing, and browsing&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;eiginn/netrw&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Elegant buffer explorer&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;fholgado/minibufexpl.vim&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Text filtering and alignment&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;godlygeek/tabular&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Syntax for LESS (dynamic CSS)&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;groenewege/vim-less&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; CSS3 syntax support&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;hail2u/vim-css3-syntax&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Statusline/tabline for Vim&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;itchyny/lightline.vim&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Distraction free&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;junegunn/goyo.vim&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Vim motion on speed&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;Lokaltog/vim-easymotion&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Python tag list&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;majutsushi/tagbar&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Auto close scope (brackets, quotes, etc)&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;Raimondi/delimitMate&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Awesome HAML to HTML by CTRL-E on HTML files&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;rstacruz/sparkup&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;rtp&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;vim/&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Awesome syntax checking plugin&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;scrooloose/syntastic&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Snippet engine and snipet lists&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;honza/vim-snippets&#39;&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;SirVer/ultisnips&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Visualize your undo tree&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;sjl/gundo.vim&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Unite, async and tags support&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;Shougo/neomru.vim&#39;&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;Shougo/unite.vim&#39;&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;Shougo/vimproc.vim&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;build&#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;unix&#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;make -f make_unix.mak&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;tsukkee/unite-tag&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Expand visual selection by multiple &#39;v&#39;&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;terryma/vim-expand-region&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; String substitute for singular / plural (context, sensitive)&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;tpope/vim-abolish&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Language-agnostic commenting plugin&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;tpope/vim-commentary&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Git integration&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;tpope/vim-fugitive&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Enable repeating supported plugin&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;tpope/vim-repeat&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Quoting/parenthesizing made simple&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;tpope/vim-surround&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; Awesome completion&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;Valloric/YouCompleteMe&#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;Multiple cursor&lt;/span&gt;
+NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;terryma/vim-multiple-cursors&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Pairing Logitech Devices With Solaar</title>
+   <link href="https://blog.renodesper.com/2014/09/18/pairing-logitech-devices-with-solaar.html"/>
+   <updated>2014-09-18T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/09/18/pairing-logitech-devices-with-solaar</id>
+   <content type="html">&lt;p&gt;A few minutes ago, a friend of mine shared something good on facebook. He use Solaar to get battery information from his Logitech mouse. So, what is Solaar?&lt;/p&gt;
+
+&lt;p&gt;Quoted from Solaar website:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;Solaar is a Linux device manager for Logitech&#39;s Unifying Receiver peripherals.&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It gives you information about your device’s technical detail like Wireless PID, Protocol, Polling Rate, Serial number, even your device’s firmware. And of course, it gives battery information. Nice isn’t it? Well, I won’t worry about my mouse battery anymore since Solaar also provide an applet.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Menukar Fungsi Tombol Mouse atau Touchpad</title>
+   <link href="https://blog.renodesper.com/2014/09/01/menukar-fungsi-tombol-mouse-atau-touchpad.html"/>
+   <updated>2014-09-01T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/09/01/menukar-fungsi-tombol-mouse-atau-touchpad</id>
+   <content type="html">&lt;p&gt;Mungkin ini terdengar aneh, tetapi saya mempunyai kebiasaan untuk menukar fungsi tombol yang ada di mouse walaupun sebetulnya saya bukan left-handed. Untuk menukar fungsi tombol yang ada di mouse kita bisa menggunakan perintah berikut:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;xmodmap -e &lt;span class=&quot;s2&quot;&gt;&quot;pointer = 3 2 1&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ada masalah yang muncul jika kita menggunakan perintah di atas. Masalahnya adalah perintah tersebut akan menukar fungsi mouse secara umum, maksudnya adalah touchpad yang juga bisa digunakan selain mouse akan tertukar. Lalu bagaimana kita menyiasatinya? Kita bisa menggunakan fungsi &lt;em&gt;xinput&lt;/em&gt;. Sebelumnya kita harus mencari tahu dulu id dari &lt;em&gt;touchpad&lt;/em&gt; / &lt;em&gt;mouse&lt;/em&gt; yang akan kita tukar fungsi tombolnya.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;xinput list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Fungsi di atas dapat digunakan untuk melihat id dari device-device yang kita gunakan. Cari id untuk &lt;em&gt;touchpad&lt;/em&gt; / &lt;em&gt;mouse&lt;/em&gt; kita lalu gunakan perintah berikut untuk menukar fungsi tombolnya:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;xinput &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;-button-map &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;id&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 3 2 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Grep for The World</title>
+   <link href="https://blog.renodesper.com/2014/08/11/grep-for-the-world.html"/>
+   <updated>2014-08-11T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/08/11/grep-for-the-world</id>
+   <content type="html">&lt;p&gt;Pernahkah kalian merasa kesulitan saat ingin mencari sebuah file yang kalian tidak tahu nama file-nya tetapi (sedikit) tahu apa isinya? Untuk mencari file yang misterius seperti ini kita bisa menggunakan grep. Berikut adalah contoh grep yang baru saja saya gunakan:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;grep -r -i &lt;span class=&quot;s2&quot;&gt;&quot;INSERT INTO news&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Perintah di atas berguna untuk mencari file berakhiran “.py” yang di dalamnya mengandung kalimat “INSERT INTO news”. Opsi “-r” akan membuat grep dapat mencari file tersebut secara rekursif pada folder tersebut. Opsi “-i” akan memberikan grep kemampuan untuk mencari teks secara “case insensitive”.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Browser Tunneling</title>
+   <link href="https://blog.renodesper.com/2014/07/26/browser-tunneling.html"/>
+   <updated>2014-07-26T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/07/26/browser-tunneling</id>
+   <content type="html">&lt;h2 id=&quot;prolog&quot;&gt;Prolog&lt;/h2&gt;
+
+&lt;p&gt;Okay, we will talk about tunneling. I have a task to do in a few days, I need to remote 3 servers which cannot be accessed from outside of my office. So, I guess I have to use a tunnel. With that being said, this is what I do to achieve that.&lt;/p&gt;
+
+&lt;h2 id=&quot;workaround&quot;&gt;Workaround&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ssh -D &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;port&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; -N &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;user&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;@&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;tunneled-ip-address&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; -p &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;tunneled-port&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, if I want to access some specific web page which can only be accessed from my office I only need to change how my browser connect to the internet. Let’s say that the port I chose is 9999, in firefox I change my network configuration into this:&lt;br /&gt;
+Firefox Configuration&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Erasing Partition Table</title>
+   <link href="https://blog.renodesper.com/2014/07/21/erasing-partition-table.html"/>
+   <updated>2014-07-21T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/07/21/erasing-partition-table</id>
+   <content type="html">&lt;p&gt;Well, I always use gparted to erase my partition table and sometimes it fail miserably. The most accurate way is to use sgdisk. We can erase our partition table like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sgdisk --zap-all /dev/sda
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>LiveReload Integration</title>
+   <link href="https://blog.renodesper.com/2014/07/14/livereload-integration.html"/>
+   <updated>2014-07-14T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/07/14/livereload-integration</id>
+   <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Apa itu livereload? LiveReload adalah sebuah tool yang dapat kita gunakan untuk melakukan reload (refresh) pada browser sesuai dengan trigger tertentu. Misalnya jika sebuah file disimpan, jika ada sebuah GET request, bahkan kita juga bisa menambahkan delay sebelum reload dijalankan. Lalu hal apa saja yang harus kita lakukan untuk dapat menggunakan livereload?&lt;br /&gt;
+Sublime Text and LiveReload Integration&lt;/p&gt;
+
+&lt;p&gt;Oke, ada 2 pilihan server yang bisa kita (saya sudah coba) gunakan. Yang pertama adalah plugin livereload yang sudah terintegrasi dengan sublime text. Dengan plugin ini, kita bisa menjalankan dan mematikan livereload langsung dari sublime text dan livereload langsung aktif begitu sublime text dinyalakan. Plugin ini bisa didownload di LiveReload.&lt;/p&gt;
+
+&lt;h2 id=&quot;any-text-editor-and-livereload-integration&quot;&gt;Any Text Editor and LiveReload Integration&lt;/h2&gt;
+
+&lt;p&gt;Pilihan selanjutnya yang dapat kita gunakan adalah python-livereload. Jika kita memilih untuk menggunakan python-livereload maka kita dapat menggunakan text editor apapun, contohnya kita bisa menggunakan Vim. Yang perlu kita lakukan hanyalah menjalankan livereload dengan menyertakan directory dimana file-file yang digunakan berada. Berikut adalah isi help dari python-livereload:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;usage: livereload &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;-h] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;-p PORT] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;directory]
+
+Start a &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;livereload&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; server
+
+positional arguments:
+  directory             Directory to watch &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;changes
+
+optional arguments:
+  -h, --help            show this &lt;span class=&quot;nb&quot;&gt;help &lt;/span&gt;message and &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;
+  -p PORT, --port PORT  Port to run &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;livereload&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; server on
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Postgresql and Metasploit</title>
+   <link href="https://blog.renodesper.com/2014/07/12/postgresql-and-metasploit.html"/>
+   <updated>2014-07-12T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/07/12/postgresql-and-metasploit</id>
+   <content type="html">&lt;p&gt;Dulu saya selalu penasaran bagaimana caranya menggunakan metasploit dan konfigurasi database-nya. Tetapi ternyata selama ini saya hanya kurang paham dengan alurnya. Berikut saya tuliskan apa yang sudah saya pahami saat ini.&lt;/p&gt;
+
+&lt;h2 id=&quot;first-step&quot;&gt;First Step&lt;/h2&gt;
+
+&lt;p&gt;Hal pertama yang harus diperhatikan adalah database. Database yang digunakan oleh metasploit adalah postgresql. Setelah memasang postgresql di sistem yang kita miliki, kita harus membuat sebuah database yang nantinya akan digunakan oleh metasploit, begitu juga dengan user. Selain itu, hal penting lain yang harus diingat adalah port dimana database tersebut berjalan. Jika melihat di tutorial-tutorial yang sudah ada, maka port tersebut akan berbeda-beda. Oleh karena itu kita harus mencari tahu port yang digunakan oleh postgresql pada sistem yang kita miliki. Berikut contoh konfigurasi database yang saya gunakan.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;production&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;postgresql&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;database&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;database_msf&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;user_msf&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;password_msf&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;127.0.0.1&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5432&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;pool&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;256&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;second-step-final-step&quot;&gt;Second Step (Final Step?)&lt;/h2&gt;
+
+&lt;p&gt;Jika konfigurasi database sudah selesai dilakukan, maka selanjutnya kita cukup mengecek apakah metasploit sudah dapat mengakses database yang sudah kita sediakan.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~ msfconsole
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;-] Failed to connect to the database: could not connect to server: Connection refused
+    Is the server running on host &lt;span class=&quot;s2&quot;&gt;&quot;127.0.0.1&quot;&lt;/span&gt; and accepting
+    TCP/IP connections on port 5432?
+
+ ------------
+&amp;lt; metasploit &amp;gt;
+ ------------
+       &lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;  ,__,
+        &lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;oo&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;___
+           &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;__&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+              &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;--|| &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+
+
+       &lt;span class=&quot;o&quot;&gt;=[&lt;/span&gt; metasploit v4.9.3-dev &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;core:4.9 api:1.0]        &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
++ -- --&lt;span class=&quot;o&quot;&gt;=[&lt;/span&gt; 1318 exploits - 716 auxiliary - 210 post        &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
++ -- --&lt;span class=&quot;o&quot;&gt;=[&lt;/span&gt; 341 payloads - 35 encoders - 8 nops             &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
++ -- --&lt;span class=&quot;o&quot;&gt;=[&lt;/span&gt; Free Metasploit Pro trial: http://r-7.co/trymsp &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+
+msf &amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Seperti yang dapat kita lihat, metasploit masih belum dapat mengakses database yang kita buat. Ini disebabkan karena service postgresql belum kita nyalakan. Hal ini biasa terjadi jika kita memasang postgresql pada sistem yang kurang user friendly. Jangan dibandingkan dengan Kali yang sudah jelas-jelas menyediakan tools ini pada sistemnya.&lt;/p&gt;
+
+&lt;p&gt;Hal yang harus kita lakukan selanjutnya adalah menjalankan service postgresql dan mencoba menjalankan lagi metasploit.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~ sudo systemctl start postgresql
+~ msfconsole
+
+       &lt;span class=&quot;o&quot;&gt;=[&lt;/span&gt; metasploit v4.9.3-dev &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;core:4.9 api:1.0]        &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
++ -- --&lt;span class=&quot;o&quot;&gt;=[&lt;/span&gt; 1318 exploits - 716 auxiliary - 210 post        &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
++ -- --&lt;span class=&quot;o&quot;&gt;=[&lt;/span&gt; 341 payloads - 35 encoders - 8 nops             &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
++ -- --&lt;span class=&quot;o&quot;&gt;=[&lt;/span&gt; Free Metasploit Pro trial: http://r-7.co/trymsp &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+
+msf &amp;gt; db_status
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; postgresql connected to database_msf
+
+msf &amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Daaaaan, metasploit sudah dapat terkoneksi dengan database. Happy hacking… :)&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Querying Solr from Python with MySolr</title>
+   <link href="https://blog.renodesper.com/2014/05/01/querying-solr-from-python-with-mysolr.html"/>
+   <updated>2014-05-01T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/05/01/querying-solr-from-python-with-mysolr</id>
+   <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;MySolr is an API for Apache’s Solr for python. You can install mysolr using your favorite package manager. In the last post I have showed you how to update, select, and delete index using curl. Today, I will show you how we do those things using mysolr.&lt;br /&gt;
+Basic Configuration&lt;/p&gt;
+
+&lt;p&gt;There is nothing special with solr configuration. The first thing you should do is importing Solr from mysolr. If you have done that, you can set the connection. The default connection is http://localhost:8080. After that, we define what we want to query from solr and store it into a variable. You can print it afterward.&lt;br /&gt;
+Solr Query Example&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;mysolr&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Solr&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# We can also specify another connection like http://192.168.10.10:8983/solr/{core}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;solr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Solr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;q&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;*:*&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;solr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;documents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documents&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;documents&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’ve tried to make a summary for mysolr basic usage and this is what I got:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;mysolr&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Solr&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# We can also specify another connection like&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# solr = Solr() or solr = Solr(auth=(&#39;admin&#39;, &#39;admin&#39;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;solr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Solr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://localhost:8983/solr/{core}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;insertIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# Create documents&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;documents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;s&quot;&gt;&#39;id&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s&quot;&gt;&#39;field1&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;field content&#39;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;s&quot;&gt;&#39;id&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s&quot;&gt;&#39;field2&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;field content&#39;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# # Index using json with auto commit&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# solr.update(documents, &#39;json&#39;, commit=True)&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;solr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;json&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;commit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# Index using json&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;solr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;commit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# Manual commit&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;selectIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;solr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# For every document in response.documents print document&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;updateIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;solr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# For every document in response.documents update title&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;title&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;title&#39;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;solr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;commit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;c&quot;&gt;# Start here&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;q&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;*:*&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# # Inserting index&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# insertIndex()&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Selecting index&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;selectIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# # Updating index&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# updateIndex(query)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Play with Apache Solr</title>
+   <link href="https://blog.renodesper.com/2014/04/30/play-with-apache-solr.html"/>
+   <updated>2014-04-30T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/04/30/play-with-apache-solr</id>
+   <content type="html">&lt;p&gt;Okay, Solr. It’s the first time I play with Solr. I will never know about it if I don’t join this company. Let’s start with selecting index.&lt;/p&gt;
+
+&lt;h2 id=&quot;select&quot;&gt;Select&lt;/h2&gt;
+
+&lt;p&gt;We can select an index using this command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl http://localhost:8983/solr/&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;core&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/select?q&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;id:&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;id&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;insert--update&quot;&gt;Insert / Update&lt;/h2&gt;
+
+&lt;p&gt;There are two commands to insert or update index. Just remember, the structure should be identical.&lt;/p&gt;
+
+&lt;h3 id=&quot;insert--update-with-json&quot;&gt;Insert / Update with JSON&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl http://localhost:8983/solr/&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;core&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/update?commit&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; -H &lt;span class=&quot;s1&quot;&gt;&#39;Content-type:application/json&#39;&lt;/span&gt; -d 
+&lt;span class=&quot;s1&quot;&gt;&#39;[
+    { 
+        &quot;id&quot;:&quot;{id}&quot;,
+        &quot;desc&quot;:&quot;{description}&quot;
+    }
+]&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;insert--update-with-xml&quot;&gt;Insert / Update with XML&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl http://localhost:8983/solr/&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;core&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/update?commit&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; -H &lt;span class=&quot;s2&quot;&gt;&quot;Content-Type: text/xml&quot;&lt;/span&gt; --data-binary 
+&lt;span class=&quot;s1&quot;&gt;&#39;&amp;lt;add&amp;gt;
+    &amp;lt;doc&amp;gt;
+        &amp;lt;field name=&quot;id&quot;&amp;gt;{id}&amp;lt;/field&amp;gt;
+        &amp;lt;field name=&quot;desc&quot;&amp;gt;{description}&amp;lt;/field&amp;gt;
+    &amp;lt;/doc&amp;gt;
+&amp;lt;/add&amp;gt;&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;delete&quot;&gt;Delete&lt;/h2&gt;
+
+&lt;p&gt;There are also two commands to delete index.&lt;/p&gt;
+
+&lt;h3 id=&quot;delete-with-json&quot;&gt;Delete with JSON&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl http://localhost:8983/solr/&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;core&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/update?commit&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; -H &lt;span class=&quot;s1&quot;&gt;&#39;Content-type:application/json&#39;&lt;/span&gt; -d 
+&lt;span class=&quot;s1&quot;&gt;&#39;{
+    &quot;delete&quot;:{
+        &quot;id&quot;:&quot;{id}&quot;
+    },
+    &quot;delete&quot;:{
+        &quot;query&quot;:&quot;id:{id}&quot;
+    }
+}&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;delete-with-xml&quot;&gt;Delete with XML&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl http://localhost:8983/solr/&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;core&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/update?commit&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; -H &lt;span class=&quot;s2&quot;&gt;&quot;Content-Type: text/xml&quot;&lt;/span&gt; --data-binary 
+    &lt;span class=&quot;s1&quot;&gt;&#39;&amp;lt;delete&amp;gt;
+        &amp;lt;id&amp;gt;{id}&amp;lt;/id&amp;gt;
+        &amp;lt;query&amp;gt;id:{id}&amp;lt;/query&amp;gt;
+    &amp;lt;/delete&amp;gt;&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>What should I learn about Linux</title>
+   <link href="https://blog.renodesper.com/2014/04/12/what-should-i-learn-about-linux.html"/>
+   <updated>2014-04-12T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/04/12/what-should-i-learn-about-linux</id>
+   <content type="html">&lt;p&gt;Okay, for now I want to list everything which I should learn about GNU/Linux in 2 part. Let’s say it for the beginner and advance.&lt;/p&gt;
+
+&lt;h2 id=&quot;beginner&quot;&gt;Beginner&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. Introduction to GNU/Linux
+2. GNU/Linux Desktop Environment
+3. Unix Command Line
+4. Text Editing Tools
+5. Shell Scripting
+6. TCP/IP Networking Basics
+7. X-Windows
+8. Native GNU/Linux Compiler, Software ad Services
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;##Advance&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. Filesystem Management
+2. Software Management
+3. User and Group Management
+4. Managing Service
+5. Performing Backup
+6. Performance Analysis
+7. System Logs
+8. Kernel Administration
+9. DNS and Network File System
+10. Samba and Squid Proxy
+11. Configuring IPTables and Security NAT /issues
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Freshly Baked with Node</title>
+   <link href="https://blog.renodesper.com/2014/04/10/freshly-baked-with-node.html"/>
+   <updated>2014-04-10T00:00:00+07:00</updated>
+   <id>https://blog.renodesper.com/2014/04/10/freshly-baked-with-node</id>
+   <content type="html">&lt;p&gt;Today, I tried something different. Well, I just want to improve my programming language and english but I don’t have any idea about what should I do. And I thought why don’t I learn by documenting what I have done. Maybe I will learn more serious to avoid making mistake when I write it.&lt;/p&gt;
+
+&lt;p&gt;Here we go, a blog made from ghost with everything about everything. Oh right, I will use 2 different languages in this blog. In case I forgot some words in english, I will use Bahasa Indonesia instead.&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A Place to Remember &middot; 
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="layout-reverse">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h2>
+        <a href="/">
+          A Place to Remember
+        </a>
+      </h2>
+      <p class="lead">Thoughts, stories and ideas.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!-- <a class="sidebar-nav-item" href="/">Home</a> -->
+
+      <!-- 
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about.html">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+       -->
+
+      <!-- <a class="sidebar-nav-item" href="https://github.com/renodesper/archive/v.zip">Download</a>
+      <a class="sidebar-nav-item" href="https://github.com/renodesper">GitHub project</a> -->
+    </nav>
+
+    <p>&copy; 2015. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2015/06/04/migration.html">
+        Migration
+      </a>
+    </h1>
+
+    <span class="post-date">04 Jun 2015</span>
+
+    Jadi begini, rencananya saya menggunakan Ghost sebagai blog adalah untuk belajar NodeJS. Sayangnya saya selalu sibuk dan tidak sempat untuk mempelajari NodeJS sekalipun. Akhirnya saya berpikir, daripada membebani server lebih baik saya ubah saja blog-nya ke sesuatu yang lebih ringan. Static site pun muncul di benak saya. Saya menggunakan Hugo untuk men-generate situs ini.
+
+Udah sih gitu aja, saya gitu sih orangnya. B|
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2015/03/13/timestamp-and-date-in-apache-phoenix.html">
+        Timestamp and Date in Apache Phoenix
+      </a>
+    </h1>
+
+    <span class="post-date">13 Mar 2015</span>
+
+    <p>For a several days I’ve played with Apache Phoenix. Instead of playing with HBase directly, Phoenix helped me simplify HBase query (well, just a bit). What I want to tell you now is not about Phoenix in general but the difference between Timestamp and Date in Phoenix.</p>
+
+<p>I have 2 column which have different format. I thought that both column should have different data type as well. Those format is like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1. yyyy-MM-dd HH:mm:ss
+2. yyyy-MM-dd
+</code></pre>
+</div>
+
+<p>When I use Date type for the 1st format, it doesn’t show me the right result. It only shows me year, month, and day of the data like this: 2015-01-31. But in Timestamp, it shows me the right result. So, my assumption is I should be using Timestamp when I want to include the time (hour, minute, and second) of the data, and the rest should be use Date type.</p>
+
+<p>Unfortunately, I found that my data in HBase is inconsistent. It has 7 hours difference with the actual data. The culprit is the difference of data type. The documentation says that I should include format type and timezone when I want to insert the date with Phoenix (in timestamp). So, instead of <em>to_date(‘2015-01-31 13:17:14’)</em>, I should use <em>to_date(‘2015-01-31 13:17:14’, ‘yyyy-MM-dd HH:mm:ss’, ‘GMT+7’)</em>. But that is a bit long and there is too many code to change, also I should remember which column have Timestamp and Date type.</p>
+
+<p>At last, after hundreds thousand data insertion (wrong data of course), I found that I can also use Date type in every column as long as I explicitly write the format when I try to get the data with Phoenix.</p>
+
+<p>That’s all I wanna share, I hope it’s useful.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2015/01/18/dvorak-programmers-time.html">
+        dvorak programmer's time
+      </a>
+    </h1>
+
+    <span class="post-date">18 Jan 2015</span>
+
+    <p>Jadi begini, beberapa hari belakangan ini saya sedang menikmati belajar menggunakan layout dvorak programmer. Keycode untuk layout tersebut ada dvp. Jujur saja, sangat sulit untuk menggunakan layout tersebut terlebih lagi jika kita sudah terbiasa menggunakan qwerty. Terkadang jadi jemari saya kembali ke tempat dimana huruf tersebut berada di qwerty. Ini yang saya lakukan agar saya tidak terganggu dengan tampilan keyword qwerty yang ada di laptop saya: <br />
+dvorak workaround</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2014/12/18/editing-stream-likke-merlin-the-mighty-with-sed.html">
+        Editing Stream like Merlin The Mighty with Sed
+      </a>
+    </h1>
+
+    <span class="post-date">18 Dec 2014</span>
+
+    <p>We already talk about Vim a couple of time. Let’s move to sed. Sed is a stream editor (we already know that) that I used today. This is the case, I have some file (php file) which is badly written by someone (maybe for pissing me off) by changing some characters on it. Let’s say they change <em>.php into *.rrrr</em> wherever possible. It’s not a big deal if the file is only have a few lines, but imagine if it has 2000 lines and I should edit every <em>.rrrr</em> into *.php. Let’s assume that I’m using a server, and even worse there many files that should be edited.</p>
+
+<p>Enough with the long talk, this is how I roll:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sed -i <span class="s1">'s/\.rrrr/\.php/g'</span> file.php
+</code></pre>
+</div>
+
+<p>I also found an interesting sed &amp; find combo, it looks like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>find folder_path -type f -exec sed -i <span class="s1">'s/\.rrrr/\.php/g'</span> <span class="o">{}</span> <span class="se">\;</span>
+</code></pre>
+</div>
+
+<p>Neat, isn’t it? :)</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2014/12/09/menghapus-baris-di-vim-2.html">
+        Menghapus baris di Vim - 2
+      </a>
+    </h1>
+
+    <span class="post-date">09 Dec 2014</span>
+
+    <h2 id="case">Case</h2>
+
+<p>Terkadang kita ingin menghapus baris-baris tertentu yang hanya mengandung kata-kata yang spesifik. Contohnya jika ingin menghapus log tetapi menyisakan baris yang mengandung kata <strong>warning</strong> atau <strong>error</strong> atau lainnya.</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Ada 2 ex command yang dapat kita gunakan yang berhubungan dengan masalah tersebut.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1. :g/{pola yang ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}
+2. :v/{pola yang tidak ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}
+</code></pre>
+</div>
+
+<h2 id="example">Example</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1. Untuk menghapus setiap baris yang mengandung pola "warning" kita bisa menggunakan:
+   :g/warning/d
+
+2. Untuk menghapus setiap baris yang tidak mengandung pola "warning" kita bisa menggunakan:
+   - :v/warning/d
+   - :g!/warning/d
+</code></pre>
+</div>
+
+<p>Jika ingin mencoba perintah-perintah tersebut saya sarankan untuk menggunakan 1 file yang memiliki banyak kata dan kalimat, contohnya saya menggunakan 1 story yang saya ambil dari booktrust.</p>
+
+<p><em>PS: Pola yang dicari bisa juga menggunakan regex</em></p>
+
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page3">Older</a>
+  
+  
+    
+      <a class="pagination-item newer" href="/">Newer</a>
+    
+  
+</div>
+    </div>
+
+  </body>
+</html>

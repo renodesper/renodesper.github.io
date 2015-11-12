@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A Place to Remember &middot; 
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="layout-reverse">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h2>
+        <a href="/">
+          A Place to Remember
+        </a>
+      </h2>
+      <p class="lead">Thoughts, stories and ideas.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!-- <a class="sidebar-nav-item" href="/">Home</a> -->
+
+      <!-- 
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about.html">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+       -->
+
+      <!-- <a class="sidebar-nav-item" href="https://github.com/renodesper/archive/v.zip">Download</a>
+      <a class="sidebar-nav-item" href="https://github.com/renodesper">GitHub project</a> -->
+    </nav>
+
+    <p>&copy; 2015. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2014/09/18/pairing-logitech-devices-with-solaar.html">
+        Pairing Logitech Devices With Solaar
+      </a>
+    </h1>
+
+    <span class="post-date">18 Sep 2014</span>
+
+    <p>A few minutes ago, a friend of mine shared something good on facebook. He use Solaar to get battery information from his Logitech mouse. So, what is Solaar?</p>
+
+<p>Quoted from Solaar website:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>"Solaar is a Linux device manager for Logitech's Unifying Receiver peripherals."
+</code></pre>
+</div>
+
+<p>It gives you information about your device’s technical detail like Wireless PID, Protocol, Polling Rate, Serial number, even your device’s firmware. And of course, it gives battery information. Nice isn’t it? Well, I won’t worry about my mouse battery anymore since Solaar also provide an applet.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2014/09/01/menukar-fungsi-tombol-mouse-atau-touchpad.html">
+        Menukar Fungsi Tombol Mouse atau Touchpad
+      </a>
+    </h1>
+
+    <span class="post-date">01 Sep 2014</span>
+
+    <p>Mungkin ini terdengar aneh, tetapi saya mempunyai kebiasaan untuk menukar fungsi tombol yang ada di mouse walaupun sebetulnya saya bukan left-handed. Untuk menukar fungsi tombol yang ada di mouse kita bisa menggunakan perintah berikut:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>xmodmap -e <span class="s2">"pointer = 3 2 1"</span>
+</code></pre>
+</div>
+
+<p>Ada masalah yang muncul jika kita menggunakan perintah di atas. Masalahnya adalah perintah tersebut akan menukar fungsi mouse secara umum, maksudnya adalah touchpad yang juga bisa digunakan selain mouse akan tertukar. Lalu bagaimana kita menyiasatinya? Kita bisa menggunakan fungsi <em>xinput</em>. Sebelumnya kita harus mencari tahu dulu id dari <em>touchpad</em> / <em>mouse</em> yang akan kita tukar fungsi tombolnya.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>xinput list
+</code></pre>
+</div>
+
+<p>Fungsi di atas dapat digunakan untuk melihat id dari device-device yang kita gunakan. Cari id untuk <em>touchpad</em> / <em>mouse</em> kita lalu gunakan perintah berikut untuk menukar fungsi tombolnya:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>xinput <span class="nb">set</span>-button-map <span class="o">{</span>id<span class="o">}</span> 3 2 1
+</code></pre>
+</div>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2014/08/11/grep-for-the-world.html">
+        Grep for The World
+      </a>
+    </h1>
+
+    <span class="post-date">11 Aug 2014</span>
+
+    <p>Pernahkah kalian merasa kesulitan saat ingin mencari sebuah file yang kalian tidak tahu nama file-nya tetapi (sedikit) tahu apa isinya? Untuk mencari file yang misterius seperti ini kita bisa menggunakan grep. Berikut adalah contoh grep yang baru saja saya gunakan:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>grep -r -i <span class="s2">"INSERT INTO news"</span> <span class="k">*</span>.py
+</code></pre>
+</div>
+
+<p>Perintah di atas berguna untuk mencari file berakhiran “.py” yang di dalamnya mengandung kalimat “INSERT INTO news”. Opsi “-r” akan membuat grep dapat mencari file tersebut secara rekursif pada folder tersebut. Opsi “-i” akan memberikan grep kemampuan untuk mencari teks secara “case insensitive”.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2014/07/26/browser-tunneling.html">
+        Browser Tunneling
+      </a>
+    </h1>
+
+    <span class="post-date">26 Jul 2014</span>
+
+    <h2 id="prolog">Prolog</h2>
+
+<p>Okay, we will talk about tunneling. I have a task to do in a few days, I need to remote 3 servers which cannot be accessed from outside of my office. So, I guess I have to use a tunnel. With that being said, this is what I do to achieve that.</p>
+
+<h2 id="workaround">Workaround</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ssh -D <span class="o">{</span>port<span class="o">}</span> -N <span class="o">{</span>user<span class="o">}</span>@<span class="o">{</span>tunneled-ip-address<span class="o">}</span> -p <span class="o">{</span>tunneled-port<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>Now, if I want to access some specific web page which can only be accessed from my office I only need to change how my browser connect to the internet. Let’s say that the port I chose is 9999, in firefox I change my network configuration into this:<br />
+Firefox Configuration</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2014/07/21/erasing-partition-table.html">
+        Erasing Partition Table
+      </a>
+    </h1>
+
+    <span class="post-date">21 Jul 2014</span>
+
+    <p>Well, I always use gparted to erase my partition table and sometimes it fail miserably. The most accurate way is to use sgdisk. We can erase our partition table like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sgdisk --zap-all /dev/sda
+</code></pre>
+</div>
+
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page5">Older</a>
+  
+  
+    
+      <a class="pagination-item newer" href="/page3">Newer</a>
+    
+  
+</div>
+    </div>
+
+  </body>
+</html>
