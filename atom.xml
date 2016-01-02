@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>A Place to Remember</title>
- <link href="https://blog.renodesper.com/atom.xml" rel="self"/>
- <link href="https://blog.renodesper.com/"/>
- <updated>2015-11-14T19:58:05+07:00</updated>
- <id>https://blog.renodesper.com</id>
+ <link href="https://renodesper.com/atom.xml" rel="self"/>
+ <link href="https://renodesper.com/"/>
+ <updated>2016-01-02T21:09:53+07:00</updated>
+ <id>https://renodesper.com</id>
  <author>
    <name>Boy Sandy Gladies Arriezona</name>
    <email></email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Berbagi Buku</title>
-   <link href="https://blog.renodesper.com/2015/10/04/berbagi-buku.html"/>
+   <link href="https://renodesper.com/2015/10/04/berbagi-buku.html"/>
    <updated>2015-10-04T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2015/10/04/berbagi-buku</id>
+   <id>https://renodesper.com/2015/10/04/berbagi-buku</id>
    <content type="html">&lt;h2 id=&quot;prakata&quot;&gt;Prakata&lt;/h2&gt;
 
 &lt;p&gt;Salam,&lt;/p&gt;
@@ -53,9 +53,9 @@
  
  <entry>
    <title>My First Time with Awk</title>
-   <link href="https://blog.renodesper.com/2015/07/30/my-first-time-with-awk.html"/>
+   <link href="https://renodesper.com/2015/07/30/my-first-time-with-awk.html"/>
    <updated>2015-07-30T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2015/07/30/my-first-time-with-awk</id>
+   <id>https://renodesper.com/2015/07/30/my-first-time-with-awk</id>
    <content type="html">&lt;p&gt;Tonight we’ll talk about Awk. Actually, I’ve know it for a long time but I never had any chance to explore it. A few days ago, I need to remove some duplicate lines from a file BUT it should not be sorted. We can also use sort and uniq, but it will end up sorted before we got an actual result. I’m using this kind of script to remove it:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;awk &lt;span class=&quot;s1&quot;&gt;&#39;!x[$0]++&#39;&lt;/span&gt; test_file.log &amp;gt; result_file.log
@@ -68,9 +68,9 @@
  
  <entry>
    <title>Starting Screen in Detach Mode</title>
-   <link href="https://blog.renodesper.com/2015/07/12/starting-screen-in-detach-mode.html"/>
+   <link href="https://renodesper.com/2015/07/12/starting-screen-in-detach-mode.html"/>
    <updated>2015-07-12T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2015/07/12/starting-screen-in-detach-mode</id>
+   <id>https://renodesper.com/2015/07/12/starting-screen-in-detach-mode</id>
    <content type="html">&lt;p&gt;For a few days I’ve been thinking about GNU/screen. I have some scripts that should be run inside screen everytime a reboot happened. I’ve been looking in stackoverflow, google, etc but haven’t found anything useful. So I’ve been stuck with this kind of script:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;screen -dmS screen_name some_command
@@ -98,9 +98,9 @@
  
  <entry>
    <title>Untracking The Tracked Ones</title>
-   <link href="https://blog.renodesper.com/2015/06/13/untracking-the-tracked-ones.html"/>
+   <link href="https://renodesper.com/2015/06/13/untracking-the-tracked-ones.html"/>
    <updated>2015-06-13T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2015/06/13/untracking-the-tracked-ones</id>
+   <id>https://renodesper.com/2015/06/13/untracking-the-tracked-ones</id>
    <content type="html">&lt;p&gt;Sudah beberapa hari saya mempunyai keinginan untuk memperbaiki projek yang saya lakukan. Secara tidak sengaja saya memasukkan virtual environment ke dalam repositori yang notabene seharusnya hanya diisi oleh projek yang saya kerjakan. Alhasil banyak sekali perubahan setiap saya mencoba mengerjakan kembali (bahkan) ketika saya tidak mengubah apapun.&lt;/p&gt;
 
 &lt;p&gt;Berikut cara yang saya temukan untuk meng-untrack file / folder yang sudah di-track:&lt;/p&gt;
@@ -119,9 +119,9 @@
  
  <entry>
    <title>Django Project</title>
-   <link href="https://blog.renodesper.com/2015/06/13/django-project.html"/>
+   <link href="https://renodesper.com/2015/06/13/django-project.html"/>
    <updated>2015-06-13T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2015/06/13/django-project</id>
+   <id>https://renodesper.com/2015/06/13/django-project</id>
    <content type="html">&lt;p&gt;For about a month I’ve been busy building a Django project. Even though everyday I work with python, but I never ever try any framework that is build with it. I can not say it’s hard, but with all those “jobs” in my office, this month is the busiest time for me to took another project (I never know that I will be this busy). Deadline is in the corner and the project is about 75%. I hope I can finish it as fast as possible.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;never stop until the bell ringing&lt;/strong&gt;&lt;/p&gt;
@@ -130,9 +130,9 @@
  
  <entry>
    <title>Migration</title>
-   <link href="https://blog.renodesper.com/2015/06/04/migration.html"/>
+   <link href="https://renodesper.com/2015/06/04/migration.html"/>
    <updated>2015-06-04T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2015/06/04/migration</id>
+   <id>https://renodesper.com/2015/06/04/migration</id>
    <content type="html">Jadi begini, rencananya saya menggunakan Ghost sebagai blog adalah untuk belajar NodeJS. Sayangnya saya selalu sibuk dan tidak sempat untuk mempelajari NodeJS sekalipun. Akhirnya saya berpikir, daripada membebani server lebih baik saya ubah saja blog-nya ke sesuatu yang lebih ringan. Static site pun muncul di benak saya. Saya menggunakan Hugo untuk men-generate situs ini.
 
 Udah sih gitu aja, saya gitu sih orangnya. B|
@@ -141,9 +141,9 @@ Udah sih gitu aja, saya gitu sih orangnya. B|
  
  <entry>
    <title>Timestamp and Date in Apache Phoenix</title>
-   <link href="https://blog.renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix.html"/>
+   <link href="https://renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix.html"/>
    <updated>2015-03-13T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix</id>
+   <id>https://renodesper.com/2015/03/13/timestamp-and-date-in-apache-phoenix</id>
    <content type="html">&lt;p&gt;For a several days I’ve played with Apache Phoenix. Instead of playing with HBase directly, Phoenix helped me simplify HBase query (well, just a bit). What I want to tell you now is not about Phoenix in general but the difference between Timestamp and Date in Phoenix.&lt;/p&gt;
 
 &lt;p&gt;I have 2 column which have different format. I thought that both column should have different data type as well. Those format is like this:&lt;/p&gt;
@@ -165,9 +165,9 @@ Udah sih gitu aja, saya gitu sih orangnya. B|
  
  <entry>
    <title>dvorak programmer's time</title>
-   <link href="https://blog.renodesper.com/2015/01/18/dvorak-programmers-time.html"/>
+   <link href="https://renodesper.com/2015/01/18/dvorak-programmers-time.html"/>
    <updated>2015-01-18T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2015/01/18/dvorak-programmers-time</id>
+   <id>https://renodesper.com/2015/01/18/dvorak-programmers-time</id>
    <content type="html">&lt;p&gt;Jadi begini, beberapa hari belakangan ini saya sedang menikmati belajar menggunakan layout dvorak programmer. Keycode untuk layout tersebut ada dvp. Jujur saja, sangat sulit untuk menggunakan layout tersebut terlebih lagi jika kita sudah terbiasa menggunakan qwerty. Terkadang jadi jemari saya kembali ke tempat dimana huruf tersebut berada di qwerty. Ini yang saya lakukan agar saya tidak terganggu dengan tampilan keyword qwerty yang ada di laptop saya: &lt;br /&gt;
 dvorak workaround&lt;/p&gt;
 </content>
@@ -175,9 +175,9 @@ dvorak workaround&lt;/p&gt;
  
  <entry>
    <title>Editing Stream like Merlin The Mighty with Sed</title>
-   <link href="https://blog.renodesper.com/2014/12/18/editing-stream-likke-merlin-the-mighty-with-sed.html"/>
+   <link href="https://renodesper.com/2014/12/18/editing-stream-likke-merlin-the-mighty-with-sed.html"/>
    <updated>2014-12-18T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/12/18/editing-stream-likke-merlin-the-mighty-with-sed</id>
+   <id>https://renodesper.com/2014/12/18/editing-stream-likke-merlin-the-mighty-with-sed</id>
    <content type="html">&lt;p&gt;We already talk about Vim a couple of time. Let’s move to sed. Sed is a stream editor (we already know that) that I used today. This is the case, I have some file (php file) which is badly written by someone (maybe for pissing me off) by changing some characters on it. Let’s say they change &lt;em&gt;.php into *.rrrr&lt;/em&gt; wherever possible. It’s not a big deal if the file is only have a few lines, but imagine if it has 2000 lines and I should edit every &lt;em&gt;.rrrr&lt;/em&gt; into *.php. Let’s assume that I’m using a server, and even worse there many files that should be edited.&lt;/p&gt;
 
 &lt;p&gt;Enough with the long talk, this is how I roll:&lt;/p&gt;
@@ -198,9 +198,9 @@ dvorak workaround&lt;/p&gt;
  
  <entry>
    <title>Menghapus baris di Vim - 2</title>
-   <link href="https://blog.renodesper.com/2014/12/09/menghapus-baris-di-vim-2.html"/>
+   <link href="https://renodesper.com/2014/12/09/menghapus-baris-di-vim-2.html"/>
    <updated>2014-12-09T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/12/09/menghapus-baris-di-vim-2</id>
+   <id>https://renodesper.com/2014/12/09/menghapus-baris-di-vim-2</id>
    <content type="html">&lt;h2 id=&quot;case&quot;&gt;Case&lt;/h2&gt;
 
 &lt;p&gt;Terkadang kita ingin menghapus baris-baris tertentu yang hanya mengandung kata-kata yang spesifik. Contohnya jika ingin menghapus log tetapi menyisakan baris yang mengandung kata &lt;strong&gt;warning&lt;/strong&gt; atau &lt;strong&gt;error&lt;/strong&gt; atau lainnya.&lt;/p&gt;
@@ -233,9 +233,9 @@ dvorak workaround&lt;/p&gt;
  
  <entry>
    <title>Menghapus baris di Vim - 1</title>
-   <link href="https://blog.renodesper.com/2014/12/04/menghapus-baris-di-vim.html"/>
+   <link href="https://renodesper.com/2014/12/04/menghapus-baris-di-vim.html"/>
    <updated>2014-12-04T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/12/04/menghapus-baris-di-vim</id>
+   <id>https://renodesper.com/2014/12/04/menghapus-baris-di-vim</id>
    <content type="html">&lt;h2 id=&quot;case&quot;&gt;Case&lt;/h2&gt;
 
 &lt;p&gt;Terkadang kita perlu menghapus beberapa baris secara berurutan dan secara spesifik. Contohnya adalah jika kita ingin menghapus 491 baris dari baris ke 105. Seperti yang kita tahu, kita bisa menggunakan dd untuk menghapus 1 baris di Vim. Tapi bagaimana untuk kasus di atas? Mengutip dari suatu blog, penggunaan Vim itu seperti kita berbahasa (thanks for Daniel Miessler for your awesome post). Caranya seperti berikut:&lt;/p&gt;
@@ -254,9 +254,9 @@ dvorak workaround&lt;/p&gt;
  
  <entry>
    <title>Mengurutkan isi file menggunakan Sort</title>
-   <link href="https://blog.renodesper.com/2014/11/27/mengurutkan-isi-file-menggunakan-sort.html"/>
+   <link href="https://renodesper.com/2014/11/27/mengurutkan-isi-file-menggunakan-sort.html"/>
    <updated>2014-11-27T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/11/27/mengurutkan-isi-file-menggunakan-sort</id>
+   <id>https://renodesper.com/2014/11/27/mengurutkan-isi-file-menggunakan-sort</id>
    <content type="html">&lt;p&gt;Saya rasa kita semua pernah merasa kesulitan dalam mengurutkan sesuatu. Beberapa waktu yang lalu saya ingin mengurutkan id yang akan saya olah yang sumbernya terdapat dari 2 file. Untuk kasus ini saya menggunakan sort, saya rasa tidak ada yang lebih mudah dari sort untuk melakukan proses ini melalui command line.&lt;br /&gt;
 sort image&lt;/p&gt;
 
@@ -266,9 +266,9 @@ sort image&lt;/p&gt;
  
  <entry>
    <title>My Vim Plugins - 2</title>
-   <link href="https://blog.renodesper.com/2014/11/13/my-vim-plugins-2.html"/>
+   <link href="https://renodesper.com/2014/11/13/my-vim-plugins-2.html"/>
    <updated>2014-11-13T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/11/13/my-vim-plugins-2</id>
+   <id>https://renodesper.com/2014/11/13/my-vim-plugins-2</id>
    <content type="html">&lt;h2 id=&quot;flazzvim-colorschemes&quot;&gt;flazz/vim-colorschemes&lt;/h2&gt;
 
 &lt;p&gt;vim-colorschemes is a collection of colorscheme from vim.org. My favorite is Tomorrow-Night-Eighties which looks like this:&lt;br /&gt;
@@ -298,9 +298,9 @@ tabular image&lt;/p&gt;
  
  <entry>
    <title>New VPS for Node</title>
-   <link href="https://blog.renodesper.com/2014/10/15/new-vps-for-node.html"/>
+   <link href="https://renodesper.com/2014/10/15/new-vps-for-node.html"/>
    <updated>2014-10-15T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/10/15/new-vps-for-node</id>
+   <id>https://renodesper.com/2014/10/15/new-vps-for-node</id>
    <content type="html">&lt;p&gt;Kita skip dulu bahasan tentang Vim yang ada di post sebelumnya. Kemarin saya baru saja menyewa sebuah vps yang nantinya akan saya gunakan untuk riset. VPS tersebut saya pasangkan Centos 7 x86_64. Hal pertama yang saya lakukan adalah memasang nodejs dan npm. Berikut langkah - langkah yang saya lakukan.&lt;/p&gt;
 
 &lt;h2 id=&quot;update-sistem&quot;&gt;Update sistem&lt;/h2&gt;
@@ -328,9 +328,9 @@ tabular image&lt;/p&gt;
  
  <entry>
    <title>My Vim Plugins - 1</title>
-   <link href="https://blog.renodesper.com/2014/10/06/my-vim-plugins-1.html"/>
+   <link href="https://renodesper.com/2014/10/06/my-vim-plugins-1.html"/>
    <updated>2014-10-06T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/10/06/my-vim-plugins-1</id>
+   <id>https://renodesper.com/2014/10/06/my-vim-plugins-1</id>
    <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;First thing first. What is Vim? As far as I can tell, Vim is an imitation of Vi. But &lt;strong&gt;tldr&lt;/strong&gt; it is an improved version of Vi now. The last thing that I remember is Vim is not a word processor, it is an editor. You should find the difference yourself.&lt;/p&gt;
@@ -396,9 +396,9 @@ NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;terryma/vim-multiple-cursors&#39
  
  <entry>
    <title>Pairing Logitech Devices With Solaar</title>
-   <link href="https://blog.renodesper.com/2014/09/18/pairing-logitech-devices-with-solaar.html"/>
+   <link href="https://renodesper.com/2014/09/18/pairing-logitech-devices-with-solaar.html"/>
    <updated>2014-09-18T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/09/18/pairing-logitech-devices-with-solaar</id>
+   <id>https://renodesper.com/2014/09/18/pairing-logitech-devices-with-solaar</id>
    <content type="html">&lt;p&gt;A few minutes ago, a friend of mine shared something good on facebook. He use Solaar to get battery information from his Logitech mouse. So, what is Solaar?&lt;/p&gt;
 
 &lt;p&gt;Quoted from Solaar website:&lt;/p&gt;
@@ -413,9 +413,9 @@ NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;terryma/vim-multiple-cursors&#39
  
  <entry>
    <title>Menukar Fungsi Tombol Mouse atau Touchpad</title>
-   <link href="https://blog.renodesper.com/2014/09/01/menukar-fungsi-tombol-mouse-atau-touchpad.html"/>
+   <link href="https://renodesper.com/2014/09/01/menukar-fungsi-tombol-mouse-atau-touchpad.html"/>
    <updated>2014-09-01T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/09/01/menukar-fungsi-tombol-mouse-atau-touchpad</id>
+   <id>https://renodesper.com/2014/09/01/menukar-fungsi-tombol-mouse-atau-touchpad</id>
    <content type="html">&lt;p&gt;Mungkin ini terdengar aneh, tetapi saya mempunyai kebiasaan untuk menukar fungsi tombol yang ada di mouse walaupun sebetulnya saya bukan left-handed. Untuk menukar fungsi tombol yang ada di mouse kita bisa menggunakan perintah berikut:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;xmodmap -e &lt;span class=&quot;s2&quot;&gt;&quot;pointer = 3 2 1&quot;&lt;/span&gt;
@@ -438,9 +438,9 @@ NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;terryma/vim-multiple-cursors&#39
  
  <entry>
    <title>Grep for The World</title>
-   <link href="https://blog.renodesper.com/2014/08/11/grep-for-the-world.html"/>
+   <link href="https://renodesper.com/2014/08/11/grep-for-the-world.html"/>
    <updated>2014-08-11T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/08/11/grep-for-the-world</id>
+   <id>https://renodesper.com/2014/08/11/grep-for-the-world</id>
    <content type="html">&lt;p&gt;Pernahkah kalian merasa kesulitan saat ingin mencari sebuah file yang kalian tidak tahu nama file-nya tetapi (sedikit) tahu apa isinya? Untuk mencari file yang misterius seperti ini kita bisa menggunakan grep. Berikut adalah contoh grep yang baru saja saya gunakan:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;grep -r -i &lt;span class=&quot;s2&quot;&gt;&quot;INSERT INTO news&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.py
@@ -453,9 +453,9 @@ NeoBundle &lt;span class=&quot;s1&quot;&gt;&#39;terryma/vim-multiple-cursors&#39
  
  <entry>
    <title>Browser Tunneling</title>
-   <link href="https://blog.renodesper.com/2014/07/26/browser-tunneling.html"/>
+   <link href="https://renodesper.com/2014/07/26/browser-tunneling.html"/>
    <updated>2014-07-26T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/07/26/browser-tunneling</id>
+   <id>https://renodesper.com/2014/07/26/browser-tunneling</id>
    <content type="html">&lt;h2 id=&quot;prolog&quot;&gt;Prolog&lt;/h2&gt;
 
 &lt;p&gt;Okay, we will talk about tunneling. I have a task to do in a few days, I need to remote 3 servers which cannot be accessed from outside of my office. So, I guess I have to use a tunnel. With that being said, this is what I do to achieve that.&lt;/p&gt;
@@ -473,9 +473,9 @@ Firefox Configuration&lt;/p&gt;
  
  <entry>
    <title>Erasing Partition Table</title>
-   <link href="https://blog.renodesper.com/2014/07/21/erasing-partition-table.html"/>
+   <link href="https://renodesper.com/2014/07/21/erasing-partition-table.html"/>
    <updated>2014-07-21T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/07/21/erasing-partition-table</id>
+   <id>https://renodesper.com/2014/07/21/erasing-partition-table</id>
    <content type="html">&lt;p&gt;Well, I always use gparted to erase my partition table and sometimes it fail miserably. The most accurate way is to use sgdisk. We can erase our partition table like this:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sgdisk --zap-all /dev/sda
@@ -486,9 +486,9 @@ Firefox Configuration&lt;/p&gt;
  
  <entry>
    <title>LiveReload Integration</title>
-   <link href="https://blog.renodesper.com/2014/07/14/livereload-integration.html"/>
+   <link href="https://renodesper.com/2014/07/14/livereload-integration.html"/>
    <updated>2014-07-14T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/07/14/livereload-integration</id>
+   <id>https://renodesper.com/2014/07/14/livereload-integration</id>
    <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;Apa itu livereload? LiveReload adalah sebuah tool yang dapat kita gunakan untuk melakukan reload (refresh) pada browser sesuai dengan trigger tertentu. Misalnya jika sebuah file disimpan, jika ada sebuah GET request, bahkan kita juga bisa menambahkan delay sebelum reload dijalankan. Lalu hal apa saja yang harus kita lakukan untuk dapat menggunakan livereload?&lt;br /&gt;
@@ -517,9 +517,9 @@ optional arguments:
  
  <entry>
    <title>Postgresql and Metasploit</title>
-   <link href="https://blog.renodesper.com/2014/07/12/postgresql-and-metasploit.html"/>
+   <link href="https://renodesper.com/2014/07/12/postgresql-and-metasploit.html"/>
    <updated>2014-07-12T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/07/12/postgresql-and-metasploit</id>
+   <id>https://renodesper.com/2014/07/12/postgresql-and-metasploit</id>
    <content type="html">&lt;p&gt;Dulu saya selalu penasaran bagaimana caranya menggunakan metasploit dan konfigurasi database-nya. Tetapi ternyata selama ini saya hanya kurang paham dengan alurnya. Berikut saya tuliskan apa yang sudah saya pahami saat ini.&lt;/p&gt;
 
 &lt;h2 id=&quot;first-step&quot;&gt;First Step&lt;/h2&gt;
@@ -590,9 +590,9 @@ msf &amp;gt;
  
  <entry>
    <title>Querying Solr from Python with MySolr</title>
-   <link href="https://blog.renodesper.com/2014/05/01/querying-solr-from-python-with-mysolr.html"/>
+   <link href="https://renodesper.com/2014/05/01/querying-solr-from-python-with-mysolr.html"/>
    <updated>2014-05-01T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/05/01/querying-solr-from-python-with-mysolr</id>
+   <id>https://renodesper.com/2014/05/01/querying-solr-from-python-with-mysolr</id>
    <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;MySolr is an API for Apache’s Solr for python. You can install mysolr using your favorite package manager. In the last post I have showed you how to update, select, and delete index using curl. Today, I will show you how we do those things using mysolr.&lt;br /&gt;
@@ -679,9 +679,9 @@ Solr Query Example&lt;/p&gt;
  
  <entry>
    <title>Play with Apache Solr</title>
-   <link href="https://blog.renodesper.com/2014/04/30/play-with-apache-solr.html"/>
+   <link href="https://renodesper.com/2014/04/30/play-with-apache-solr.html"/>
    <updated>2014-04-30T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/04/30/play-with-apache-solr</id>
+   <id>https://renodesper.com/2014/04/30/play-with-apache-solr</id>
    <content type="html">&lt;p&gt;Okay, Solr. It’s the first time I play with Solr. I will never know about it if I don’t join this company. Let’s start with selecting index.&lt;/p&gt;
 
 &lt;h2 id=&quot;select&quot;&gt;Select&lt;/h2&gt;
@@ -752,9 +752,9 @@ Solr Query Example&lt;/p&gt;
  
  <entry>
    <title>What should I learn about Linux</title>
-   <link href="https://blog.renodesper.com/2014/04/12/what-should-i-learn-about-linux.html"/>
+   <link href="https://renodesper.com/2014/04/12/what-should-i-learn-about-linux.html"/>
    <updated>2014-04-12T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/04/12/what-should-i-learn-about-linux</id>
+   <id>https://renodesper.com/2014/04/12/what-should-i-learn-about-linux</id>
    <content type="html">&lt;p&gt;Okay, for now I want to list everything which I should learn about GNU/Linux in 2 part. Let’s say it for the beginner and advance.&lt;/p&gt;
 
 &lt;h2 id=&quot;beginner&quot;&gt;Beginner&lt;/h2&gt;
@@ -790,9 +790,9 @@ Solr Query Example&lt;/p&gt;
  
  <entry>
    <title>Freshly Baked with Node</title>
-   <link href="https://blog.renodesper.com/2014/04/10/freshly-baked-with-node.html"/>
+   <link href="https://renodesper.com/2014/04/10/freshly-baked-with-node.html"/>
    <updated>2014-04-10T00:00:00+07:00</updated>
-   <id>https://blog.renodesper.com/2014/04/10/freshly-baked-with-node</id>
+   <id>https://renodesper.com/2014/04/10/freshly-baked-with-node</id>
    <content type="html">&lt;p&gt;Today, I tried something different. Well, I just want to improve my programming language and english but I don’t have any idea about what should I do. And I thought why don’t I learn by documenting what I have done. Maybe I will learn more serious to avoid making mistake when I write it.&lt;/p&gt;
 
 &lt;p&gt;Here we go, a blog made from ghost with everything about everything. Oh right, I will use 2 different languages in this blog. In case I forgot some words in english, I will use Bahasa Indonesia instead.&lt;/p&gt;
