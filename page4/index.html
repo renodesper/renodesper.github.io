@@ -117,6 +117,78 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/2014/10/06/my-vim-plugins-1.html">
+        My Vim Plugins - 1
+      </a>
+    </h1>
+
+    <span class="post-date">06 Oct 2014</span>
+
+    <h2 id="introduction">Introduction</h2>
+
+<p>First thing first. What is Vim? As far as I can tell, Vim is an imitation of Vi. But <strong>tldr</strong> it is an improved version of Vi now. The last thing that I remember is Vim is not a word processor, it is an editor. You should find the difference yourself.</p>
+
+<p>So, now I wanna show you all Vim plugins that I used. It’s not much but it really help me a lot when I code.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">" Color scheme</span>
+NeoBundle <span class="s1">'flazz/vim-colorschemes'</span>
+<span class="c">" Network oriented reading, writing, and browsing</span>
+NeoBundle <span class="s1">'eiginn/netrw'</span>
+<span class="c">" Elegant buffer explorer</span>
+NeoBundle <span class="s1">'fholgado/minibufexpl.vim'</span>
+<span class="c">" Text filtering and alignment</span>
+NeoBundle <span class="s1">'godlygeek/tabular'</span>
+<span class="c">" Syntax for LESS (dynamic CSS)</span>
+NeoBundle <span class="s1">'groenewege/vim-less'</span>
+<span class="c">" CSS3 syntax support</span>
+NeoBundle <span class="s1">'hail2u/vim-css3-syntax'</span>
+<span class="c">" Statusline/tabline for Vim</span>
+NeoBundle <span class="s1">'itchyny/lightline.vim'</span>
+<span class="c">" Distraction free</span>
+NeoBundle <span class="s1">'junegunn/goyo.vim'</span>
+<span class="c">" Vim motion on speed</span>
+NeoBundle <span class="s1">'Lokaltog/vim-easymotion'</span>
+<span class="c">" Python tag list</span>
+NeoBundle <span class="s1">'majutsushi/tagbar'</span>
+<span class="c">" Auto close scope (brackets, quotes, etc)</span>
+NeoBundle <span class="s1">'Raimondi/delimitMate'</span>
+<span class="c">" Awesome HAML to HTML by CTRL-E on HTML files</span>
+NeoBundle <span class="s1">'rstacruz/sparkup'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'rtp'</span><span class="p">:</span> <span class="s1">'vim/'</span><span class="p">}</span>
+<span class="c">" Awesome syntax checking plugin</span>
+NeoBundle <span class="s1">'scrooloose/syntastic'</span>
+<span class="c">" Snippet engine and snipet lists</span>
+NeoBundle <span class="s1">'honza/vim-snippets'</span>
+NeoBundle <span class="s1">'SirVer/ultisnips'</span>
+<span class="c">" Visualize your undo tree</span>
+NeoBundle <span class="s1">'sjl/gundo.vim'</span>
+<span class="c">" Unite, async and tags support</span>
+NeoBundle <span class="s1">'Shougo/neomru.vim'</span>
+NeoBundle <span class="s1">'Shougo/unite.vim'</span>
+NeoBundle <span class="s1">'Shougo/vimproc.vim'</span><span class="p">,</span> <span class="p">{</span> <span class="s1">'build'</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">'unix'</span> <span class="p">:</span> <span class="s1">'make -f make_unix.mak'</span><span class="p">,</span> <span class="p">},</span> <span class="p">}</span>
+NeoBundle <span class="s1">'tsukkee/unite-tag'</span>
+<span class="c">" Expand visual selection by multiple 'v'</span>
+NeoBundle <span class="s1">'terryma/vim-expand-region'</span>
+<span class="c">" String substitute for singular / plural (context, sensitive)</span>
+NeoBundle <span class="s1">'tpope/vim-abolish'</span>
+<span class="c">" Language-agnostic commenting plugin</span>
+NeoBundle <span class="s1">'tpope/vim-commentary'</span>
+<span class="c">" Git integration</span>
+NeoBundle <span class="s1">'tpope/vim-fugitive'</span>
+<span class="c">" Enable repeating supported plugin</span>
+NeoBundle <span class="s1">'tpope/vim-repeat'</span>
+<span class="c">" Quoting/parenthesizing made simple</span>
+NeoBundle <span class="s1">'tpope/vim-surround'</span>
+<span class="c">" Awesome completion</span>
+NeoBundle <span class="s1">'Valloric/YouCompleteMe'</span>
+<span class="c">"Multiple cursor</span>
+NeoBundle <span class="s1">'terryma/vim-multiple-cursors'</span>
+</code></pre>
+</div>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/2014/09/18/pairing-logitech-devices-with-solaar.html">
         Pairing Logitech Devices With Solaar
       </a>
@@ -205,23 +277,6 @@
 
 <p>Now, if I want to access some specific web page which can only be accessed from my office I only need to change how my browser connect to the internet. Let’s say that the port I chose is 9999, in firefox I change my network configuration into this:<br />
 Firefox Configuration</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2014/07/21/erasing-partition-table.html">
-        Erasing Partition Table
-      </a>
-    </h1>
-
-    <span class="post-date">21 Jul 2014</span>
-
-    <p>Well, I always use gparted to erase my partition table and sometimes it fail miserably. The most accurate way is to use sgdisk. We can erase our partition table like this:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sgdisk --zap-all /dev/sda
-</code></pre>
-</div>
 
   </div>
   

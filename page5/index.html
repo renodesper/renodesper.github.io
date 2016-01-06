@@ -117,6 +117,23 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/2014/07/21/erasing-partition-table.html">
+        Erasing Partition Table
+      </a>
+    </h1>
+
+    <span class="post-date">21 Jul 2014</span>
+
+    <p>Well, I always use gparted to erase my partition table and sometimes it fail miserably. The most accurate way is to use sgdisk. We can erase our partition table like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sgdisk --zap-all /dev/sda
+</code></pre>
+</div>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/2014/07/14/livereload-integration.html">
         LiveReload Integration
       </a>
@@ -392,48 +409,6 @@ Solr Query Example</p>
         &lt;id&gt;{id}&lt;/id&gt;
         &lt;query&gt;id:{id}&lt;/query&gt;
     &lt;/delete&gt;'</span>
-</code></pre>
-</div>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2014/04/12/what-should-i-learn-about-linux.html">
-        What should I learn about Linux
-      </a>
-    </h1>
-
-    <span class="post-date">12 Apr 2014</span>
-
-    <p>Okay, for now I want to list everything which I should learn about GNU/Linux in 2 part. Let’s say it for the beginner and advance.</p>
-
-<h2 id="beginner">Beginner</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1. Introduction to GNU/Linux
-2. GNU/Linux Desktop Environment
-3. Unix Command Line
-4. Text Editing Tools
-5. Shell Scripting
-6. TCP/IP Networking Basics
-7. X-Windows
-8. Native GNU/Linux Compiler, Software ad Services
-</code></pre>
-</div>
-
-<p>##Advance</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1. Filesystem Management
-2. Software Management
-3. User and Group Management
-4. Managing Service
-5. Performing Backup
-6. Performance Analysis
-7. System Logs
-8. Kernel Administration
-9. DNS and Network File System
-10. Samba and Squid Proxy
-11. Configuring IPTables and Security NAT /issues
 </code></pre>
 </div>
 

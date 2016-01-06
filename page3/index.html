@@ -117,6 +117,45 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/2014/12/09/menghapus-baris-di-vim-2.html">
+        Menghapus baris di Vim - 2
+      </a>
+    </h1>
+
+    <span class="post-date">09 Dec 2014</span>
+
+    <h2 id="case">Case</h2>
+
+<p>Terkadang kita ingin menghapus baris-baris tertentu yang hanya mengandung kata-kata yang spesifik. Contohnya jika ingin menghapus log tetapi menyisakan baris yang mengandung kata <strong>warning</strong> atau <strong>error</strong> atau lainnya.</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Ada 2 ex command yang dapat kita gunakan yang berhubungan dengan masalah tersebut.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1. :g/{pola yang ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}
+2. :v/{pola yang tidak ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}
+</code></pre>
+</div>
+
+<h2 id="example">Example</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1. Untuk menghapus setiap baris yang mengandung pola "warning" kita bisa menggunakan:
+   :g/warning/d
+
+2. Untuk menghapus setiap baris yang tidak mengandung pola "warning" kita bisa menggunakan:
+   - :v/warning/d
+   - :g!/warning/d
+</code></pre>
+</div>
+
+<p>Jika ingin mencoba perintah-perintah tersebut saya sarankan untuk menggunakan 1 file yang memiliki banyak kata dan kalimat, contohnya saya menggunakan 1 story yang saya ambil dari booktrust.</p>
+
+<p><em>PS: Pola yang dicari bisa juga menggunakan regex</em></p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/2014/12/04/menghapus-baris-di-vim.html">
         Menghapus baris di Vim - 1
       </a>
@@ -223,78 +262,6 @@ tabular image</p>
 </div>
 
 <p>Dokumentasi di situs Ghost mengatakan bahwa versi Node.js dan npm yang direkomendasikan adalah versi 0.10.30 untuk Node.js dan 1.4.21 untuk npm. Oleh karena itu pastikan agar Node.js dan npm yang kita instal sudah sesuai.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2014/10/06/my-vim-plugins-1.html">
-        My Vim Plugins - 1
-      </a>
-    </h1>
-
-    <span class="post-date">06 Oct 2014</span>
-
-    <h2 id="introduction">Introduction</h2>
-
-<p>First thing first. What is Vim? As far as I can tell, Vim is an imitation of Vi. But <strong>tldr</strong> it is an improved version of Vi now. The last thing that I remember is Vim is not a word processor, it is an editor. You should find the difference yourself.</p>
-
-<p>So, now I wanna show you all Vim plugins that I used. It’s not much but it really help me a lot when I code.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">" Color scheme</span>
-NeoBundle <span class="s1">'flazz/vim-colorschemes'</span>
-<span class="c">" Network oriented reading, writing, and browsing</span>
-NeoBundle <span class="s1">'eiginn/netrw'</span>
-<span class="c">" Elegant buffer explorer</span>
-NeoBundle <span class="s1">'fholgado/minibufexpl.vim'</span>
-<span class="c">" Text filtering and alignment</span>
-NeoBundle <span class="s1">'godlygeek/tabular'</span>
-<span class="c">" Syntax for LESS (dynamic CSS)</span>
-NeoBundle <span class="s1">'groenewege/vim-less'</span>
-<span class="c">" CSS3 syntax support</span>
-NeoBundle <span class="s1">'hail2u/vim-css3-syntax'</span>
-<span class="c">" Statusline/tabline for Vim</span>
-NeoBundle <span class="s1">'itchyny/lightline.vim'</span>
-<span class="c">" Distraction free</span>
-NeoBundle <span class="s1">'junegunn/goyo.vim'</span>
-<span class="c">" Vim motion on speed</span>
-NeoBundle <span class="s1">'Lokaltog/vim-easymotion'</span>
-<span class="c">" Python tag list</span>
-NeoBundle <span class="s1">'majutsushi/tagbar'</span>
-<span class="c">" Auto close scope (brackets, quotes, etc)</span>
-NeoBundle <span class="s1">'Raimondi/delimitMate'</span>
-<span class="c">" Awesome HAML to HTML by CTRL-E on HTML files</span>
-NeoBundle <span class="s1">'rstacruz/sparkup'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'rtp'</span><span class="p">:</span> <span class="s1">'vim/'</span><span class="p">}</span>
-<span class="c">" Awesome syntax checking plugin</span>
-NeoBundle <span class="s1">'scrooloose/syntastic'</span>
-<span class="c">" Snippet engine and snipet lists</span>
-NeoBundle <span class="s1">'honza/vim-snippets'</span>
-NeoBundle <span class="s1">'SirVer/ultisnips'</span>
-<span class="c">" Visualize your undo tree</span>
-NeoBundle <span class="s1">'sjl/gundo.vim'</span>
-<span class="c">" Unite, async and tags support</span>
-NeoBundle <span class="s1">'Shougo/neomru.vim'</span>
-NeoBundle <span class="s1">'Shougo/unite.vim'</span>
-NeoBundle <span class="s1">'Shougo/vimproc.vim'</span><span class="p">,</span> <span class="p">{</span> <span class="s1">'build'</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">'unix'</span> <span class="p">:</span> <span class="s1">'make -f make_unix.mak'</span><span class="p">,</span> <span class="p">},</span> <span class="p">}</span>
-NeoBundle <span class="s1">'tsukkee/unite-tag'</span>
-<span class="c">" Expand visual selection by multiple 'v'</span>
-NeoBundle <span class="s1">'terryma/vim-expand-region'</span>
-<span class="c">" String substitute for singular / plural (context, sensitive)</span>
-NeoBundle <span class="s1">'tpope/vim-abolish'</span>
-<span class="c">" Language-agnostic commenting plugin</span>
-NeoBundle <span class="s1">'tpope/vim-commentary'</span>
-<span class="c">" Git integration</span>
-NeoBundle <span class="s1">'tpope/vim-fugitive'</span>
-<span class="c">" Enable repeating supported plugin</span>
-NeoBundle <span class="s1">'tpope/vim-repeat'</span>
-<span class="c">" Quoting/parenthesizing made simple</span>
-NeoBundle <span class="s1">'tpope/vim-surround'</span>
-<span class="c">" Awesome completion</span>
-NeoBundle <span class="s1">'Valloric/YouCompleteMe'</span>
-<span class="c">"Multiple cursor</span>
-NeoBundle <span class="s1">'terryma/vim-multiple-cursors'</span>
-</code></pre>
-</div>
 
   </div>
   

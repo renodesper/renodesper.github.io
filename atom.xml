@@ -4,13 +4,26 @@
  <title>A Place to Remember</title>
  <link href="https://renodesper.com/atom.xml" rel="self"/>
  <link href="https://renodesper.com/"/>
- <updated>2016-01-02T21:09:53+07:00</updated>
+ <updated>2016-01-06T11:22:43+07:00</updated>
  <id>https://renodesper.com</id>
  <author>
    <name>Boy Sandy Gladies Arriezona</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Native development of Android in Visual Studio</title>
+   <link href="https://renodesper.com/2016/01/06/native-development-of-android-in-visual-studio.html"/>
+   <updated>2016-01-06T00:00:00+07:00</updated>
+   <id>https://renodesper.com/2016/01/06/native-development-of-android-in-visual-studio</id>
+   <content type="html">&lt;p&gt;Today, I found an interesting article about Android development. We often see people using Eclipe, Intellij, or Android Studio when developing Android application. But now we can also use the free version of Visual Studio in Windows. I haven’t try it yet, since I myself do not use Windows. The name is Android++.&lt;/p&gt;
+
+&lt;p&gt;Actually, the website says that this project has been going for a long time. With features like zero hardware restrictions, costumisable compiler, msbuild flexibility, and integrated gdb debugging, I think it has a good future. Well, enough talking, you can test it yourself to fully understand it.&lt;/p&gt;
+
+&lt;p&gt;You can find it here: &lt;a href=&quot;http://android-plus-plus.com&quot;&gt;Android++&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Berbagi Buku</title>
