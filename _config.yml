@@ -1,0 +1,22 @@
+# Setup
+title: "A Place to Remember"
+email: "reno.esper@gmail.com"
+description: "Thoughts, stories and ideas."
+baseurl: /
+url: "https://renodesper.com"
+
+gems: [jekyll-paginate] 
+paginate: 5
+
+author:
+  name: "Boy Sandy Gladies Arriezona"
+  url: "https://twitter.com/renodesper"
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+github:
+  repo: https://github.com/renodesper
