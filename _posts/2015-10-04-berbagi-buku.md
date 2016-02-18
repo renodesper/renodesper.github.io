@@ -12,7 +12,7 @@ comments: True
 
 Salam,
 
-Kebetulan buku2 yang fotonya saya lampirkan di atas sudah jarang saya baca. Oleh karena itu, daripada hanya menjadi memenuhi ruangan di kosan saya, sepertinya akan lebih baik untuk diberikan kepada yang membutuhkan. Membutuhkan di sini bukan berarti "dibaca jika sedang mood" tapi lebih ke membutuhkan karena memang ingin membaca / menggunakan buku tersebut. Harapan saya, jika misalnya buku-buku tersebut udah tidak dibutuhkan lagi nantinya, maka akan lebih baik jika buku tersebut diberikan lagi kepada orang lain oleh orang yang meminjam sebelumnya, semacam chain reaction gitu.
+Kebetulan ada beberapa buku yang sudah jarang saya baca. Oleh karena itu, daripada hanya memenuhi ruangan kosan saya, sepertinya akan lebih baik untuk diberikan kepada yang membutuhkan. Membutuhkan di sini bukan berarti "dibaca jika sedang mood" tapi lebih ke membutuhkan karena memang ingin membaca / menggunakan buku tersebut. Harapan saya, jika misalnya buku-buku tersebut sudah tidak dibutuhkan lagi nantinya, maka akan lebih baik jika buku tersebut diberikan lagi kepada orang lain oleh orang yang meminjam sebelumnya, semacam *chain reaction* gitu.
 
 Maksimal buku yang bisa diminta adalah 3. Jumlah maksimal ini dibutuhkan untuk menghindari adanya buku yang diminta tetapi akhirnya tidak dibaca. Untuk yang berminat cukup mengganti ongkos kirim saja seikhlasnya. Berikut saya sertakan daftar bukunya:
 
