@@ -1,8 +1,15 @@
 .tag {
-	-moz-border-radius: 50; 
-	-webkit-border-radius: 50;
-	border-radius: 50;
-	border: 0px solid;
-	background-color: #B3E5FF;
-	color: black;
+	/* Border radius */
+	-moz-border-radius: 		15px 5px; 
+	-webkit-border-radius: 		15px 5px;
+	border-radius: 				15px 5px;
+
+	/* Prevent background color leak outs */
+	-webkit-background-clip:	padding-box; 
+	-moz-background-clip:    	padding; 
+	background-clip:         	padding-box;
+
+	border: 					0px solid;
+	padding:					10px;
+	background-color: 			#B3E5FF;
 }
