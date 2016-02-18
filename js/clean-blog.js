@@ -23,7 +23,6 @@ $(function() {
             // get values from FORM
             var name = $("input#name").val();
             var email = $("input#email").val();
-            var phone = $("input#phone").val();
             var message = $("textarea#message").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
@@ -31,11 +30,10 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "https://getsimpleform.com/messages?form_api_token=f809a35168c1b5c74d5b1f22a42449a6",
                 type: "POST",
                 data: {
                     name: name,
-                    phone: phone,
                     email: email,
                     message: message
                 },
@@ -87,6 +85,7 @@ $('#name').focus(function() {
 // *
 // * v1.3.6
 // *
+                    phone: phone,
 // * License: MIT <http://opensource.org/licenses/mit-license.php> - see LICENSE file
 // *
 // * http://ReactiveRaven.github.com/jqBootstrapValidation/
