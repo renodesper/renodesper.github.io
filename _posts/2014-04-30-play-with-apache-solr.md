@@ -3,6 +3,7 @@ published: true
 layout: post
 title: "Play with Apache Solr"
 author: Boy Sandy Gladies Arriezona
+categories: data source
 tags:
     - apache
     - solr

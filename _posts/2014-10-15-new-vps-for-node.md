@@ -3,6 +3,7 @@ published: true
 layout: post
 title: "New VPS for Node"
 author: Boy Sandy Gladies Arriezona
+categories: linux
 tags:
     - vps
     - node

@@ -3,6 +3,7 @@ published: true
 layout: post
 title: "My Vim Plugins - 1"
 author: Boy Sandy Gladies Arriezona
+categories: tools
 tags:
     - vim
     - plugin

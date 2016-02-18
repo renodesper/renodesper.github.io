@@ -3,6 +3,7 @@ published: true
 layout: post
 title: "What should I learn about Linux"
 author: Boy Sandy Gladies Arriezona
+categories: linux
 tags:
     - linux
 comments: True

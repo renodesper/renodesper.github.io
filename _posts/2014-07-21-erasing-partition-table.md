@@ -3,6 +3,7 @@ published: true
 layout: post
 title: "Erasing Partition Table"
 author: Boy Sandy Gladies Arriezona
+categories: tools
 tags:
     - partition
     - linux
