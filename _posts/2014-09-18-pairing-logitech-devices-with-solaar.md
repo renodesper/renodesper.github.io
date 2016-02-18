@@ -3,6 +3,8 @@ published: true
 layout: post
 title: "Pairing Logitech Devices With Solaar"
 author: Boy Sandy Gladies Arriezona
+categories:
+    - linux
 tags:
     - mouse
     - linux

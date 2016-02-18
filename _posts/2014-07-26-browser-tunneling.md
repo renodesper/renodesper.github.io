@@ -3,6 +3,8 @@ published: true
 layout: post
 title: "Browser Tunneling"
 author: Boy Sandy Gladies Arriezona
+categories:
+    - tools
 tags:
     - tunnel
     - browser
