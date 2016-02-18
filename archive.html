@@ -1,6 +1,8 @@
 ---
 layout: page
-description: "Thoughts, stories and ideas."
+title: "Archive"
+description: "This is what I've written."
+header-img: "img/archive-bg.jpg"
 ---
 
 {% for post in paginator.posts %}
@@ -15,7 +17,19 @@ description: "Thoughts, stories and ideas."
         {% endif %}
     </a>
     <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
-    {{ post.content }}
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                    {{ post.content }}
+
+                </div>
+            </div>
+        </div>
+    </article>
 </div>
 <hr>
 {% endfor %}
