@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "Starting Screen in Detach Mode"
+author: Boy Sandy Gladies Arriezona
 tags:
     - screen
     - linux

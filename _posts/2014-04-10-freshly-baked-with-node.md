@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "Freshly Baked with Node"
+author: Boy Sandy Gladies Arriezona
 tags:
     - node
 comments: True

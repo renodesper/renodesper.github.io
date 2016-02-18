@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "Mengurutkan isi file menggunakan Sort"
+author: Boy Sandy Gladies Arriezona
 tags:
     - sort
     - linux

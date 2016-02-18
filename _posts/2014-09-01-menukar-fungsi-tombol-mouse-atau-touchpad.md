@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "Menukar Fungsi Tombol Mouse atau Touchpad"
+author: Boy Sandy Gladies Arriezona
 tags:
     - mouse
     - linux

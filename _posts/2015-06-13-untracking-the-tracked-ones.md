@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "Untracking The Tracked Ones"
+author: Boy Sandy Gladies Arriezona
 tags:
     - git
     - linux

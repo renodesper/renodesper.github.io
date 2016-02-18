@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "Berbagi Buku"
+author: Boy Sandy Gladies Arriezona
 tags:
     - share
 comments: True

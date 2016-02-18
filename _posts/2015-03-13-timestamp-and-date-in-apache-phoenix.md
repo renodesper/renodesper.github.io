@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "Timestamp and Date in Apache Phoenix"
+author: Boy Sandy Gladies Arriezona
 tags:
     - timestamp
     - date

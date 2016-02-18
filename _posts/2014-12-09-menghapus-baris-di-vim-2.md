@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "Menghapus baris di Vim - 2"
+author: Boy Sandy Gladies Arriezona
 tags:
     - vim
     - linux

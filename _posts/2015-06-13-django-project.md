@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "Django Project"
+author: Boy Sandy Gladies Arriezona
 tags:
     - django
 comments: True

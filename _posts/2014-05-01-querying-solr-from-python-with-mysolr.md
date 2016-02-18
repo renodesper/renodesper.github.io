@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "Querying Solr from Python with MySolr"
+author: Boy Sandy Gladies Arriezona
 tags:
     - solr
     - mysolr

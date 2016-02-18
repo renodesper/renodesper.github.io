@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "Postgresql and Metasploit"
+author: Boy Sandy Gladies Arriezona
 tags:
     - postgresql
     - metasploit

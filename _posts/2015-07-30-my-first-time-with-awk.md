@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "My First Time with Awk"
+author: Boy Sandy Gladies Arriezona
 tags:
     - awk
     - linux

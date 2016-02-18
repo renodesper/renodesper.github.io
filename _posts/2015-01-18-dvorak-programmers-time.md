@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "dvorak programmer's time"
+author: Boy Sandy Gladies Arriezona
 tags:
     - dvorak
     - keyboard layout

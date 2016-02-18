@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: "Play with Apache Solr"
+author: Boy Sandy Gladies Arriezona
 tags:
     - apache
     - solr
