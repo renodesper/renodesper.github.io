@@ -3,8 +3,6 @@ published: true
 layout: post
 title: "Grep for The World"
 author: Boy Sandy Gladies Arriezona
-categories:
-    - tools
 tags:
     - grep
     - linux

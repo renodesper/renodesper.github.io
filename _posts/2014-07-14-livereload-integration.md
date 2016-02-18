@@ -3,8 +3,6 @@ published: true
 layout: post
 title: "LiveReload Integration"
 author: Boy Sandy Gladies Arriezona
-categories:
-    - tools
 tags:
     - livereload
     - web development

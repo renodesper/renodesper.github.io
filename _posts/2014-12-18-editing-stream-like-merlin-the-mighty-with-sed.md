@@ -3,8 +3,6 @@ published: true
 layout: post
 title: "Editing Stream like Merlin The Mighty with Sed"
 author: Boy Sandy Gladies Arriezona
-categories:
-    - tools
 tags:
     - sed
     - linux

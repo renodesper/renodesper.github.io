@@ -3,8 +3,6 @@ published: true
 layout: post
 title: "Menghapus baris di Vim - 1"
 author: Boy Sandy Gladies Arriezona
-categories:
-    - tools
 tags:
     - vim
     - linux

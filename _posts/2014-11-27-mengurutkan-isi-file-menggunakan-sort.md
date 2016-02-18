@@ -3,8 +3,6 @@ published: true
 layout: post
 title: "Mengurutkan isi file menggunakan Sort"
 author: Boy Sandy Gladies Arriezona
-categories:
-    - tools
 tags:
     - sort
     - linux
