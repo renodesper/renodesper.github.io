@@ -24,9 +24,13 @@ header-img: "img/contact-bg.jpg"
     {% endif %}
 {% endfor %}
 
+<h3>Tag List</h3>
+
 {% for tag in tags %}
     <a class="tag" href="#{{ tag | slugify }}">{{ tag }}</a>&nbsp;
 {% endfor %}
+
+<hr>
 
 {% for tag in tags %}
 <h3 id="{{ tag | slugify }}">{{ tag }}</h3>
