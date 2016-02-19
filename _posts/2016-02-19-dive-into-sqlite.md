@@ -35,7 +35,7 @@ import sqlite3
 con = sqlite3.connect('test.db')
 ```
 
-You can see what I'm talking about before. Those import statement is where put all required libraries. The *con* variable will handle the connection from / into sqlite database which named "test.db". Don't mind the space between import and con, it's just a habit to give 2 empty line between import statement and code below it.
+Those *import* statement is where we put all required libraries. The *con* variable will handle the connection from / into sqlite database which named "test.db". Don't mind the space between import and con, it's just a habit to give 2 empty line between import statement and code below it.
 
 ``` python
 with con:
@@ -44,7 +44,6 @@ with con:
 ```
 
 Now, "this one" is what I prefer because we will get a dictionary when we select some data from sqlite. We can ignore it of course, but the result from our query will be tuple which I do not prefer.
-"with" statement will handle the resource and exception. We can also handle the resource manually (close the connection) and use try-except to handle the exception.
 
 ``` python
 print(data[0], data[1], ..., data[n])
@@ -55,6 +54,8 @@ People will not understand what we print unless we tell them.
 print(data['id'], data['email'], data['username'], ...)
 ```
 This one will be more understandable.
+
+"with" statement will handle the resource. We can also handle the resource manually (close the connection) and use try-except to handle the exception.
 
 This is a little code to show how we drop or create table and insert some data into sqlite.
 
@@ -68,7 +69,10 @@ datum = cur.fetchone()
 print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
 ```
 
-Some explanation
+Now, you can see why I use that *row_factory*. The next code will show you how to do batch insert with sqlite. Instead of *execute*, we can use *executemany* to insert data.
+
+#### Some explanation
+
 - We drop the table first if the table is exist
 - We create new table which named *users*. It has several field which is *id*, *email*, *username*, *password*, and *authenticated*.
 - We insert a new user into users table.
@@ -78,8 +82,6 @@ Some explanation
 
 > I use parameterized queries to insert data. Look for it, it will be helpful for your project. 
 > I also use hashlib to hash the password. In real case, you should use a better security like bcrypt or others.
-
-Now, you can see why I use that *row_factory*. The next code will show you how to do batch insert with sqlite. Instead of *execute*, we can use *executemany* to insert data.
 
 ``` python
 wayang_actors = (
@@ -106,7 +108,7 @@ for datum in data:
 	print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
 ```
 
-The completed code is this one.
+The complete code is this one.
 
 ``` python
 #!/usr/bin/python
