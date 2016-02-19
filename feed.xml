@@ -6,7 +6,7 @@ layout: null
   <channel>
     <title>{{ site.name | xml_escape }} - Articles</title>
     <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://renodesper.com/feed.xml" rel="self" type="application/rss+xml" />
     <link>{{ site.url }}</link>
     {% for post in site.posts %}
       {% unless post.link %}
