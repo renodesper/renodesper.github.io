@@ -39,8 +39,8 @@ Those *import* statement is where we put all required libraries. The *con* varia
 
 ``` python
 with con:
-	con.row_factory = sqlite3.Row  # this one
-	cur = con.cursor()
+    con.row_factory = sqlite3.Row  # this one
+    cur = con.cursor()
 ```
 
 Now, "this one" is what I prefer because we will get a dictionary when we select some data from sqlite. We can ignore it of course, but the result from our query will be tuple which I do not prefer.
@@ -85,15 +85,15 @@ Now, you can see why I use that *row_factory*. The next code will show you how t
 
 ``` python
 wayang_actors = (
-	(2, "gareng@gmail.com", "gareng", hashlib.md5("passwordgareng".encode()).hexdigest(), True),
-	(3, "bagong@gmail.com", "bagong", hashlib.md5("passwordbagong".encode()).hexdigest(), True)
+    (2, "gareng@gmail.com", "gareng", hashlib.md5("passwordgareng".encode()).hexdigest(), True),
+    (3, "bagong@gmail.com", "bagong", hashlib.md5("passwordbagong".encode()).hexdigest(), True)
 )
 cur.executemany("INSERT INTO users VALUES (?, ?, ?, ?, ?)", wayang_actors)
 
 cur.execute("SELECT * FROM users")
 data = cur.fetchall()
 for datum in data:
-	print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
+    print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
 ```
 
 Now this one is the update query.
@@ -105,7 +105,7 @@ print("Data updated: {}".format(cur.rowcount))
 cur.execute("SELECT * FROM users")
 data = cur.fetchall()
 for datum in data:
-	print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
+    print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
 ```
 
 The complete code is this one.
@@ -121,41 +121,41 @@ import sqlite3
 con = sqlite3.connect('test.db')
 
 with con:
-	con.row_factory = sqlite3.Row
-	cur = con.cursor()    
+    con.row_factory = sqlite3.Row
+    cur = con.cursor()    
 
-	print("# drop, create table and insert example")
-	cur.execute("DROP TABLE IF EXISTS users")
-	cur.execute("CREATE TABLE users (id, email, username, password, authenticated)")
-	cur.execute("INSERT INTO users VALUES (?, ?, ?, ?, ?)", [1, "petruk@gmail.com", "petruk", hashlib.md5("passwordpetruk".encode()).hexdigest(), True])
+    print("# drop, create table and insert example")
+    cur.execute("DROP TABLE IF EXISTS users")
+    cur.execute("CREATE TABLE users (id, email, username, password, authenticated)")
+    cur.execute("INSERT INTO users VALUES (?, ?, ?, ?, ?)", [1, "petruk@gmail.com", "petruk", hashlib.md5("passwordpetruk".encode()).hexdigest(), True])
 
-	cur.execute("SELECT * FROM users WHERE id=?", (1,))
-	datum = cur.fetchone()
-	print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
-	print()
+    cur.execute("SELECT * FROM users WHERE id=?", (1,))
+    datum = cur.fetchone()
+    print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
+    print()
 
-	print("# batch insert example")
-	wayang_actors = (
-		(2, "gareng@gmail.com", "gareng", hashlib.md5("passwordgareng".encode()).hexdigest(), True),
-		(3, "bagong@gmail.com", "bagong", hashlib.md5("passwordbagong".encode()).hexdigest(), True)
-	)
-	cur.executemany("INSERT INTO users VALUES (?, ?, ?, ?, ?)", wayang_actors)
+    print("# batch insert example")
+    wayang_actors = (
+        (2, "gareng@gmail.com", "gareng", hashlib.md5("passwordgareng".encode()).hexdigest(), True),
+        (3, "bagong@gmail.com", "bagong", hashlib.md5("passwordbagong".encode()).hexdigest(), True)
+    )
+    cur.executemany("INSERT INTO users VALUES (?, ?, ?, ?, ?)", wayang_actors)
 
-	cur.execute("SELECT * FROM users")
-	data = cur.fetchall()
-	for datum in data:
-		print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
-	print()
+    cur.execute("SELECT * FROM users")
+    data = cur.fetchall()
+    for datum in data:
+        print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
+    print()
 
-	print("# update example")
-	cur.execute("UPDATE USERS SET email=? WHERE id=?", ("goreng@gmail.com", 2))
-	print("Data updated: {}".format(cur.rowcount))
+    print("# update example")
+    cur.execute("UPDATE USERS SET email=? WHERE id=?", ("goreng@gmail.com", 2))
+    print("Data updated: {}".format(cur.rowcount))
 
-	cur.execute("SELECT * FROM users")
-	data = cur.fetchall()
-	for datum in data:
-		print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
-	print()
+    cur.execute("SELECT * FROM users")
+    data = cur.fetchall()
+    for datum in data:
+        print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
+    print()
 ```
 
 Thank you, I hope it will help.
