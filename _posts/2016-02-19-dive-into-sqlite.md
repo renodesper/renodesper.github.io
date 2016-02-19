@@ -69,7 +69,7 @@ datum = cur.fetchone()
 print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
 ```
 
-Now, you can see why I use that *row_factory*. The next code will show you how to do batch insert with sqlite. Instead of *execute*, we can use *executemany* to insert data.
+Now, you can see why I use that *row_factory*.
 
 ### Some explanation
 
@@ -82,6 +82,8 @@ Now, you can see why I use that *row_factory*. The next code will show you how t
 
 > I use parameterized queries to insert data. Look for it, it will be helpful for your project. 
 > I also use hashlib to hash the password. In real case, you should use a better security like bcrypt or others.
+
+The next code will show you how to do batch insert with sqlite. Instead of *execute*, we can use *executemany* to insert data.
 
 ``` python
 wayang_actors = (
