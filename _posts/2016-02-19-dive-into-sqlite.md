@@ -71,7 +71,7 @@ print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], da
 
 Now, you can see why I use that *row_factory*. The next code will show you how to do batch insert with sqlite. Instead of *execute*, we can use *executemany* to insert data.
 
-#### Some explanation
+### Some explanation
 
 - We drop the table first if the table is exist
 - We create new table which named *users*. It has several field which is *id*, *email*, *username*, *password*, and *authenticated*.
