@@ -27,3 +27,5 @@ The next step is to use ffmpeg to create gif file. Let's assume that the video i
 ``` shell
 ffmpeg -i rec.avi -r 15 -vf scale=800:-1 rec.gif
 ```
+
+Now, we can send that gif to show them the demo.
