@@ -1,7 +1,8 @@
 ---
 published: true
 layout: post
-title: "Create Gif from video as Project Demo"
+title: "Create Gif from Video as Project Demo"
+author: Boy Sandy Gladies Arriezona
 categories: linux tools
 tags:
     - ffmpeg
