@@ -159,5 +159,3 @@ with con:
         print("{} {} {} {} {}".format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
     print()
 ```
-
-Thank you, I hope it will help.
