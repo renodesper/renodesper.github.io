@@ -21,11 +21,12 @@ For a few month after I did a fresh install of Archlinux, I found that when I tr
  We can set out default browser with these commands:
 
 ``` shell
-$ xdg-mime default browser.desktop x-scheme-handler/http
+$ xdg-mime default firefox.desktop x-scheme-handler/http
 ```
 
 And for https:
+
 ``` shell
-$ xdg-mime default browser.desktop x-scheme-handler/https
+$ xdg-mime default firefox.desktop x-scheme-handler/https
 ```
 
