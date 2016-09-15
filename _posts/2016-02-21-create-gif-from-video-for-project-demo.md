@@ -10,7 +10,6 @@ tags:
 comments: True
 ---
 
-
 This time I will show you how to make a gif from a video. Why do we need this? Well, a few hours ago I need to create a demo of a program to get a job. But I can't give them the source code, that's why I just show them how the program works.
 
 ## Requirement

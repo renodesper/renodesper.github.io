@@ -3,10 +3,10 @@ published: true
 layout: post
 title: "Maven Dependency Problem"
 author: Boy Sandy Gladies Arriezona
-date: 2016-09-15 12:28: +0700
 categories: tools
 tags:
     - maven
+comments: True
 ---
 
 I have a problem downloading several pom files from local artifactory. Well, those poms literally doesn't exist but the jar files are there, so it should not be a problem. The weird thing is it failed to build the package with maven.
