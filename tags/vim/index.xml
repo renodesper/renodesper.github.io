@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vim on A Place to Remember</title>
-    <link>http://renodesper.github.io/tags/vim/</link>
+    <link>https://renodesper.github.io/tags/vim/</link>
     <description>Recent content in Vim on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 09 Dec 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://renodesper.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://renodesper.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Menghapus baris di Vim - 2</title>
-      <link>http://renodesper.github.io/post/2014-12-09-menghapus-baris-di-vim-2/</link>
+      <link>https://renodesper.github.io/post/2014-12-09-menghapus-baris-di-vim-2/</link>
       <pubDate>Tue, 09 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://renodesper.github.io/post/2014-12-09-menghapus-baris-di-vim-2/</guid>
+      <guid>https://renodesper.github.io/post/2014-12-09-menghapus-baris-di-vim-2/</guid>
       <description>Case Terkadang kita ingin menghapus baris-baris tertentu yang hanya mengandung kata-kata yang spesifik. Contohnya jika ingin menghapus log tetapi menyisakan baris yang mengandung kata warning atau error atau lainnya.
 Solution Ada 2 ex command yang dapat kita gunakan yang berhubungan dengan masalah tersebut.
 1. :g/{pola yang ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan} 2. :v/{pola yang tidak ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}  Example 1. Untuk menghapus setiap baris yang mengandung pola &amp;quot;warning&amp;quot; kita bisa menggunakan: :g/warning/d 2.</description>
@@ -24,20 +24,20 @@ Solution Ada 2 ex command yang dapat kita gunakan yang berhubungan dengan masala
     
     <item>
       <title>Menghapus baris di Vim - 1</title>
-      <link>http://renodesper.github.io/post/2014-12-04-menghapus-baris-di-vim/</link>
+      <link>https://renodesper.github.io/post/2014-12-04-menghapus-baris-di-vim/</link>
       <pubDate>Thu, 04 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://renodesper.github.io/post/2014-12-04-menghapus-baris-di-vim/</guid>
+      <guid>https://renodesper.github.io/post/2014-12-04-menghapus-baris-di-vim/</guid>
       <description>Case Terkadang kita perlu menghapus beberapa baris secara berurutan dan secara spesifik. Contohnya adalah jika kita ingin menghapus 491 baris dari baris ke 105. Seperti yang kita tahu, kita bisa menggunakan dd untuk menghapus 1 baris di Vim. Tapi bagaimana untuk kasus di atas? Mengutip dari suatu blog, penggunaan Vim itu seperti kita berbahasa (thanks for Daniel Miessler for your awesome post). Caranya seperti berikut:
 Solution 1. 491dd = menghapus 491 baris ke bawah dengan syarat posisi kita harus ada di baris 105 2.</description>
     </item>
     
     <item>
       <title>My Vim Plugins - 2</title>
-      <link>http://renodesper.github.io/post/2014-11-13-my-vim-plugins-2/</link>
+      <link>https://renodesper.github.io/post/2014-11-13-my-vim-plugins-2/</link>
       <pubDate>Thu, 13 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://renodesper.github.io/post/2014-11-13-my-vim-plugins-2/</guid>
+      <guid>https://renodesper.github.io/post/2014-11-13-my-vim-plugins-2/</guid>
       <description>flazz/vim-colorschemes vim-colorschemes is a collection of colorscheme from vim.org. My favorite is Tomorrow-Night-Eighties which looks like this: Tomorrow-Night-Eighties image
 This plugin has a lot of colorschemes, I don&amp;rsquo;t think I will ever have a chance to try all of it
 eiginn/netrw netrw is a must-have plugin if you often connect to remote server. Instead of editing file on the remote server, you can use netrw to do some editing right in vim.</description>
@@ -45,10 +45,10 @@ eiginn/netrw netrw is a must-have plugin if you often connect to remote server. 
     
     <item>
       <title>My Vim Plugins - 1</title>
-      <link>http://renodesper.github.io/post/2014-10-06-my-vim-plugins-1/</link>
+      <link>https://renodesper.github.io/post/2014-10-06-my-vim-plugins-1/</link>
       <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://renodesper.github.io/post/2014-10-06-my-vim-plugins-1/</guid>
+      <guid>https://renodesper.github.io/post/2014-10-06-my-vim-plugins-1/</guid>
       <description>Introduction First thing first. What is Vim? As far as I can tell, Vim is an imitation of Vi. But tldr it is an improved version of Vi now. The last thing that I remember is Vim is not a word processor, it is an editor. You should find the difference yourself.
 So, now I wanna show you all Vim plugins that I used. It’s not much but it really help me a lot when I code.</description>
     </item>

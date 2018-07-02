@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Keyboard Layout on A Place to Remember</title>
-    <link>http://renodesper.github.io/tags/keyboard-layout/</link>
+    <link>https://renodesper.github.io/tags/keyboard-layout/</link>
     <description>Recent content in Keyboard Layout on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 18 Jan 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://renodesper.github.io/tags/keyboard-layout/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://renodesper.github.io/tags/keyboard-layout/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>dvorak programmer&#39;s time</title>
-      <link>http://renodesper.github.io/post/2015-01-18-dvorak-programmers-time/</link>
+      <link>https://renodesper.github.io/post/2015-01-18-dvorak-programmers-time/</link>
       <pubDate>Sun, 18 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://renodesper.github.io/post/2015-01-18-dvorak-programmers-time/</guid>
+      <guid>https://renodesper.github.io/post/2015-01-18-dvorak-programmers-time/</guid>
       <description>Jadi begini, beberapa hari belakangan ini saya sedang menikmati belajar menggunakan layout dvorak programmer. Keycode untuk layout tersebut adalah dvp. Jujur saja, sangat sulit untuk menggunakan layout tersebut terlebih lagi jika kita sudah terbiasa menggunakan qwerty. Terkadang jadi jemari saya kembali ke tempat dimana huruf tersebut berada di qwerty. Ini yang saya lakukan agar saya tidak terganggu dengan tampilan keyword qwerty yang ada di laptop saya: dvorak workaround</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sort on A Place to Remember</title>
-    <link>http://renodesper.github.io/tags/sort/</link>
+    <link>https://renodesper.github.io/tags/sort/</link>
     <description>Recent content in Sort on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 27 Nov 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://renodesper.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://renodesper.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mengurutkan isi file menggunakan Sort</title>
-      <link>http://renodesper.github.io/post/2014-11-27-mengurutkan-isi-file-menggunakan-sort/</link>
+      <link>https://renodesper.github.io/post/2014-11-27-mengurutkan-isi-file-menggunakan-sort/</link>
       <pubDate>Thu, 27 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://renodesper.github.io/post/2014-11-27-mengurutkan-isi-file-menggunakan-sort/</guid>
+      <guid>https://renodesper.github.io/post/2014-11-27-mengurutkan-isi-file-menggunakan-sort/</guid>
       <description>Saya rasa kita semua pernah merasa kesulitan dalam mengurutkan sesuatu. Beberapa waktu yang lalu saya ingin mengurutkan id yang akan saya olah yang sumbernya terdapat dari 2 file. Untuk kasus ini saya menggunakan sort, saya rasa tidak ada yang lebih mudah dari sort untuk melakukan proses ini melalui command line. sort image
 Kita bisa menggunakan parameter -m untuk melakukan merging ataupun langsung mengarahkan keluarannya ke file yang lain menggunakan simbol &amp;gt;.</description>
     </item>

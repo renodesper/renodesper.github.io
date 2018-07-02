@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sed on A Place to Remember</title>
-    <link>http://renodesper.github.io/tags/sed/</link>
+    <link>https://renodesper.github.io/tags/sed/</link>
     <description>Recent content in Sed on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 18 Dec 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://renodesper.github.io/tags/sed/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://renodesper.github.io/tags/sed/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Editing Stream like Merlin The Mighty with Sed</title>
-      <link>http://renodesper.github.io/post/2014-12-18-editing-stream-like-merlin-the-mighty-with-sed/</link>
+      <link>https://renodesper.github.io/post/2014-12-18-editing-stream-like-merlin-the-mighty-with-sed/</link>
       <pubDate>Thu, 18 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://renodesper.github.io/post/2014-12-18-editing-stream-like-merlin-the-mighty-with-sed/</guid>
+      <guid>https://renodesper.github.io/post/2014-12-18-editing-stream-like-merlin-the-mighty-with-sed/</guid>
       <description>We already talk about Vim a couple of time. Let&amp;rsquo;s move to sed. Sed is a stream editor (we already know that) that I used today. This is the case, I have some file (php file) which is badly written by someone (maybe for pissing me off) by changing some characters on it. Let&amp;rsquo;s say they change *.php into .rrrr wherever possible. It&amp;rsquo;s not a big deal if the file is only have a few lines, but imagine if it has 2000 lines and I should edit every .</description>
     </item>
     

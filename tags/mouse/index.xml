@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mouse on A Place to Remember</title>
-    <link>http://renodesper.github.io/tags/mouse/</link>
+    <link>https://renodesper.github.io/tags/mouse/</link>
     <description>Recent content in Mouse on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 18 Sep 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://renodesper.github.io/tags/mouse/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://renodesper.github.io/tags/mouse/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pairing Logitech Devices With Solaar</title>
-      <link>http://renodesper.github.io/post/2014-09-18-pairing-logitech-devices-with-solaar/</link>
+      <link>https://renodesper.github.io/post/2014-09-18-pairing-logitech-devices-with-solaar/</link>
       <pubDate>Thu, 18 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://renodesper.github.io/post/2014-09-18-pairing-logitech-devices-with-solaar/</guid>
+      <guid>https://renodesper.github.io/post/2014-09-18-pairing-logitech-devices-with-solaar/</guid>
       <description>A few minutes ago, a friend of mine shared something good on facebook. He use Solaar to get battery information from his Logitech mouse. So, what is Solaar?
 Quoted from Solaar website:
 &amp;quot;Solaar is a Linux device manager for Logitech&#39;s Unifying Receiver peripherals.&amp;quot;  It gives you information about your device&amp;rsquo;s technical detail like Wireless PID, Protocol, Polling Rate, Serial number, even your device&amp;rsquo;s firmware. And of course, it gives battery information.</description>
@@ -24,10 +24,10 @@ Quoted from Solaar website:
     
     <item>
       <title>Menukar Fungsi Tombol Mouse atau Touchpad</title>
-      <link>http://renodesper.github.io/post/2014-09-01-menukar-fungsi-tombol-mouse-atau-touchpad/</link>
+      <link>https://renodesper.github.io/post/2014-09-01-menukar-fungsi-tombol-mouse-atau-touchpad/</link>
       <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://renodesper.github.io/post/2014-09-01-menukar-fungsi-tombol-mouse-atau-touchpad/</guid>
+      <guid>https://renodesper.github.io/post/2014-09-01-menukar-fungsi-tombol-mouse-atau-touchpad/</guid>
       <description>Mungkin ini terdengar aneh, tetapi saya mempunyai kebiasaan untuk menukar fungsi tombol yang ada di mouse walaupun sebetulnya saya bukan left-handed. Untuk menukar fungsi tombol yang ada di mouse kita bisa menggunakan perintah berikut:
 $ xmodmap -e &amp;quot;pointer = 3 2 1&amp;quot;  Ada masalah yang muncul jika kita menggunakan perintah di atas. Masalahnya adalah perintah tersebut akan menukar fungsi mouse secara umum, maksudnya adalah touchpad yang juga bisa digunakan selain mouse akan tertukar.</description>
     </item>
