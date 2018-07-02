@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Grep on A Place to Remember</title>
+    <link>http://renodesper.github.io/tags/grep/</link>
+    <description>Recent content in Grep on A Place to Remember</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Aug 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://renodesper.github.io/tags/grep/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Grep for The World</title>
+      <link>http://renodesper.github.io/post/2014-08-11-grep-for-the-world/</link>
+      <pubDate>Mon, 11 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/post/2014-08-11-grep-for-the-world/</guid>
+      <description>Pernahkah kalian merasa kesulitan saat ingin mencari sebuah file yang kalian tidak tahu nama file-nya tetapi (sedikit) tahu apa isinya? Untuk mencari file yang misterius seperti ini kita bisa menggunakan grep. Berikut adalah contoh grep yang baru saja saya gunakan:
+$ grep -r -i &amp;quot;INSERT INTO news&amp;quot; *.py  Perintah di atas berguna untuk mencari file berakhiran &amp;ldquo;.py&amp;rdquo; yang di dalamnya mengandung kalimat &amp;ldquo;INSERT INTO news&amp;rdquo;. Opsi &amp;ldquo;-r&amp;rdquo; akan membuat grep dapat mencari file tersebut secara rekursif pada folder tersebut.</description>
+    </item>
+    
+  </channel>
+</rss>

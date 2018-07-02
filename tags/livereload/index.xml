@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Livereload on A Place to Remember</title>
+    <link>http://renodesper.github.io/tags/livereload/</link>
+    <description>Recent content in Livereload on A Place to Remember</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 14 Jul 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://renodesper.github.io/tags/livereload/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LiveReload Integration</title>
+      <link>http://renodesper.github.io/post/2014-07-14-livereload-integration/</link>
+      <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/post/2014-07-14-livereload-integration/</guid>
+      <description>Introduction Apa itu livereload? LiveReload adalah sebuah tool yang dapat kita gunakan untuk melakukan reload (refresh) pada browser sesuai dengan trigger tertentu. Misalnya jika sebuah file disimpan, jika ada sebuah GET request, bahkan kita juga bisa menambahkan delay sebelum reload dijalankan. Lalu hal apa saja yang harus kita lakukan untuk dapat menggunakan livereload? Sublime Text and LiveReload Integration
+Oke, ada 2 pilihan server yang bisa kita (saya sudah coba) gunakan.</description>
+    </item>
+    
+  </channel>
+</rss>

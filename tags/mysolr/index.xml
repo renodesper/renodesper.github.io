@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysolr on A Place to Remember</title>
+    <link>http://renodesper.github.io/tags/mysolr/</link>
+    <description>Recent content in Mysolr on A Place to Remember</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 01 May 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://renodesper.github.io/tags/mysolr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Querying Solr from Python with MySolr</title>
+      <link>http://renodesper.github.io/post/2014-05-01-querying-solr-from-python-with-mysolr/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/post/2014-05-01-querying-solr-from-python-with-mysolr/</guid>
+      <description>Introduction MySolr is an API for Apache&amp;rsquo;s Solr for python. You can install mysolr using your favorite package manager. In the last post I have showed you how to update, select, and delete index using curl. Today, I will show you how we do those things using mysolr. Basic Configuration
+There is nothing special with solr configuration. The first thing you should do is importing Solr from mysolr. If you have done that, you can set the connection.</description>
+    </item>
+    
+  </channel>
+</rss>

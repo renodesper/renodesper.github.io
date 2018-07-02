@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Metasploit on A Place to Remember</title>
+    <link>http://renodesper.github.io/tags/metasploit/</link>
+    <description>Recent content in Metasploit on A Place to Remember</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 12 Jul 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://renodesper.github.io/tags/metasploit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Postgresql and Metasploit</title>
+      <link>http://renodesper.github.io/post/2014-07-12-postgresql-and-metasploit/</link>
+      <pubDate>Sat, 12 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/post/2014-07-12-postgresql-and-metasploit/</guid>
+      <description>Dulu saya selalu penasaran bagaimana caranya menggunakan metasploit dan konfigurasi database-nya. Tetapi ternyata selama ini saya hanya kurang paham dengan alurnya. Berikut saya tuliskan apa yang sudah saya pahami saat ini.
+First Step Hal pertama yang harus diperhatikan adalah database. Database yang digunakan oleh metasploit adalah postgresql. Setelah memasang postgresql di sistem yang kita miliki, kita harus membuat sebuah database yang nantinya akan digunakan oleh metasploit, begitu juga dengan user.</description>
+    </item>
+    
+  </channel>
+</rss>

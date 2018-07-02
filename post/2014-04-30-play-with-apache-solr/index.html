@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="http://renodesper.github.io">
+    <title>
+  Play with Apache Solr · A Place to Remember
+</title>
+
+    <link rel="canonical" href="http://renodesper.github.io/post/2014-04-30-play-with-apache-solr/">
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="http://renodesper.github.io/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.42.1" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://renodesper.github.io">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="post">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="page/about">About Me</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Play with Apache Solr</h1>
+    </header>
+
+    
+
+<p>Okay, Solr. It&rsquo;s the first time I play with Solr. I will never know about it if I don&rsquo;t join this company. Let&rsquo;s start with selecting index.</p>
+
+<h2 id="select">Select</h2>
+
+<p>We can select an index using this command:</p>
+
+<pre><code class="language-shell">curl http://localhost:8983/solr/{core}/select?q=id:{id}
+</code></pre>
+
+<h2 id="insert-update">Insert / Update</h2>
+
+<p>There are two commands to insert or update index. Just remember, the structure should be identical.</p>
+
+<h3 id="insert-update-with-json">Insert / Update with JSON</h3>
+
+<pre><code class="language-shell">curl http://localhost:8983/solr/{core}/update?commit=true -H 'Content-type:application/json' -d
+'[
+    {
+        &quot;id&quot;:&quot;{id}&quot;,
+        &quot;desc&quot;:&quot;{description}&quot;
+    }
+]'
+</code></pre>
+
+<h3 id="insert-update-with-xml">Insert / Update with XML</h3>
+
+<pre><code class="language-shell">curl http://localhost:8983/solr/{core}/update?commit=true -H &quot;Content-Type: text/xml&quot; --data-binary
+'&lt;add&gt;
+    &lt;doc&gt;
+        &lt;field name=&quot;id&quot;&gt;{id}&lt;/field&gt;
+        &lt;field name=&quot;desc&quot;&gt;{description}&lt;/field&gt;
+    &lt;/doc&gt;
+&lt;/add&gt;'
+</code></pre>
+
+<h2 id="delete">Delete</h2>
+
+<p>There are also two commands to delete index.</p>
+
+<h3 id="delete-with-json">Delete with JSON</h3>
+
+<pre><code class="language-shell">curl http://localhost:8983/solr/{core}/update?commit=true -H 'Content-type:application/json' -d
+'{
+    &quot;delete&quot;:{
+        &quot;id&quot;:&quot;{id}&quot;
+    },
+    &quot;delete&quot;:{
+        &quot;query&quot;:&quot;id:{id}&quot;
+    }
+}'
+</code></pre>
+
+<h3 id="delete-with-xml">Delete with XML</h3>
+
+<pre><code class="language-shell">curl http://localhost:8983/solr/{core}/update?commit=true -H &quot;Content-Type: text/xml&quot; --data-binary
+    '&lt;delete&gt;
+        &lt;id&gt;{id}&lt;/id&gt;
+        &lt;query&gt;id:{id}&lt;/query&gt;
+    &lt;/delete&gt;'
+</code></pre>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

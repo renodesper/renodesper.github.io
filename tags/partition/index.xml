@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Partition on A Place to Remember</title>
+    <link>http://renodesper.github.io/tags/partition/</link>
+    <description>Recent content in Partition on A Place to Remember</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 21 Jul 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://renodesper.github.io/tags/partition/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Erasing Partition Table</title>
+      <link>http://renodesper.github.io/post/2014-07-21-erasing-partition-table/</link>
+      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/post/2014-07-21-erasing-partition-table/</guid>
+      <description>Well, I always use gparted to erase my partition table and sometimes it fail miserably. The most accurate way is to use sgdisk. We can erase our partition table like this:
+$ sgdisk --zap-all /dev/sda  </description>
+    </item>
+    
+  </channel>
+</rss>

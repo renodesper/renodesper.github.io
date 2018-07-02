@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="http://renodesper.github.io">
+    <title>
+  Menghapus baris di Vim - 2 · A Place to Remember
+</title>
+
+    <link rel="canonical" href="http://renodesper.github.io/post/2014-12-09-menghapus-baris-di-vim-2/">
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="http://renodesper.github.io/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.42.1" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://renodesper.github.io">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="post">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="page/about">About Me</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Menghapus baris di Vim - 2</h1>
+    </header>
+
+    
+
+<h2 id="case">Case</h2>
+
+<p>Terkadang kita ingin menghapus baris-baris tertentu yang hanya mengandung kata-kata yang spesifik. Contohnya jika ingin menghapus log tetapi menyisakan baris yang mengandung kata <strong>warning</strong> atau <strong>error</strong> atau lainnya.</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Ada 2 ex command yang dapat kita gunakan yang berhubungan dengan masalah tersebut.</p>
+
+<pre><code>1. :g/{pola yang ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}
+2. :v/{pola yang tidak ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}
+</code></pre>
+
+<h2 id="example">Example</h2>
+
+<pre><code>1. Untuk menghapus setiap baris yang mengandung pola &quot;warning&quot; kita bisa menggunakan:
+   :g/warning/d
+
+2. Untuk menghapus setiap baris yang tidak mengandung pola &quot;warning&quot; kita bisa menggunakan:
+   - :v/warning/d
+   - :g!/warning/d
+</code></pre>
+
+<p>Jika ingin mencoba perintah-perintah tersebut saya sarankan untuk menggunakan 1 file yang memiliki banyak kata dan kalimat, contohnya saya menggunakan 1 story yang saya ambil dari booktrust.</p>
+
+<p><em>PS: Pola yang dicari bisa juga menggunakan regex</em></p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

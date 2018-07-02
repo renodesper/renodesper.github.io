@@ -1,38 +1,101 @@
----
-layout: page
-description: "Thoughts, stories and ideas."
----
+<!DOCTYPE html>
+<html lang="en">
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="http://renodesper.github.io">
+    <title>A Place to Remember</title>
+
+    <link rel="canonical" href="http://renodesper.github.io/">
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="http://renodesper.github.io/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    
+      <link href="http://renodesper.github.io/index.xml" rel="alternate" type="application/rss+xml" title="A Place to Remember" />
+      <link href="http://renodesper.github.io/index.xml" rel="feed" type="application/rss+xml" title="A Place to Remember" />
+    
+
+    <meta name="generator" content="Hugo 0.42.1" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://renodesper.github.io">
+      A Place to Remember
     </a>
-    <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="post">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="page/about">About Me</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
 
-    {{ post.content }}
-</div>
-<hr>
-{% endfor %}
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+      <div class="content">
+        
+  <section class="container centered">
+  <div class="about">
+    <h1>renodesper</h1>
+    <h2>Mainly code in Python and Golang</h2>
+    
+    <ul>
+      
+      <li><a href="https://gitlab.com/renodesper">Gitlab</a></li>
+      
+      <li><a href="https://github.com/renodesper">Github</a></li>
+      
+      <li><a href="https://linkedin.com/in/renodesper">LinkedIn</a></li>
+      
+      <li><a href="https://twitter.com/renodesper">Twitter</a></li>
+      
+    </ul>
+    
+  </div>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

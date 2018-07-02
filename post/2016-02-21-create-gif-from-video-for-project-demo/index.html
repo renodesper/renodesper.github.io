@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="http://renodesper.github.io">
+    <title>
+  Create Gif from Video as Project Demo · A Place to Remember
+</title>
+
+    <link rel="canonical" href="http://renodesper.github.io/post/2016-02-21-create-gif-from-video-for-project-demo/">
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="http://renodesper.github.io/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.42.1" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://renodesper.github.io">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="post">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="page/about">About Me</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Create Gif from Video as Project Demo</h1>
+    </header>
+
+    
+
+<p>This time I will show you how to make a gif from a video. Why do we need this? Well, a few hours ago I need to create a demo of a program to get a job. But I can&rsquo;t give them the source code, that&rsquo;s why I just show them how the program works.</p>
+
+<h2 id="requirement">Requirement</h2>
+
+<ul>
+<li>Simple Screen Recorder / similar software</li>
+<li>ffmpeg</li>
+</ul>
+
+<h2 id="what-i-did">What I did</h2>
+
+<p>The first thing we need to do is create a video with Simple Screen Recorder / similar software. I make an avi video, but I guess it will work for any kind (but maybe not all kind) of video format. If we use Simple Screen Recorder, we need to specify video input, output format, output location, and frame rate.</p>
+
+<p>The next step is to use ffmpeg to create gif file. Let&rsquo;s assume that the video is rec.avi and we want to create rec.gif, also we want the gif width to be 800px with the appropriate height. Do not forget to specify the frame rate, this time we will use 15 fps. This is the command I use to create the gif:</p>
+
+<pre><code class="language-shell">ffmpeg -i rec.avi -r 15 -vf scale=800:-1 rec.gif
+</code></pre>
+
+<p>Now, we can send that gif to show them the demo.</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

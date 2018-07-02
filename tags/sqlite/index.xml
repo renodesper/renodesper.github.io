@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sqlite on A Place to Remember</title>
+    <link>http://renodesper.github.io/tags/sqlite/</link>
+    <description>Recent content in Sqlite on A Place to Remember</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Feb 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://renodesper.github.io/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dive into Sqlite</title>
+      <link>http://renodesper.github.io/post/2016-02-19-dive-into-sqlite/</link>
+      <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/post/2016-02-19-dive-into-sqlite/</guid>
+      <description>Introduction Today we will talk about sqlite in python. I often use mysql as my data source because of a habit, but when I am in a hurry, I guess sqlite will be enough.
+To keep in mind:  I use python3 Sqlite library is called sqlite3 I use hashlib to hash the password (not required)  Action Let&amp;rsquo;s start with a little bit of code:
+#!/usr/bin/python # -*- coding: utf-8 -*- import hashlib import sqlite3 con = sqlite3.</description>
+    </item>
+    
+  </channel>
+</rss>

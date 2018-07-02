@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="http://renodesper.github.io">
+    <title>
+  Postgresql and Metasploit · A Place to Remember
+</title>
+
+    <link rel="canonical" href="http://renodesper.github.io/post/2014-07-12-postgresql-and-metasploit/">
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="http://renodesper.github.io/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.42.1" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://renodesper.github.io">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="post">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="page/about">About Me</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Postgresql and Metasploit</h1>
+    </header>
+
+    
+
+<p>Dulu saya selalu penasaran bagaimana caranya menggunakan metasploit dan konfigurasi database-nya. Tetapi ternyata selama ini saya hanya kurang paham dengan alurnya. Berikut saya tuliskan apa yang sudah saya pahami saat ini.</p>
+
+<h2 id="first-step">First Step</h2>
+
+<p>Hal pertama yang harus diperhatikan adalah database. Database yang digunakan oleh metasploit adalah postgresql. Setelah memasang postgresql di sistem yang kita miliki, kita harus membuat sebuah database yang nantinya akan digunakan oleh metasploit, begitu juga dengan user. Selain itu, hal penting lain yang harus diingat adalah port dimana database tersebut berjalan. Jika melihat di tutorial-tutorial yang sudah ada, maka port tersebut akan berbeda-beda. Oleh karena itu kita harus mencari tahu port yang digunakan oleh postgresql pada sistem yang kita miliki. Berikut contoh konfigurasi database yang saya gunakan.</p>
+
+<pre><code class="language-yaml">production:
+    adapter: postgresql
+    database: database_msf
+    username: user_msf
+    password: password_msf
+    host: 127.0.0.1
+    port: 5432
+    pool: 256
+    timeout: 5
+</code></pre>
+
+<h2 id="second-step-final-step">Second Step (Final Step?)</h2>
+
+<p>Jika konfigurasi database sudah selesai dilakukan, maka selanjutnya kita cukup mengecek apakah metasploit sudah dapat mengakses database yang sudah kita sediakan.</p>
+
+<pre><code class="language-shell">~ msfconsole
+[-] Failed to connect to the database: could not connect to server: Connection refused
+    Is the server running on host &quot;127.0.0.1&quot; and accepting
+    TCP/IP connections on port 5432?
+
+ ------------
+&lt; metasploit &gt;
+ ------------
+       \   ,__,
+        \  (oo)___
+           (__)    )\
+              ||--|| *
+
+
+       =[ metasploit v4.9.3-dev [core:4.9 api:1.0]        ]
++ -- --=[ 1318 exploits - 716 auxiliary - 210 post        ]
++ -- --=[ 341 payloads - 35 encoders - 8 nops             ]
++ -- --=[ Free Metasploit Pro trial: http://r-7.co/trymsp ]
+
+msf &gt;
+</code></pre>
+
+<p>Seperti yang dapat kita lihat, metasploit masih belum dapat mengakses database yang kita buat. Ini disebabkan karena service postgresql belum kita nyalakan. Hal ini biasa terjadi jika kita memasang postgresql pada sistem yang kurang user friendly. Jangan dibandingkan dengan Kali yang sudah jelas-jelas menyediakan tools ini pada sistemnya.</p>
+
+<p>Hal yang harus kita lakukan selanjutnya adalah menjalankan service postgresql dan mencoba menjalankan lagi metasploit.</p>
+
+<pre><code class="language-shell">~ sudo systemctl start postgresql
+~ msfconsole
+
+       =[ metasploit v4.9.3-dev [core:4.9 api:1.0]        ]
++ -- --=[ 1318 exploits - 716 auxiliary - 210 post        ]
++ -- --=[ 341 payloads - 35 encoders - 8 nops             ]
++ -- --=[ Free Metasploit Pro trial: http://r-7.co/trymsp ]
+
+msf &gt; db_status
+[*] postgresql connected to database_msf
+
+msf &gt;
+</code></pre>
+
+<p>Daaaaan, metasploit sudah dapat terkoneksi dengan database. Happy hacking… :)</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

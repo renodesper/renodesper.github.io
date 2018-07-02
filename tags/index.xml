@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on A Place to Remember</title>
+    <link>http://renodesper.github.io/tags/</link>
+    <description>Recent content in Tags on A Place to Remember</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 30 Apr 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://renodesper.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Apache</title>
+      <link>http://renodesper.github.io/tags/apache/</link>
+      <pubDate>Wed, 30 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/apache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apache Phoenix</title>
+      <link>http://renodesper.github.io/tags/apache-phoenix/</link>
+      <pubDate>Fri, 13 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/apache-phoenix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Awk</title>
+      <link>http://renodesper.github.io/tags/awk/</link>
+      <pubDate>Thu, 30 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/awk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Browser</title>
+      <link>http://renodesper.github.io/tags/browser/</link>
+      <pubDate>Sat, 26 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/browser/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Centos</title>
+      <link>http://renodesper.github.io/tags/centos/</link>
+      <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/centos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Date</title>
+      <link>http://renodesper.github.io/tags/date/</link>
+      <pubDate>Fri, 13 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/date/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>http://renodesper.github.io/tags/django/</link>
+      <pubDate>Sat, 13 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dvorak</title>
+      <link>http://renodesper.github.io/tags/dvorak/</link>
+      <pubDate>Sun, 18 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/dvorak/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ffmpeg</title>
+      <link>http://renodesper.github.io/tags/ffmpeg/</link>
+      <pubDate>Sun, 21 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/ffmpeg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Functional Programming</title>
+      <link>http://renodesper.github.io/tags/functional-programming/</link>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/functional-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ghost</title>
+      <link>http://renodesper.github.io/tags/ghost/</link>
+      <pubDate>Thu, 04 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/ghost/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://renodesper.github.io/tags/git/</link>
+      <pubDate>Sat, 13 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Grep</title>
+      <link>http://renodesper.github.io/tags/grep/</link>
+      <pubDate>Mon, 11 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/grep/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Haskell</title>
+      <link>http://renodesper.github.io/tags/haskell/</link>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/haskell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://renodesper.github.io/tags/hugo/</link>
+      <pubDate>Thu, 04 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Keyboard Layout</title>
+      <link>http://renodesper.github.io/tags/keyboard-layout/</link>
+      <pubDate>Sun, 18 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/keyboard-layout/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://renodesper.github.io/tags/linux/</link>
+      <pubDate>Thu, 30 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Livereload</title>
+      <link>http://renodesper.github.io/tags/livereload/</link>
+      <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/livereload/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maven</title>
+      <link>http://renodesper.github.io/tags/maven/</link>
+      <pubDate>Thu, 15 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Metasploit</title>
+      <link>http://renodesper.github.io/tags/metasploit/</link>
+      <pubDate>Sat, 12 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/metasploit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Migrasi</title>
+      <link>http://renodesper.github.io/tags/migrasi/</link>
+      <pubDate>Thu, 04 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/migrasi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mouse</title>
+      <link>http://renodesper.github.io/tags/mouse/</link>
+      <pubDate>Thu, 18 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/mouse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mysolr</title>
+      <link>http://renodesper.github.io/tags/mysolr/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/mysolr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Node</title>
+      <link>http://renodesper.github.io/tags/node/</link>
+      <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/node/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Npm</title>
+      <link>http://renodesper.github.io/tags/npm/</link>
+      <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/npm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Partition</title>
+      <link>http://renodesper.github.io/tags/partition/</link>
+      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/partition/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plugin</title>
+      <link>http://renodesper.github.io/tags/plugin/</link>
+      <pubDate>Thu, 13 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/plugin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Postgresql</title>
+      <link>http://renodesper.github.io/tags/postgresql/</link>
+      <pubDate>Sat, 12 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://renodesper.github.io/tags/python/</link>
+      <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screen</title>
+      <link>http://renodesper.github.io/tags/screen/</link>
+      <pubDate>Sun, 12 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/screen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sed</title>
+      <link>http://renodesper.github.io/tags/sed/</link>
+      <pubDate>Thu, 18 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/sed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Share</title>
+      <link>http://renodesper.github.io/tags/share/</link>
+      <pubDate>Sun, 04 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/share/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Simple Screen Recorder</title>
+      <link>http://renodesper.github.io/tags/simple-screen-recorder/</link>
+      <pubDate>Sun, 21 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/simple-screen-recorder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Solr</title>
+      <link>http://renodesper.github.io/tags/solr/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/solr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sort</title>
+      <link>http://renodesper.github.io/tags/sort/</link>
+      <pubDate>Thu, 27 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/sort/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sqlite</title>
+      <link>http://renodesper.github.io/tags/sqlite/</link>
+      <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/sqlite/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Timestamp</title>
+      <link>http://renodesper.github.io/tags/timestamp/</link>
+      <pubDate>Fri, 13 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/timestamp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tunnel</title>
+      <link>http://renodesper.github.io/tags/tunnel/</link>
+      <pubDate>Sat, 26 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/tunnel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>http://renodesper.github.io/tags/vim/</link>
+      <pubDate>Tue, 09 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vps</title>
+      <link>http://renodesper.github.io/tags/vps/</link>
+      <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/vps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Development</title>
+      <link>http://renodesper.github.io/tags/web-development/</link>
+      <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/web-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xdg</title>
+      <link>http://renodesper.github.io/tags/xdg/</link>
+      <pubDate>Tue, 12 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/tags/xdg/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

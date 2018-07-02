@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on A Place to Remember</title>
+    <link>http://renodesper.github.io/tags/python/</link>
+    <description>Recent content in Python on A Place to Remember</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Feb 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://renodesper.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dive into Sqlite</title>
+      <link>http://renodesper.github.io/post/2016-02-19-dive-into-sqlite/</link>
+      <pubDate>Fri, 19 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/post/2016-02-19-dive-into-sqlite/</guid>
+      <description>Introduction Today we will talk about sqlite in python. I often use mysql as my data source because of a habit, but when I am in a hurry, I guess sqlite will be enough.
+To keep in mind:  I use python3 Sqlite library is called sqlite3 I use hashlib to hash the password (not required)  Action Let&amp;rsquo;s start with a little bit of code:
+#!/usr/bin/python # -*- coding: utf-8 -*- import hashlib import sqlite3 con = sqlite3.</description>
+    </item>
+    
+    <item>
+      <title>LiveReload Integration</title>
+      <link>http://renodesper.github.io/post/2014-07-14-livereload-integration/</link>
+      <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/post/2014-07-14-livereload-integration/</guid>
+      <description>Introduction Apa itu livereload? LiveReload adalah sebuah tool yang dapat kita gunakan untuk melakukan reload (refresh) pada browser sesuai dengan trigger tertentu. Misalnya jika sebuah file disimpan, jika ada sebuah GET request, bahkan kita juga bisa menambahkan delay sebelum reload dijalankan. Lalu hal apa saja yang harus kita lakukan untuk dapat menggunakan livereload? Sublime Text and LiveReload Integration
+Oke, ada 2 pilihan server yang bisa kita (saya sudah coba) gunakan.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simple Screen Recorder on A Place to Remember</title>
+    <link>http://renodesper.github.io/tags/simple-screen-recorder/</link>
+    <description>Recent content in Simple Screen Recorder on A Place to Remember</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 21 Feb 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://renodesper.github.io/tags/simple-screen-recorder/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Create Gif from Video as Project Demo</title>
+      <link>http://renodesper.github.io/post/2016-02-21-create-gif-from-video-for-project-demo/</link>
+      <pubDate>Sun, 21 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/post/2016-02-21-create-gif-from-video-for-project-demo/</guid>
+      <description>This time I will show you how to make a gif from a video. Why do we need this? Well, a few hours ago I need to create a demo of a program to get a job. But I can&amp;rsquo;t give them the source code, that&amp;rsquo;s why I just show them how the program works.
+Requirement  Simple Screen Recorder / similar software ffmpeg  What I did The first thing we need to do is create a video with Simple Screen Recorder / similar software.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="http://renodesper.github.io">
+    <title>
+  Dive into Sqlite · A Place to Remember
+</title>
+
+    <link rel="canonical" href="http://renodesper.github.io/post/2016-02-19-dive-into-sqlite/">
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="http://renodesper.github.io/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.42.1" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://renodesper.github.io">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="post">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="page/about">About Me</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Dive into Sqlite</h1>
+    </header>
+
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Today we will talk about sqlite in python. I often use mysql as my data source because of a habit, but when I am in a hurry, I guess sqlite will be enough.</p>
+
+<h4 id="to-keep-in-mind">To keep in mind:</h4>
+
+<ul>
+<li>I use python3</li>
+<li>Sqlite library is called sqlite3</li>
+<li>I use hashlib to hash the password (not required)</li>
+</ul>
+
+<h2 id="action">Action</h2>
+
+<p>Let&rsquo;s start with a little bit of code:</p>
+
+<pre><code class="language-python">#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import hashlib
+import sqlite3
+
+
+con = sqlite3.connect('test.db')
+</code></pre>
+
+<p>Those <em>import</em> statement is where we put all required libraries. The <em>con</em> variable will handle the connection from / into sqlite database which named &ldquo;test.db&rdquo;. Don&rsquo;t mind the space between import and con, it&rsquo;s just a habit to give 2 empty line between import statement and code below it.</p>
+
+<pre><code class="language-python">with con:
+    con.row_factory = sqlite3.Row  # this one
+    cur = con.cursor()
+</code></pre>
+
+<p>Now, &ldquo;this one&rdquo; is what I prefer because we will get a dictionary when we select some data from sqlite. We can ignore it of course, but the result from our query will be tuple which I do not prefer.</p>
+
+<pre><code class="language-python">print(data[0], data[1], ..., data[n])
+</code></pre>
+
+<p>People will not understand what we print unless we tell them.</p>
+
+<pre><code class="language-python">print(data['id'], data['email'], data['username'], ...)
+</code></pre>
+
+<p>This one will be more understandable.</p>
+
+<p>&ldquo;with&rdquo; statement will handle the resource. We can also handle the resource manually (close the connection) and use try-except to handle the exception.</p>
+
+<p>This is a little code to show how we drop or create table and insert some data into sqlite.</p>
+
+<pre><code class="language-python">cur.execute(&quot;DROP TABLE IF EXISTS users&quot;)
+cur.execute(&quot;CREATE TABLE users (id, email, username, password, authenticated)&quot;)
+cur.execute(&quot;INSERT INTO users VALUES (?, ?, ?, ?, ?)&quot;, [1, &quot;petruk@gmail.com&quot;, &quot;petruk&quot;, hashlib.md5(&quot;passwordpetruk&quot;.encode()).hexdigest(), True])
+
+cur.execute(&quot;SELECT * FROM users WHERE id=?&quot;, (1,))
+datum = cur.fetchone()
+print(&quot;{} {} {} {} {}&quot;.format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
+</code></pre>
+
+<p>Now, you can see why I use that <em>row_factory</em>.</p>
+
+<h3 id="some-explanation">Some explanation</h3>
+
+<ul>
+<li>We drop the table first if the table is exist</li>
+<li>We create new table which named <em>users</em>. It has several field which is <em>id</em>, <em>email</em>, <em>username</em>, <em>password</em>, and <em>authenticated</em>.</li>
+<li>We insert a new user into users table.</li>
+<li>We find a user with a specified id.</li>
+</ul>
+
+<h4 id="to-keep-in-mind-1">To keep in mind:</h4>
+
+<blockquote>
+<p>I use parameterized queries to insert data. Look for it, it will be helpful for your project.
+I also use hashlib to hash the password. In real case, you should use a better security like bcrypt or others.</p>
+</blockquote>
+
+<p>The next code will show you how to do batch insert with sqlite. Instead of <em>execute</em>, we can use <em>executemany</em> to insert data.</p>
+
+<pre><code class="language-python">wayang_actors = (
+    (2, &quot;gareng@gmail.com&quot;, &quot;gareng&quot;, hashlib.md5(&quot;passwordgareng&quot;.encode()).hexdigest(), True),
+    (3, &quot;bagong@gmail.com&quot;, &quot;bagong&quot;, hashlib.md5(&quot;passwordbagong&quot;.encode()).hexdigest(), True)
+)
+cur.executemany(&quot;INSERT INTO users VALUES (?, ?, ?, ?, ?)&quot;, wayang_actors)
+
+cur.execute(&quot;SELECT * FROM users&quot;)
+data = cur.fetchall()
+for datum in data:
+    print(&quot;{} {} {} {} {}&quot;.format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
+</code></pre>
+
+<p>Now this one is the update query.</p>
+
+<pre><code class="language-python">cur.execute(&quot;UPDATE USERS SET email=? WHERE id=?&quot;, (&quot;goreng@gmail.com&quot;, 2))
+print(&quot;Data updated: {}&quot;.format(cur.rowcount))
+
+cur.execute(&quot;SELECT * FROM users&quot;)
+data = cur.fetchall()
+for datum in data:
+    print(&quot;{} {} {} {} {}&quot;.format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
+</code></pre>
+
+<p>The complete code is this one.</p>
+
+<pre><code class="language-python">#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import hashlib
+import sqlite3
+
+
+con = sqlite3.connect('test.db')
+
+with con:
+    con.row_factory = sqlite3.Row
+    cur = con.cursor()
+
+    print(&quot;# drop, create table and insert example&quot;)
+    cur.execute(&quot;DROP TABLE IF EXISTS users&quot;)
+    cur.execute(&quot;CREATE TABLE users (id, email, username, password, authenticated)&quot;)
+    cur.execute(&quot;INSERT INTO users VALUES (?, ?, ?, ?, ?)&quot;, [1, &quot;petruk@gmail.com&quot;, &quot;petruk&quot;, hashlib.md5(&quot;passwordpetruk&quot;.encode()).hexdigest(), True])
+
+    cur.execute(&quot;SELECT * FROM users WHERE id=?&quot;, (1,))
+    datum = cur.fetchone()
+    print(&quot;{} {} {} {} {}&quot;.format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
+    print()
+
+    print(&quot;# batch insert example&quot;)
+    wayang_actors = (
+        (2, &quot;gareng@gmail.com&quot;, &quot;gareng&quot;, hashlib.md5(&quot;passwordgareng&quot;.encode()).hexdigest(), True),
+        (3, &quot;bagong@gmail.com&quot;, &quot;bagong&quot;, hashlib.md5(&quot;passwordbagong&quot;.encode()).hexdigest(), True)
+    )
+    cur.executemany(&quot;INSERT INTO users VALUES (?, ?, ?, ?, ?)&quot;, wayang_actors)
+
+    cur.execute(&quot;SELECT * FROM users&quot;)
+    data = cur.fetchall()
+    for datum in data:
+        print(&quot;{} {} {} {} {}&quot;.format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
+    print()
+
+    print(&quot;# update example&quot;)
+    cur.execute(&quot;UPDATE USERS SET email=? WHERE id=?&quot;, (&quot;goreng@gmail.com&quot;, 2))
+    print(&quot;Data updated: {}&quot;.format(cur.rowcount))
+
+    cur.execute(&quot;SELECT * FROM users&quot;)
+    data = cur.fetchall()
+    for datum in data:
+        print(&quot;{} {} {} {} {}&quot;.format(datum['id'], datum['email'], datum['username'], datum['password'], datum['authenticated']))
+    print()
+</code></pre>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

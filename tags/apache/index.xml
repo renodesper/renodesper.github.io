@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache on A Place to Remember</title>
+    <link>http://renodesper.github.io/tags/apache/</link>
+    <description>Recent content in Apache on A Place to Remember</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 30 Apr 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://renodesper.github.io/tags/apache/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Play with Apache Solr</title>
+      <link>http://renodesper.github.io/post/2014-04-30-play-with-apache-solr/</link>
+      <pubDate>Wed, 30 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/post/2014-04-30-play-with-apache-solr/</guid>
+      <description>Okay, Solr. It&amp;rsquo;s the first time I play with Solr. I will never know about it if I don&amp;rsquo;t join this company. Let&amp;rsquo;s start with selecting index.
+Select We can select an index using this command:
+curl http://localhost:8983/solr/{core}/select?q=id:{id}  Insert / Update There are two commands to insert or update index. Just remember, the structure should be identical.
+Insert / Update with JSON curl http://localhost:8983/solr/{core}/update?commit=true -H &#39;Content-type:application/json&#39; -d &#39;[ { &amp;quot;id&amp;quot;:&amp;quot;{id}&amp;quot;, &amp;quot;desc&amp;quot;:&amp;quot;{description}&amp;quot; } ]&#39;  Insert / Update with XML curl http://localhost:8983/solr/{core}/update?</description>
+    </item>
+    
+  </channel>
+</rss>

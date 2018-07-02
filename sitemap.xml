@@ -1,88 +1,443 @@
----
-layout: null
-sitemap:
-  exclude: 'yes'
----
-
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for post in site.posts %}
-    {% unless post.published == false %}
-    <url>
-      <loc>{{ site.url }}{{ post.url }}</loc>
-      {% if post.sitemap.lastmod %}
-        <lastmod>{{ post.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
-      {% elsif post.date %}
-        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-      {% else %}
-        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-      {% endif %}
-      {% if post.sitemap.changefreq %}
-        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
-      {% else %}
-        <changefreq>monthly</changefreq>
-      {% endif %}
-      {% if post.sitemap.priority %}
-        <priority>{{ post.sitemap.priority }}</priority>
-      {% else %}
-        <priority>0.5</priority>
-      {% endif %}
-    </url>
-    {% endunless %}
-  {% endfor %}
-
-  {% for page in site.pages %}
-    {% assign split_path = page.path | split: "." %}
-    {% assign extension = split_path | last %}
-
-    {% if page.sitemap.exclude != "yes" and extension == "html" and page.path != "/404.html" %}
-    <url>
-      <loc>{{ site.url }}{{ page.permalink | remove: "index.html" }}</loc>
-      {% if page.sitemap.lastmod %}
-        <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
-      {% elsif page.date %}
-        <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
-      {% else %}
-        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-      {% endif %}
-      {% if page.sitemap.changefreq %}
-        <changefreq>{{ page.sitemap.changefreq }}</changefreq>
-      {% else %}
-        <changefreq>monthly</changefreq>
-      {% endif %}
-      {% if page.sitemap.priority %}
-        <priority>{{ page.sitemap.priority }}</priority>
-      {% else %}
-        <priority>0.3</priority>
-      {% endif %}
-    </url>
-    {% endif %}
-  {% endfor %}
-
-  {% for collection in site.collections %}
-    {% if collection[1].output %}
-      {% for doc in collection[1].docs %}
-        <url>
-          <loc>{{ site.url }}{{ doc.url | remove: "index.html" }}</loc>
-          {% if doc.sitemap.lastmod %}
-            <lastmod>{{ doc.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
-          {% elsif doc.date %}
-            <lastmod>{{ doc.date | date_to_xmlschema }}</lastmod>
-          {% else %}
-            <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-          {% endif %}
-          {% if doc.sitemap.changefreq %}
-            <changefreq>{{ doc.sitemap.changefreq }}</changefreq>
-          {% else %}
-            <changefreq>monthly</changefreq>
-          {% endif %}
-          {% if doc.sitemap.priority %}
-            <priority>{{ doc.sitemap.priority }}</priority>
-          {% else %}
-            <priority>0.3</priority>
-          {% endif %}
-        </url>
-      {% endfor %}
-    {% endif %}
-  {% endfor %}
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2016-12-11-journey-to-functional-programming/</loc>
+    <lastmod>2016-12-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2016-09-15-maven-dependency-problem/</loc>
+    <lastmod>2016-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2016-04-12-set-default-browser/</loc>
+    <lastmod>2016-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2016-02-21-create-gif-from-video-for-project-demo/</loc>
+    <lastmod>2016-02-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2016-02-19-dive-into-sqlite/</loc>
+    <lastmod>2016-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2015-10-04-berbagi-buku/</loc>
+    <lastmod>2015-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2015-07-30-my-first-time-with-awk/</loc>
+    <lastmod>2015-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2015-07-12-starting-screen-in-detach-mode/</loc>
+    <lastmod>2015-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2015-06-13-django-project/</loc>
+    <lastmod>2015-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2015-06-13-untracking-the-tracked-ones/</loc>
+    <lastmod>2015-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2015-06-04-migration/</loc>
+    <lastmod>2015-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2015-03-13-timestamp-and-date-in-apache-phoenix/</loc>
+    <lastmod>2015-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2015-01-18-dvorak-programmers-time/</loc>
+    <lastmod>2015-01-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-12-18-editing-stream-like-merlin-the-mighty-with-sed/</loc>
+    <lastmod>2014-12-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-12-09-menghapus-baris-di-vim-2/</loc>
+    <lastmod>2014-12-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-12-04-menghapus-baris-di-vim/</loc>
+    <lastmod>2014-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-11-27-mengurutkan-isi-file-menggunakan-sort/</loc>
+    <lastmod>2014-11-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-11-13-my-vim-plugins-2/</loc>
+    <lastmod>2014-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-10-15-new-vps-for-node/</loc>
+    <lastmod>2014-10-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-10-06-my-vim-plugins-1/</loc>
+    <lastmod>2014-10-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-09-18-pairing-logitech-devices-with-solaar/</loc>
+    <lastmod>2014-09-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-09-01-menukar-fungsi-tombol-mouse-atau-touchpad/</loc>
+    <lastmod>2014-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-08-11-grep-for-the-world/</loc>
+    <lastmod>2014-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-07-26-browser-tunneling/</loc>
+    <lastmod>2014-07-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-07-21-erasing-partition-table/</loc>
+    <lastmod>2014-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-07-14-livereload-integration/</loc>
+    <lastmod>2014-07-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-07-12-postgresql-and-metasploit/</loc>
+    <lastmod>2014-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-05-01-querying-solr-from-python-with-mysolr/</loc>
+    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-04-30-play-with-apache-solr/</loc>
+    <lastmod>2014-04-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-04-12-what-should-i-learn-about-linux/</loc>
+    <lastmod>2014-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/2014-04-10-first-post/</loc>
+    <lastmod>2014-04-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/</loc>
+    <lastmod>2016-12-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/page/about/</loc>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/apache/</loc>
+    <lastmod>2014-04-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/apache-phoenix/</loc>
+    <lastmod>2015-03-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/awk/</loc>
+    <lastmod>2015-07-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/browser/</loc>
+    <lastmod>2014-07-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/centos/</loc>
+    <lastmod>2014-10-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/date/</loc>
+    <lastmod>2015-03-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/django/</loc>
+    <lastmod>2015-06-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/dvorak/</loc>
+    <lastmod>2015-01-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/ffmpeg/</loc>
+    <lastmod>2016-02-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/functional-programming/</loc>
+    <lastmod>2016-12-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/ghost/</loc>
+    <lastmod>2015-06-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/git/</loc>
+    <lastmod>2015-06-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/grep/</loc>
+    <lastmod>2014-08-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/haskell/</loc>
+    <lastmod>2016-12-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/hugo/</loc>
+    <lastmod>2015-06-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/keyboard-layout/</loc>
+    <lastmod>2015-01-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/linux/</loc>
+    <lastmod>2015-07-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/livereload/</loc>
+    <lastmod>2014-07-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/maven/</loc>
+    <lastmod>2016-09-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/metasploit/</loc>
+    <lastmod>2014-07-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/migrasi/</loc>
+    <lastmod>2015-06-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/mouse/</loc>
+    <lastmod>2014-09-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/mysolr/</loc>
+    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/node/</loc>
+    <lastmod>2014-10-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/npm/</loc>
+    <lastmod>2014-10-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/page/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/partition/</loc>
+    <lastmod>2014-07-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/plugin/</loc>
+    <lastmod>2014-11-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/postgresql/</loc>
+    <lastmod>2014-07-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/post/</loc>
+    <lastmod>2016-12-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/python/</loc>
+    <lastmod>2016-02-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/screen/</loc>
+    <lastmod>2015-07-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/sed/</loc>
+    <lastmod>2014-12-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/share/</loc>
+    <lastmod>2015-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/simple-screen-recorder/</loc>
+    <lastmod>2016-02-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/solr/</loc>
+    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/sort/</loc>
+    <lastmod>2014-11-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/sqlite/</loc>
+    <lastmod>2016-02-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/</loc>
+    <lastmod>2014-04-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/timestamp/</loc>
+    <lastmod>2015-03-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/tunnel/</loc>
+    <lastmod>2014-07-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/vim/</loc>
+    <lastmod>2014-12-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/vps/</loc>
+    <lastmod>2014-10-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/web-development/</loc>
+    <lastmod>2014-07-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://renodesper.github.io/tags/xdg/</loc>
+    <lastmod>2016-04-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
 </urlset>

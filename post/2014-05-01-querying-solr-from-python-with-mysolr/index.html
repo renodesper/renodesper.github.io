@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="http://renodesper.github.io">
+    <title>
+  Querying Solr from Python with MySolr · A Place to Remember
+</title>
+
+    <link rel="canonical" href="http://renodesper.github.io/post/2014-05-01-querying-solr-from-python-with-mysolr/">
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="http://renodesper.github.io/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.42.1" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://renodesper.github.io">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="post">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="page/about">About Me</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Querying Solr from Python with MySolr</h1>
+    </header>
+
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p>MySolr is an API for Apache&rsquo;s Solr for python. You can install mysolr using your favorite package manager. In the last post I have showed you how to update, select, and delete index using curl. Today, I will show you how we do those things using mysolr.
+Basic Configuration</p>
+
+<p>There is nothing special with solr configuration. The first thing you should do is importing Solr from mysolr. If you have done that, you can set the connection. The default connection is <a href="http://localhost:8080">http://localhost:8080</a>. After that, we define what we want to query from solr and store it into a variable. You can print it afterward.
+Solr Query Example</p>
+
+<pre><code class="language-python">from mysolr import Solr
+
+# We can also specify another connection like http://192.168.10.10:8983/solr/{core}
+solr = Solr()
+
+query = {'q':'*:*'}
+response = solr.search(**query)
+
+documents = response.documents
+print documents
+</code></pre>
+
+<p>I&rsquo;ve tried to make a summary for mysolr basic usage and this is what I got:</p>
+
+<pre><code class="language-python">from mysolr import Solr
+
+# We can also specify another connection like
+# solr = Solr() or solr = Solr(auth=('admin', 'admin'))
+solr = Solr(&quot;http://localhost:8983/solr/{core}&quot;)
+
+
+def insertIndex():
+    # Create documents
+    documents = [
+        {
+            'id': 1,
+            'field1': 'field content'
+        },
+        {
+            'id': 2,
+            'field2': 'field content'
+        }
+    ]
+
+    # # Index using json with auto commit
+    # solr.update(documents, 'json', commit=True)
+
+    solr.update(documents, 'json', commit=False)  # Index using json
+    solr.commit()  # Manual commit
+
+
+def selectIndex(query):
+    response = solr.search(**query)
+
+    # For every document in response.documents print document
+    for document in response.documents:
+        print document
+
+
+def updateIndex(query):
+    response = solr.search(**query)
+
+    # For every document in response.documents update title
+    for document in response.documents:
+        document['title'] = 'title'
+
+    solr.update(response.documents, commit=True)
+
+
+# Start here
+query = {'q': '*:*'}
+
+# # Inserting index
+# insertIndex()
+
+# Selecting index
+selectIndex(query)
+
+# # Updating index
+# updateIndex(query)
+</code></pre>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

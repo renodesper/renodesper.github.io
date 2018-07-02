@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on A Place to Remember</title>
+    <link>http://renodesper.github.io/page/</link>
+    <description>Recent content in Pages on A Place to Remember</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="http://renodesper.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About me</title>
+      <link>http://renodesper.github.io/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/page/about/</guid>
+      <description>My alias is renodesper. I have the following qualities:
+ I use Archlinux I use Vim I code in Python and Golang for backend I code in Vue for frontend  That rug really tied the room together.
+My History To be honest, I&amp;rsquo;m having some trouble remembering right now. Just look at my social media.</description>
+    </item>
+    
+  </channel>
+</rss>

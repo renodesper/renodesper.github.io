@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="http://renodesper.github.io">
+    <title>
+  New VPS for Node · A Place to Remember
+</title>
+
+    <link rel="canonical" href="http://renodesper.github.io/post/2014-10-15-new-vps-for-node/">
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="http://renodesper.github.io/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://renodesper.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.42.1" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://renodesper.github.io">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="post">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="page/about">About Me</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>New VPS for Node</h1>
+    </header>
+
+    
+
+<p>Kita skip dulu bahasan tentang Vim yang ada di post sebelumnya. Kemarin saya baru saja menyewa sebuah vps yang nantinya akan saya gunakan untuk riset. VPS tersebut saya pasangkan Centos 7 x86_64. Hal pertama yang saya lakukan adalah memasang nodejs dan npm. Berikut langkah - langkah yang saya lakukan.</p>
+
+<h2 id="update-sistem">Update sistem</h2>
+
+<pre><code class="language-shell">$ yum update
+</code></pre>
+
+<h2 id="instal-epel-extra-packages-for-enterprise-linux-repository">Instal EPEL (Extra Packages for Enterprise Linux) Repository</h2>
+
+<pre><code class="language-shell">$ yum install epel-release
+</code></pre>
+
+<h2 id="instal-node-js-dan-npm">Instal Node.js dan npm</h2>
+
+<pre><code class="language-shell">$ yum install nodejs
+$ yum install npm
+</code></pre>
+
+<p>Dokumentasi di situs Ghost mengatakan bahwa versi Node.js dan npm yang direkomendasikan adalah versi 0.10.30 untuk Node.js dan 1.4.21 untuk npm. Oleh karena itu pastikan agar Node.js dan npm yang kita instal sudah sesuai.</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

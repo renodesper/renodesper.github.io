@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plugin on A Place to Remember</title>
+    <link>http://renodesper.github.io/tags/plugin/</link>
+    <description>Recent content in Plugin on A Place to Remember</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 13 Nov 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://renodesper.github.io/tags/plugin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My Vim Plugins - 2</title>
+      <link>http://renodesper.github.io/post/2014-11-13-my-vim-plugins-2/</link>
+      <pubDate>Thu, 13 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/post/2014-11-13-my-vim-plugins-2/</guid>
+      <description>flazz/vim-colorschemes vim-colorschemes is a collection of colorscheme from vim.org. My favorite is Tomorrow-Night-Eighties which looks like this: Tomorrow-Night-Eighties image
+This plugin has a lot of colorschemes, I don&amp;rsquo;t think I will ever have a chance to try all of it
+eiginn/netrw netrw is a must-have plugin if you often connect to remote server. Instead of editing file on the remote server, you can use netrw to do some editing right in vim.</description>
+    </item>
+    
+    <item>
+      <title>My Vim Plugins - 1</title>
+      <link>http://renodesper.github.io/post/2014-10-06-my-vim-plugins-1/</link>
+      <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://renodesper.github.io/post/2014-10-06-my-vim-plugins-1/</guid>
+      <description>Introduction First thing first. What is Vim? As far as I can tell, Vim is an imitation of Vi. But tldr it is an improved version of Vi now. The last thing that I remember is Vim is not a word processor, it is an editor. You should find the difference yourself.
+So, now I wanna show you all Vim plugins that I used. It’s not much but it really help me a lot when I code.</description>
+    </item>
+    
+  </channel>
+</rss>
