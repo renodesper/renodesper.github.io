@@ -328,13 +328,12 @@ Here we go, a blog made from ghost with everything about everything. Oh right, I
     
     <item>
       <title>About me</title>
-      <link>https://renodesper.github.io/page/about/</link>
+      <link>https://renodesper.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://renodesper.github.io/page/about/</guid>
-      <description>My alias is renodesper. I have the following qualities:
- I use Archlinux I use Vim I code in Python and Golang for backend I code in Vue for frontend  That rug really tied the room together.
-My History To be honest, I&amp;rsquo;m having some trouble remembering right now. Just look at my social media.</description>
+      <guid>https://renodesper.github.io/about/</guid>
+      <description>My name is Boy Sandy Gladies Arriezona. I use this site to document what I did or anything that I thought interesting. As a developer, I have the following qualities:
+ I use Archlinux (Debian/Centos on server) I use Vim (VS Code when I was lazy) I code in Python and Golang for backend stuff I code in Vue for frontend stuff  My History To be honest, I&amp;rsquo;m having some trouble remembering right now.</description>
     </item>
     
   </channel>

@@ -163,7 +163,7 @@
   </url>
   
   <url>
-    <loc>https://renodesper.github.io/page/about/</loc>
+    <loc>https://renodesper.github.io/about/</loc>
   </url>
   
   <url>
@@ -318,11 +318,6 @@
   <url>
     <loc>https://renodesper.github.io/tags/npm/</loc>
     <lastmod>2014-10-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://renodesper.github.io/page/</loc>
     <priority>0</priority>
   </url>
   
