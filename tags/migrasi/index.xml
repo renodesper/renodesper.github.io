@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Migrasi on A Place to Remember</title>
-    <link>https://renodesper.github.io/tags/migrasi/</link>
+    <link>https://renodesper.com/tags/migrasi/</link>
     <description>Recent content in Migrasi on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 04 Jun 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://renodesper.github.io/tags/migrasi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://renodesper.com/tags/migrasi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Migration</title>
-      <link>https://renodesper.github.io/post/2015-06-04-migration/</link>
+      <link>https://renodesper.com/post/2015-06-04-migration/</link>
       <pubDate>Thu, 04 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://renodesper.github.io/post/2015-06-04-migration/</guid>
+      <guid>https://renodesper.com/post/2015-06-04-migration/</guid>
       <description>Jadi begini, rencananya saya menggunakan Ghost sebagai blog adalah untuk belajar NodeJS. Sayangnya saya selalu sibuk dan tidak sempat untuk mempelajari NodeJS sekalipun. Akhirnya saya berpikir, daripada membebani server lebih baik saya ubah saja blog-nya ke sesuatu yang lebih ringan. Static site pun muncul di benak saya. Saya menggunakan Hugo untuk men-generate situs ini.
 Udah sih gitu aja, saya gitu sih orangnya. B|</description>
     </item>

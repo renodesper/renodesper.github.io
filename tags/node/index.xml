@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Node on A Place to Remember</title>
-    <link>https://renodesper.github.io/tags/node/</link>
+    <link>https://renodesper.com/tags/node/</link>
     <description>Recent content in Node on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 15 Oct 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://renodesper.github.io/tags/node/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://renodesper.com/tags/node/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>New VPS for Node</title>
-      <link>https://renodesper.github.io/post/2014-10-15-new-vps-for-node/</link>
+      <link>https://renodesper.com/post/2014-10-15-new-vps-for-node/</link>
       <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://renodesper.github.io/post/2014-10-15-new-vps-for-node/</guid>
+      <guid>https://renodesper.com/post/2014-10-15-new-vps-for-node/</guid>
       <description>Kita skip dulu bahasan tentang Vim yang ada di post sebelumnya. Kemarin saya baru saja menyewa sebuah vps yang nantinya akan saya gunakan untuk riset. VPS tersebut saya pasangkan Centos 7 x86_64. Hal pertama yang saya lakukan adalah memasang nodejs dan npm. Berikut langkah - langkah yang saya lakukan.
 Update sistem $ yum update  Instal EPEL (Extra Packages for Enterprise Linux) Repository $ yum install epel-release  Instal Node.</description>
     </item>
     
     <item>
       <title>First post!</title>
-      <link>https://renodesper.github.io/post/2014-04-10-first-post/</link>
+      <link>https://renodesper.com/post/2014-04-10-first-post/</link>
       <pubDate>Thu, 10 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://renodesper.github.io/post/2014-04-10-first-post/</guid>
+      <guid>https://renodesper.com/post/2014-04-10-first-post/</guid>
       <description>Today, I tried something different. Well, I just want to improve my programming language and english but I don&amp;rsquo;t have any idea about what should I do. And I thought why don&amp;rsquo;t I learn by documenting what I have done. Maybe I will learn more serious to avoid making mistake when I write it.
 Here we go, a blog made from ghost with everything about everything. Oh right, I will use 2 different languages in this blog.</description>
     </item>

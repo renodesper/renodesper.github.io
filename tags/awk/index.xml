@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Awk on A Place to Remember</title>
-    <link>https://renodesper.github.io/tags/awk/</link>
+    <link>https://renodesper.com/tags/awk/</link>
     <description>Recent content in Awk on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 30 Jul 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://renodesper.github.io/tags/awk/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://renodesper.com/tags/awk/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>My First Time with Awk</title>
-      <link>https://renodesper.github.io/post/2015-07-30-my-first-time-with-awk/</link>
+      <link>https://renodesper.com/post/2015-07-30-my-first-time-with-awk/</link>
       <pubDate>Thu, 30 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://renodesper.github.io/post/2015-07-30-my-first-time-with-awk/</guid>
+      <guid>https://renodesper.com/post/2015-07-30-my-first-time-with-awk/</guid>
       <description>Tonight we&amp;rsquo;ll talk about Awk. Actually, I&amp;rsquo;ve know it for a long time but I never had any chance to explore it. A few days ago, I need to remove some duplicate lines from a file BUT it should not be sorted. We can also use sort and uniq, but it will end up sorted before we got an actual result. I&amp;rsquo;m using this kind of script to remove it:</description>
     </item>
     

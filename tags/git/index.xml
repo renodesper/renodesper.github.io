@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on A Place to Remember</title>
-    <link>https://renodesper.github.io/tags/git/</link>
+    <link>https://renodesper.com/tags/git/</link>
     <description>Recent content in Git on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 13 Jun 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://renodesper.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://renodesper.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Untracking The Tracked Ones</title>
-      <link>https://renodesper.github.io/post/2015-06-13-untracking-the-tracked-ones/</link>
+      <link>https://renodesper.com/post/2015-06-13-untracking-the-tracked-ones/</link>
       <pubDate>Sat, 13 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://renodesper.github.io/post/2015-06-13-untracking-the-tracked-ones/</guid>
+      <guid>https://renodesper.com/post/2015-06-13-untracking-the-tracked-ones/</guid>
       <description>Sudah beberapa hari saya mempunyai keinginan untuk memperbaiki projek yang saya lakukan. Secara tidak sengaja saya memasukkan virtual environment ke dalam repositori yang notabene seharusnya hanya diisi oleh projek yang saya kerjakan. Alhasil banyak sekali perubahan setiap saya mencoba mengerjakan kembali (bahkan) ketika saya tidak mengubah apapun.
 Berikut cara yang saya temukan untuk meng-untrack file / folder yang sudah di-track:
 $ git rm --cached -r env  Setelah itu, folder tersebut bisa kita masukkan ke dalam file .</description>

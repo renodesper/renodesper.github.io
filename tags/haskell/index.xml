@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Haskell on A Place to Remember</title>
-    <link>https://renodesper.github.io/tags/haskell/</link>
+    <link>https://renodesper.com/tags/haskell/</link>
     <description>Recent content in Haskell on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 11 Dec 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://renodesper.github.io/tags/haskell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://renodesper.com/tags/haskell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Journey to Functional Programming</title>
-      <link>https://renodesper.github.io/post/2016-12-11-journey-to-functional-programming/</link>
+      <link>https://renodesper.com/post/2016-12-11-journey-to-functional-programming/</link>
       <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://renodesper.github.io/post/2016-12-11-journey-to-functional-programming/</guid>
+      <guid>https://renodesper.com/post/2016-12-11-journey-to-functional-programming/</guid>
       <description>Dulu, dulu sekali. Saya pernah mencari tentang apa saja hal yang harus saya pelajari agar saya bisa lebih ahli dalam pemrograman Python. Lalu secara tidak sengaja saya menemukan jawaban di stackoverflow yang menyarankan untuk membaca buku Real World Haskell. Di sinilah perjalanan saya menuju Functional Programming dimulai. And the journey begin~
 Saya sempat mempelajari Scala di tempat saya bekerja, hanya saja saat itu pekerjaan saya dipindahkan kembali ke pekerjaan yang menggunakan bahasa Python sehingga saya tidak terlalu dalam mempelajari Scala.</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Screen on A Place to Remember</title>
-    <link>https://renodesper.github.io/tags/screen/</link>
+    <link>https://renodesper.com/tags/screen/</link>
     <description>Recent content in Screen on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 12 Jul 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://renodesper.github.io/tags/screen/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://renodesper.com/tags/screen/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Starting Screen in Detach Mode</title>
-      <link>https://renodesper.github.io/post/2015-07-12-starting-screen-in-detach-mode/</link>
+      <link>https://renodesper.com/post/2015-07-12-starting-screen-in-detach-mode/</link>
       <pubDate>Sun, 12 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://renodesper.github.io/post/2015-07-12-starting-screen-in-detach-mode/</guid>
+      <guid>https://renodesper.com/post/2015-07-12-starting-screen-in-detach-mode/</guid>
       <description>For a few days I&amp;rsquo;ve been thinking about GNU/screen. I have some scripts that should be run inside screen everytime a reboot happened. I&amp;rsquo;ve been looking in stackoverflow, google, etc but haven&amp;rsquo;t found anything useful. So I&amp;rsquo;ve been stuck with this kind of script:
 $ screen -dmS screen_name some_command  It will create a new screen, run the command inside it and detach the screen. Well, it&amp;rsquo;s pretty good actually. But, when the command is done (finished or killed) then the screen will be terminated.</description>
     </item>

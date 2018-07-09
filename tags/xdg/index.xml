@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xdg on A Place to Remember</title>
-    <link>https://renodesper.github.io/tags/xdg/</link>
+    <link>https://renodesper.com/tags/xdg/</link>
     <description>Recent content in Xdg on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 12 Apr 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://renodesper.github.io/tags/xdg/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://renodesper.com/tags/xdg/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Set Default Browser</title>
-      <link>https://renodesper.github.io/post/2016-04-12-set-default-browser/</link>
+      <link>https://renodesper.com/post/2016-04-12-set-default-browser/</link>
       <pubDate>Tue, 12 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://renodesper.github.io/post/2016-04-12-set-default-browser/</guid>
+      <guid>https://renodesper.com/post/2016-04-12-set-default-browser/</guid>
       <description>For a few month after I did a fresh install of Archlinux, I found that when I try to click a link inside any application, it will call google chrome. So, I decide to fix it today. It actually easy. We can set our default browser with xdg-mime which is owned by xdg-utils.
 Requirement  xdg-utils  What I did We can set out default browser with these commands:</description>
     </item>

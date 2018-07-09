@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Solr on A Place to Remember</title>
-    <link>https://renodesper.github.io/tags/solr/</link>
+    <link>https://renodesper.com/tags/solr/</link>
     <description>Recent content in Solr on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 01 May 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://renodesper.github.io/tags/solr/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://renodesper.com/tags/solr/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Querying Solr from Python with MySolr</title>
-      <link>https://renodesper.github.io/post/2014-05-01-querying-solr-from-python-with-mysolr/</link>
+      <link>https://renodesper.com/post/2014-05-01-querying-solr-from-python-with-mysolr/</link>
       <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://renodesper.github.io/post/2014-05-01-querying-solr-from-python-with-mysolr/</guid>
+      <guid>https://renodesper.com/post/2014-05-01-querying-solr-from-python-with-mysolr/</guid>
       <description>Introduction MySolr is an API for Apache&amp;rsquo;s Solr for python. You can install mysolr using your favorite package manager. In the last post I have showed you how to update, select, and delete index using curl. Today, I will show you how we do those things using mysolr. Basic Configuration
 There is nothing special with solr configuration. The first thing you should do is importing Solr from mysolr. If you have done that, you can set the connection.</description>
     </item>
     
     <item>
       <title>Play with Apache Solr</title>
-      <link>https://renodesper.github.io/post/2014-04-30-play-with-apache-solr/</link>
+      <link>https://renodesper.com/post/2014-04-30-play-with-apache-solr/</link>
       <pubDate>Wed, 30 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://renodesper.github.io/post/2014-04-30-play-with-apache-solr/</guid>
+      <guid>https://renodesper.com/post/2014-04-30-play-with-apache-solr/</guid>
       <description>Okay, Solr. It&amp;rsquo;s the first time I play with Solr. I will never know about it if I don&amp;rsquo;t join this company. Let&amp;rsquo;s start with selecting index.
 Select We can select an index using this command:
 curl http://localhost:8983/solr/{core}/select?q=id:{id}  Insert / Update There are two commands to insert or update index. Just remember, the structure should be identical.
