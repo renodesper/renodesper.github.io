@@ -75,9 +75,9 @@
 <p>Terkadang kita perlu menghapus beberapa baris secara berurutan dan secara spesifik. Contohnya adalah jika kita ingin menghapus 491 baris dari baris ke 105. Seperti yang kita tahu, kita bisa menggunakan dd untuk menghapus 1 baris di Vim. Tapi bagaimana untuk kasus di atas? Mengutip dari suatu blog, penggunaan Vim itu seperti kita berbahasa (thanks for Daniel Miessler for your awesome post). Caranya seperti berikut:</p>
 
 <h2 id="solution">Solution</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>1. 491dd = menghapus 491 baris ke bawah dengan syarat posisi kita harus ada di baris 105
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>2. d491j = menghapus 491 baris ke bawah dengan syarat posisi kita harus ada di baris 105 dan di posisi paling awal baris, kita juga bisa menghapus ke atas dengan cara mengganti j menjadi k
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>3. :105,596d = menghapus 491 baris dari baris 105 sampai baris 596, kita harus tahu terlebih dahulu akhir baris yang kita inginkan dan harus berada di normal mode</pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">1. 491dd = menghapus 491 baris ke bawah dengan syarat posisi kita harus ada di baris 105
+2. d491j = menghapus 491 baris ke bawah dengan syarat posisi kita harus ada di baris 105 dan di posisi paling awal baris, kita juga bisa menghapus ke atas dengan cara mengganti j menjadi k
+3. :105,596d = menghapus 491 baris dari baris 105 sampai baris 596, kita harus tahu terlebih dahulu akhir baris yang kita inginkan dan harus berada di normal mode</pre></div>
 <p>Mudah kan? Saya juga baru saja mencoba menggunakannya. Just remember guys, practice makes expert.</p>
 
   </article>

@@ -71,9 +71,9 @@
     <p>Sudah beberapa hari saya mempunyai keinginan untuk memperbaiki projek yang saya lakukan. Secara tidak sengaja saya memasukkan virtual environment ke dalam repositori yang notabene seharusnya hanya diisi oleh projek yang saya kerjakan. Alhasil banyak sekali perubahan setiap saya mencoba mengerjakan kembali (bahkan) ketika saya tidak mengubah apapun.</p>
 
 <p>Berikut cara yang saya temukan untuk meng-untrack file / folder yang sudah di-track:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ git rm --cached -r env</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git rm --cached -r env</code></pre></div>
 <p>Setelah itu, folder tersebut bisa kita masukkan ke dalam file <em>.gitignore</em> seperti berikut:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>env/*</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">env/*</code></pre></div>
   </article>
 </section>
 

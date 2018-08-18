@@ -75,47 +75,47 @@
 <h2 id="select">Select</h2>
 
 <p>We can select an index using this command:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>curl http://localhost:8983/solr/<span style="color:#ce5c00;font-weight:bold">{</span>core<span style="color:#ce5c00;font-weight:bold">}</span>/select?q<span style="color:#ce5c00;font-weight:bold">=</span>id:<span style="color:#ce5c00;font-weight:bold">{</span>id<span style="color:#ce5c00;font-weight:bold">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl http://localhost:8983/solr/<span style="color:#ce5c00;font-weight:bold">{</span>core<span style="color:#ce5c00;font-weight:bold">}</span>/select?q<span style="color:#ce5c00;font-weight:bold">=</span>id:<span style="color:#ce5c00;font-weight:bold">{</span>id<span style="color:#ce5c00;font-weight:bold">}</span></code></pre></div>
 <h2 id="insert-update">Insert / Update</h2>
 
 <p>There are two commands to insert or update index. Just remember, the structure should be identical.</p>
 
 <h3 id="insert-update-with-json">Insert / Update with JSON</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>curl http://localhost:8983/solr/<span style="color:#ce5c00;font-weight:bold">{</span>core<span style="color:#ce5c00;font-weight:bold">}</span>/update?commit<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span> -H <span style="color:#4e9a06">&#39;Content-type:application/json&#39;</span> -d
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#4e9a06">&#39;[
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#4e9a06">    {
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#4e9a06">        &#34;id&#34;:&#34;{id}&#34;,
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#4e9a06">        &#34;desc&#34;:&#34;{description}&#34;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#4e9a06">    }
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span style="color:#4e9a06">]&#39;</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl http://localhost:8983/solr/<span style="color:#ce5c00;font-weight:bold">{</span>core<span style="color:#ce5c00;font-weight:bold">}</span>/update?commit<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span> -H <span style="color:#4e9a06">&#39;Content-type:application/json&#39;</span> -d
+<span style="color:#4e9a06">&#39;[
+</span><span style="color:#4e9a06">    {
+</span><span style="color:#4e9a06">        &#34;id&#34;:&#34;{id}&#34;,
+</span><span style="color:#4e9a06">        &#34;desc&#34;:&#34;{description}&#34;
+</span><span style="color:#4e9a06">    }
+</span><span style="color:#4e9a06">]&#39;</span></code></pre></div>
 <h3 id="insert-update-with-xml">Insert / Update with XML</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>curl http://localhost:8983/solr/<span style="color:#ce5c00;font-weight:bold">{</span>core<span style="color:#ce5c00;font-weight:bold">}</span>/update?commit<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span> -H <span style="color:#4e9a06">&#34;Content-Type: text/xml&#34;</span> --data-binary
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#4e9a06">&#39;&lt;add&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#4e9a06">    &lt;doc&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#4e9a06">        &lt;field name=&#34;id&#34;&gt;{id}&lt;/field&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#4e9a06">        &lt;field name=&#34;desc&#34;&gt;{description}&lt;/field&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#4e9a06">    &lt;/doc&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span style="color:#4e9a06">&lt;/add&gt;&#39;</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl http://localhost:8983/solr/<span style="color:#ce5c00;font-weight:bold">{</span>core<span style="color:#ce5c00;font-weight:bold">}</span>/update?commit<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span> -H <span style="color:#4e9a06">&#34;Content-Type: text/xml&#34;</span> --data-binary
+<span style="color:#4e9a06">&#39;&lt;add&gt;
+</span><span style="color:#4e9a06">    &lt;doc&gt;
+</span><span style="color:#4e9a06">        &lt;field name=&#34;id&#34;&gt;{id}&lt;/field&gt;
+</span><span style="color:#4e9a06">        &lt;field name=&#34;desc&#34;&gt;{description}&lt;/field&gt;
+</span><span style="color:#4e9a06">    &lt;/doc&gt;
+</span><span style="color:#4e9a06">&lt;/add&gt;&#39;</span></code></pre></div>
 <h2 id="delete">Delete</h2>
 
 <p>There are also two commands to delete index.</p>
 
 <h3 id="delete-with-json">Delete with JSON</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>curl http://localhost:8983/solr/<span style="color:#ce5c00;font-weight:bold">{</span>core<span style="color:#ce5c00;font-weight:bold">}</span>/update?commit<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span> -H <span style="color:#4e9a06">&#39;Content-type:application/json&#39;</span> -d
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#4e9a06">&#39;{
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#4e9a06">    &#34;delete&#34;:{
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#4e9a06">        &#34;id&#34;:&#34;{id}&#34;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#4e9a06">    },
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#4e9a06">    &#34;delete&#34;:{
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span style="color:#4e9a06">        &#34;query&#34;:&#34;id:{id}&#34;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span style="color:#4e9a06">    }
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span style="color:#4e9a06">}&#39;</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl http://localhost:8983/solr/<span style="color:#ce5c00;font-weight:bold">{</span>core<span style="color:#ce5c00;font-weight:bold">}</span>/update?commit<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span> -H <span style="color:#4e9a06">&#39;Content-type:application/json&#39;</span> -d
+<span style="color:#4e9a06">&#39;{
+</span><span style="color:#4e9a06">    &#34;delete&#34;:{
+</span><span style="color:#4e9a06">        &#34;id&#34;:&#34;{id}&#34;
+</span><span style="color:#4e9a06">    },
+</span><span style="color:#4e9a06">    &#34;delete&#34;:{
+</span><span style="color:#4e9a06">        &#34;query&#34;:&#34;id:{id}&#34;
+</span><span style="color:#4e9a06">    }
+</span><span style="color:#4e9a06">}&#39;</span></code></pre></div>
 <h3 id="delete-with-xml">Delete with XML</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>curl http://localhost:8983/solr/<span style="color:#ce5c00;font-weight:bold">{</span>core<span style="color:#ce5c00;font-weight:bold">}</span>/update?commit<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span> -H <span style="color:#4e9a06">&#34;Content-Type: text/xml&#34;</span> --data-binary
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    <span style="color:#4e9a06">&#39;&lt;delete&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#4e9a06">        &lt;id&gt;{id}&lt;/id&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#4e9a06">        &lt;query&gt;id:{id}&lt;/query&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#4e9a06">    &lt;/delete&gt;&#39;</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl http://localhost:8983/solr/<span style="color:#ce5c00;font-weight:bold">{</span>core<span style="color:#ce5c00;font-weight:bold">}</span>/update?commit<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span> -H <span style="color:#4e9a06">&#34;Content-Type: text/xml&#34;</span> --data-binary
+    <span style="color:#4e9a06">&#39;&lt;delete&gt;
+</span><span style="color:#4e9a06">        &lt;id&gt;{id}&lt;/id&gt;
+</span><span style="color:#4e9a06">        &lt;query&gt;id:{id}&lt;/query&gt;
+</span><span style="color:#4e9a06">    &lt;/delete&gt;&#39;</span></code></pre></div>
   </article>
 </section>
 

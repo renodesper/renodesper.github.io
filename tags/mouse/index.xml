@@ -19,7 +19,7 @@
       <guid>https://renodesper.com/post/2014-09-18-pairing-logitech-devices-with-solaar/</guid>
       <description>A few minutes ago, a friend of mine shared something good on facebook. He use Solaar to get battery information from his Logitech mouse. So, what is Solaar?
 Quoted from Solaar website:
-1&amp;#34;Solaar is a Linux device manager for Logitech&amp;#39;s Unifying Receiver peripherals.&amp;#34; It gives you information about your device&amp;rsquo;s technical detail like Wireless PID, Protocol, Polling Rate, Serial number, even your device&amp;rsquo;s firmware. And of course, it gives battery information.</description>
+&amp;#34;Solaar is a Linux device manager for Logitech&amp;#39;s Unifying Receiver peripherals.&amp;#34; It gives you information about your device&amp;rsquo;s technical detail like Wireless PID, Protocol, Polling Rate, Serial number, even your device&amp;rsquo;s firmware. And of course, it gives battery information.</description>
     </item>
     
     <item>
@@ -29,7 +29,7 @@ Quoted from Solaar website:
       
       <guid>https://renodesper.com/post/2014-09-01-menukar-fungsi-tombol-mouse-atau-touchpad/</guid>
       <description>Mungkin ini terdengar aneh, tetapi saya mempunyai kebiasaan untuk menukar fungsi tombol yang ada di mouse walaupun sebetulnya saya bukan left-handed. Untuk menukar fungsi tombol yang ada di mouse kita bisa menggunakan perintah berikut:
-1$ xmodmap -e &amp;#34;pointer = 3 2 1&amp;#34; Ada masalah yang muncul jika kita menggunakan perintah di atas. Masalahnya adalah perintah tersebut akan menukar fungsi mouse secara umum, maksudnya adalah touchpad yang juga bisa digunakan selain mouse akan tertukar.</description>
+$ xmodmap -e &amp;#34;pointer = 3 2 1&amp;#34; Ada masalah yang muncul jika kita menggunakan perintah di atas. Masalahnya adalah perintah tersebut akan menukar fungsi mouse secara umum, maksudnya adalah touchpad yang juga bisa digunakan selain mouse akan tertukar.</description>
     </item>
     
   </channel>

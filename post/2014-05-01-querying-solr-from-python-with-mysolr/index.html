@@ -77,73 +77,73 @@ Basic Configuration</p>
 
 <p>There is nothing special with solr configuration. The first thing you should do is importing Solr from mysolr. If you have done that, you can set the connection. The default connection is <a href="http://localhost:8080">http://localhost:8080</a>. After that, we define what we want to query from solr and store it into a variable. You can print it afterward.
 Solr Query Example</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">mysolr</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">Solr</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#8f5902;font-style:italic"># We can also specify another connection like http://192.168.10.10:8983/solr/{core}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#000">solr</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Solr</span><span style="color:#000;font-weight:bold">()</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#000">query</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#4e9a06">&#39;q&#39;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#39;*:*&#39;</span><span style="color:#000;font-weight:bold">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">solr</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">search</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">**</span><span style="color:#000">query</span><span style="color:#000;font-weight:bold">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#000">documents</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">documents</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#204a87;font-weight:bold">print</span> <span style="color:#000">documents</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">mysolr</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">Solr</span>
+
+<span style="color:#8f5902;font-style:italic"># We can also specify another connection like http://192.168.10.10:8983/solr/{core}</span>
+<span style="color:#000">solr</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Solr</span><span style="color:#000;font-weight:bold">()</span>
+
+<span style="color:#000">query</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#4e9a06">&#39;q&#39;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#39;*:*&#39;</span><span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">solr</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">search</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">**</span><span style="color:#000">query</span><span style="color:#000;font-weight:bold">)</span>
+
+<span style="color:#000">documents</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">documents</span>
+<span style="color:#204a87;font-weight:bold">print</span> <span style="color:#000">documents</span></code></pre></div>
 <p>I&rsquo;ve tried to make a summary for mysolr basic usage and this is what I got:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">mysolr</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">Solr</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#8f5902;font-style:italic"># We can also specify another connection like</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#8f5902;font-style:italic"># solr = Solr() or solr = Solr(auth=(&#39;admin&#39;, &#39;admin&#39;))</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#000">solr</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Solr</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;http://localhost:8983/solr/{core}&#34;</span><span style="color:#000;font-weight:bold">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#204a87;font-weight:bold">def</span> <span style="color:#000">insertIndex</span><span style="color:#000;font-weight:bold">():</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#8f5902;font-style:italic"># Create documents</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#000">documents</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        <span style="color:#000;font-weight:bold">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>            <span style="color:#4e9a06">&#39;id&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>            <span style="color:#4e9a06">&#39;field1&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;field content&#39;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        <span style="color:#000;font-weight:bold">},</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>        <span style="color:#000;font-weight:bold">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>            <span style="color:#4e9a06">&#39;id&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>            <span style="color:#4e9a06">&#39;field2&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;field content&#39;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        <span style="color:#000;font-weight:bold">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#000;font-weight:bold">]</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    <span style="color:#8f5902;font-style:italic"># # Index using json with auto commit</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    <span style="color:#8f5902;font-style:italic"># solr.update(documents, &#39;json&#39;, commit=True)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    <span style="color:#000">solr</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">update</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">documents</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;json&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">commit</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#3465a4">False</span><span style="color:#000;font-weight:bold">)</span>  <span style="color:#8f5902;font-style:italic"># Index using json</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    <span style="color:#000">solr</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">commit</span><span style="color:#000;font-weight:bold">()</span>  <span style="color:#8f5902;font-style:italic"># Manual commit</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#204a87;font-weight:bold">def</span> <span style="color:#000">selectIndex</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">query</span><span style="color:#000;font-weight:bold">):</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">solr</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">search</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">**</span><span style="color:#000">query</span><span style="color:#000;font-weight:bold">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>    <span style="color:#8f5902;font-style:italic"># For every document in response.documents print document</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>    <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">document</span> <span style="color:#204a87;font-weight:bold">in</span> <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">documents</span><span style="color:#000;font-weight:bold">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>        <span style="color:#204a87;font-weight:bold">print</span> <span style="color:#000">document</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span style="color:#204a87;font-weight:bold">def</span> <span style="color:#000">updateIndex</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">query</span><span style="color:#000;font-weight:bold">):</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">solr</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">search</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">**</span><span style="color:#000">query</span><span style="color:#000;font-weight:bold">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>    <span style="color:#8f5902;font-style:italic"># For every document in response.documents update title</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>    <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">document</span> <span style="color:#204a87;font-weight:bold">in</span> <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">documents</span><span style="color:#000;font-weight:bold">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>        <span style="color:#000">document</span><span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#39;title&#39;</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;title&#39;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>    <span style="color:#000">solr</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">update</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">documents</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">commit</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#3465a4">True</span><span style="color:#000;font-weight:bold">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span style="color:#8f5902;font-style:italic"># Start here</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span style="color:#000">query</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#4e9a06">&#39;q&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;*:*&#39;</span><span style="color:#000;font-weight:bold">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span style="color:#8f5902;font-style:italic"># # Inserting index</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span style="color:#8f5902;font-style:italic"># insertIndex()</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span style="color:#8f5902;font-style:italic"># Selecting index</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span><span style="color:#000">selectIndex</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">query</span><span style="color:#000;font-weight:bold">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span><span style="color:#8f5902;font-style:italic"># # Updating index</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span><span style="color:#8f5902;font-style:italic"># updateIndex(query)</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">mysolr</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">Solr</span>
+
+<span style="color:#8f5902;font-style:italic"># We can also specify another connection like</span>
+<span style="color:#8f5902;font-style:italic"># solr = Solr() or solr = Solr(auth=(&#39;admin&#39;, &#39;admin&#39;))</span>
+<span style="color:#000">solr</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Solr</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;http://localhost:8983/solr/{core}&#34;</span><span style="color:#000;font-weight:bold">)</span>
+
+
+<span style="color:#204a87;font-weight:bold">def</span> <span style="color:#000">insertIndex</span><span style="color:#000;font-weight:bold">():</span>
+    <span style="color:#8f5902;font-style:italic"># Create documents</span>
+    <span style="color:#000">documents</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[</span>
+        <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#4e9a06">&#39;id&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#4e9a06">&#39;field1&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;field content&#39;</span>
+        <span style="color:#000;font-weight:bold">},</span>
+        <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#4e9a06">&#39;id&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#4e9a06">&#39;field2&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;field content&#39;</span>
+        <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#000;font-weight:bold">]</span>
+
+    <span style="color:#8f5902;font-style:italic"># # Index using json with auto commit</span>
+    <span style="color:#8f5902;font-style:italic"># solr.update(documents, &#39;json&#39;, commit=True)</span>
+
+    <span style="color:#000">solr</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">update</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">documents</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;json&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">commit</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#3465a4">False</span><span style="color:#000;font-weight:bold">)</span>  <span style="color:#8f5902;font-style:italic"># Index using json</span>
+    <span style="color:#000">solr</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">commit</span><span style="color:#000;font-weight:bold">()</span>  <span style="color:#8f5902;font-style:italic"># Manual commit</span>
+
+
+<span style="color:#204a87;font-weight:bold">def</span> <span style="color:#000">selectIndex</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">query</span><span style="color:#000;font-weight:bold">):</span>
+    <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">solr</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">search</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">**</span><span style="color:#000">query</span><span style="color:#000;font-weight:bold">)</span>
+
+    <span style="color:#8f5902;font-style:italic"># For every document in response.documents print document</span>
+    <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">document</span> <span style="color:#204a87;font-weight:bold">in</span> <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">documents</span><span style="color:#000;font-weight:bold">:</span>
+        <span style="color:#204a87;font-weight:bold">print</span> <span style="color:#000">document</span>
+
+
+<span style="color:#204a87;font-weight:bold">def</span> <span style="color:#000">updateIndex</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">query</span><span style="color:#000;font-weight:bold">):</span>
+    <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">solr</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">search</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">**</span><span style="color:#000">query</span><span style="color:#000;font-weight:bold">)</span>
+
+    <span style="color:#8f5902;font-style:italic"># For every document in response.documents update title</span>
+    <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">document</span> <span style="color:#204a87;font-weight:bold">in</span> <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">documents</span><span style="color:#000;font-weight:bold">:</span>
+        <span style="color:#000">document</span><span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#39;title&#39;</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;title&#39;</span>
+
+    <span style="color:#000">solr</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">update</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">documents</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">commit</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#3465a4">True</span><span style="color:#000;font-weight:bold">)</span>
+
+
+<span style="color:#8f5902;font-style:italic"># Start here</span>
+<span style="color:#000">query</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#4e9a06">&#39;q&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;*:*&#39;</span><span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic"># # Inserting index</span>
+<span style="color:#8f5902;font-style:italic"># insertIndex()</span>
+
+<span style="color:#8f5902;font-style:italic"># Selecting index</span>
+<span style="color:#000">selectIndex</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">query</span><span style="color:#000;font-weight:bold">)</span>
+
+<span style="color:#8f5902;font-style:italic"># # Updating index</span>
+<span style="color:#8f5902;font-style:italic"># updateIndex(query)</span></code></pre></div>
   </article>
 </section>
 

@@ -18,7 +18,7 @@
       
       <guid>https://renodesper.com/post/2014-07-26-browser-tunneling/</guid>
       <description>Prolog Okay, we will talk about tunneling. I have a task to do in a few days, I need to remote 3 servers which cannot be accessed from outside of my office. So, I guess I have to use a tunnel. With that being said, this is what I do to achieve that.
-Workaround 1$ ssh -D {port} -N {user}@{tunneled-ip-address} -p {tunneled-port} Now, if I want to access some specific web page which can only be accessed from my office I only need to change how my browser connect to the internet.</description>
+Workaround $ ssh -D {port} -N {user}@{tunneled-ip-address} -p {tunneled-port} Now, if I want to access some specific web page which can only be accessed from my office I only need to change how my browser connect to the internet.</description>
     </item>
     
   </channel>

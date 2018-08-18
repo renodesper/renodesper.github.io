@@ -71,9 +71,9 @@
     <p>We already talk about Vim a couple of time. Let&rsquo;s move to sed. Sed is a stream editor (we already know that) that I used today. This is the case, I have some file (php file) which is badly written by someone (maybe for pissing me off) by changing some characters on it. Let&rsquo;s say they change *.php into <em>.rrrr</em> wherever possible. It&rsquo;s not a big deal if the file is only have a few lines, but imagine if it has 2000 lines and I should edit every <em>.rrrr</em> into *.php. Let&rsquo;s assume that I&rsquo;m using a server, and even worse there many files that should be edited.</p>
 
 <p>Enough with the long talk, this is how I roll:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>sed -i <span style="color:#4e9a06">&#39;s/\.rrrr/\.php/g&#39;</span> file.php</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sed -i <span style="color:#4e9a06">&#39;s/\.rrrr/\.php/g&#39;</span> file.php</code></pre></div>
 <p>I also found an interesting sed &amp; find combo, it looks like this:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>find folder_path -type f -exec sed -i <span style="color:#4e9a06">&#39;s/\.rrrr/\.php/g&#39;</span> <span style="color:#ce5c00;font-weight:bold">{}</span> <span style="color:#4e9a06">\;</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">find folder_path -type f -exec sed -i <span style="color:#4e9a06">&#39;s/\.rrrr/\.php/g&#39;</span> <span style="color:#ce5c00;font-weight:bold">{}</span> <span style="color:#4e9a06">\;</span></code></pre></div>
 <p>Neat, isn&rsquo;t it? :)</p>
 
   </article>

@@ -69,11 +69,11 @@
     </header>
 
     <p>Mungkin ini terdengar aneh, tetapi saya mempunyai kebiasaan untuk menukar fungsi tombol yang ada di mouse walaupun sebetulnya saya bukan left-handed. Untuk menukar fungsi tombol yang ada di mouse kita bisa menggunakan perintah berikut:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ xmodmap -e <span style="color:#4e9a06">&#34;pointer = 3 2 1&#34;</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ xmodmap -e <span style="color:#4e9a06">&#34;pointer = 3 2 1&#34;</span></code></pre></div>
 <p>Ada masalah yang muncul jika kita menggunakan perintah di atas. Masalahnya adalah perintah tersebut akan menukar fungsi mouse secara umum, maksudnya adalah touchpad yang juga bisa digunakan selain mouse akan tertukar. Lalu bagaimana kita menyiasatinya? Kita bisa menggunakan fungsi <em>xinput</em>. Sebelumnya kita harus mencari tahu dulu id dari <em>touchpad</em> / <em>mouse</em> yang akan kita tukar fungsi tombolnya.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ xinput list</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ xinput list</code></pre></div>
 <p>Fungsi di atas dapat digunakan untuk melihat id dari device-device yang kita gunakan. Cari id untuk <em>touchpad</em> / <em>mouse</em> kita lalu gunakan perintah berikut untuk menukar fungsi tombolnya:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ xinput set-button-map <span style="color:#ce5c00;font-weight:bold">{</span>id<span style="color:#ce5c00;font-weight:bold">}</span> <span style="color:#0000cf;font-weight:bold">3</span> <span style="color:#0000cf;font-weight:bold">2</span> <span style="color:#0000cf;font-weight:bold">1</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ xinput set-button-map <span style="color:#ce5c00;font-weight:bold">{</span>id<span style="color:#ce5c00;font-weight:bold">}</span> <span style="color:#0000cf;font-weight:bold">3</span> <span style="color:#0000cf;font-weight:bold">2</span> <span style="color:#0000cf;font-weight:bold">1</span></code></pre></div>
   </article>
 </section>
 

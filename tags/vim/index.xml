@@ -19,7 +19,7 @@
       <guid>https://renodesper.com/post/2014-12-09-menghapus-baris-di-vim-2/</guid>
       <description>Case Terkadang kita ingin menghapus baris-baris tertentu yang hanya mengandung kata-kata yang spesifik. Contohnya jika ingin menghapus log tetapi menyisakan baris yang mengandung kata warning atau error atau lainnya.
 Solution Ada 2 ex command yang dapat kita gunakan yang berhubungan dengan masalah tersebut.
-11. :g/{pola yang ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan} 22. :v/{pola yang tidak ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan} Example 11. Untuk menghapus setiap baris yang mengandung pola &amp;#34;warning&amp;#34; kita bisa menggunakan: 2 :g/warning/d 3 42.</description>
+1. :g/{pola yang ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan} 2. :v/{pola yang tidak ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan} Example 1. Untuk menghapus setiap baris yang mengandung pola &amp;#34;warning&amp;#34; kita bisa menggunakan: :g/warning/d 2.</description>
     </item>
     
     <item>
@@ -29,7 +29,7 @@ Solution Ada 2 ex command yang dapat kita gunakan yang berhubungan dengan masala
       
       <guid>https://renodesper.com/post/2014-12-04-menghapus-baris-di-vim/</guid>
       <description>Case Terkadang kita perlu menghapus beberapa baris secara berurutan dan secara spesifik. Contohnya adalah jika kita ingin menghapus 491 baris dari baris ke 105. Seperti yang kita tahu, kita bisa menggunakan dd untuk menghapus 1 baris di Vim. Tapi bagaimana untuk kasus di atas? Mengutip dari suatu blog, penggunaan Vim itu seperti kita berbahasa (thanks for Daniel Miessler for your awesome post). Caranya seperti berikut:
-Solution 11. 491dd = menghapus 491 baris ke bawah dengan syarat posisi kita harus ada di baris 105 22.</description>
+Solution 1. 491dd = menghapus 491 baris ke bawah dengan syarat posisi kita harus ada di baris 105 2.</description>
     </item>
     
     <item>
