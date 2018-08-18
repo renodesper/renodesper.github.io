@@ -18,7 +18,7 @@
       
       <guid>https://renodesper.com/post/2014-07-21-erasing-partition-table/</guid>
       <description>Well, I always use gparted to erase my partition table and sometimes it fail miserably. The most accurate way is to use sgdisk. We can erase our partition table like this:
-$ sgdisk --zap-all /dev/sda  </description>
+1$ sgdisk --zap-all /dev/sda</description>
     </item>
     
   </channel>

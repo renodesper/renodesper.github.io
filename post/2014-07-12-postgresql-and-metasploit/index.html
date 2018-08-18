@@ -16,7 +16,7 @@
 
     <link rel="canonical" href="https://renodesper.com/post/2014-07-12-postgresql-and-metasploit/">
 
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Fira+Mono:400,700" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="https://renodesper.com/css/style.min.css">
 
@@ -29,7 +29,7 @@
 
     
 
-    <meta name="generator" content="Hugo 0.44" />
+    <meta name="generator" content="Hugo 0.46" />
   </head>
 
   <body class="">
@@ -75,62 +75,53 @@
 <h2 id="first-step">First Step</h2>
 
 <p>Hal pertama yang harus diperhatikan adalah database. Database yang digunakan oleh metasploit adalah postgresql. Setelah memasang postgresql di sistem yang kita miliki, kita harus membuat sebuah database yang nantinya akan digunakan oleh metasploit, begitu juga dengan user. Selain itu, hal penting lain yang harus diingat adalah port dimana database tersebut berjalan. Jika melihat di tutorial-tutorial yang sudah ada, maka port tersebut akan berbeda-beda. Oleh karena itu kita harus mencari tahu port yang digunakan oleh postgresql pada sistem yang kita miliki. Berikut contoh konfigurasi database yang saya gunakan.</p>
-
-<pre><code class="language-yaml">production:
-    adapter: postgresql
-    database: database_msf
-    username: user_msf
-    password: password_msf
-    host: 127.0.0.1
-    port: 5432
-    pool: 256
-    timeout: 5
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>production<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#f8f8f8">    </span>adapter<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8"> </span>postgresql<span style="color:#f8f8f8">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#f8f8f8">    </span>database<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8"> </span>database_msf<span style="color:#f8f8f8">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#f8f8f8">    </span>username<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8"> </span>user_msf<span style="color:#f8f8f8">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#f8f8f8">    </span>password<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8"> </span>password_msf<span style="color:#f8f8f8">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#f8f8f8">    </span>host<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8"> </span><span style="color:#0000cf;font-weight:bold">127.0</span>.<span style="color:#0000cf;font-weight:bold">0.1</span><span style="color:#f8f8f8">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span style="color:#f8f8f8">    </span>port<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8"> </span><span style="color:#0000cf;font-weight:bold">5432</span><span style="color:#f8f8f8">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span style="color:#f8f8f8">    </span>pool<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8"> </span><span style="color:#0000cf;font-weight:bold">256</span><span style="color:#f8f8f8">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span style="color:#f8f8f8">    </span>timeout<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8"> </span><span style="color:#0000cf;font-weight:bold">5</span></code></pre></div>
 <h2 id="second-step-final-step">Second Step (Final Step?)</h2>
 
 <p>Jika konfigurasi database sudah selesai dilakukan, maka selanjutnya kita cukup mengecek apakah metasploit sudah dapat mengakses database yang sudah kita sediakan.</p>
-
-<pre><code class="language-shell">~ msfconsole
-[-] Failed to connect to the database: could not connect to server: Connection refused
-    Is the server running on host &quot;127.0.0.1&quot; and accepting
-    TCP/IP connections on port 5432?
-
- ------------
-&lt; metasploit &gt;
- ------------
-       \   ,__,
-        \  (oo)___
-           (__)    )\
-              ||--|| *
-
-
-       =[ metasploit v4.9.3-dev [core:4.9 api:1.0]        ]
-+ -- --=[ 1318 exploits - 716 auxiliary - 210 post        ]
-+ -- --=[ 341 payloads - 35 encoders - 8 nops             ]
-+ -- --=[ Free Metasploit Pro trial: http://r-7.co/trymsp ]
-
-msf &gt;
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>~ msfconsole
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ce5c00;font-weight:bold">[</span>-<span style="color:#ce5c00;font-weight:bold">]</span> Failed to connect to the database: could not connect to server: Connection refused
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    Is the server running on host <span style="color:#4e9a06">&#34;127.0.0.1&#34;</span> and accepting
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    TCP/IP connections on port <span style="color:#0000cf;font-weight:bold">5432</span>?
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span> ------------
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>&lt; metasploit &gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span> ------------
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>       <span style="color:#4e9a06">\ </span>  ,__,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        <span style="color:#4e9a06">\ </span> <span style="color:#ce5c00;font-weight:bold">(</span>oo<span style="color:#ce5c00;font-weight:bold">)</span>___
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>           <span style="color:#ce5c00;font-weight:bold">(</span>__<span style="color:#ce5c00;font-weight:bold">)</span>    <span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#4e9a06">\
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#4e9a06"></span>              <span style="color:#ce5c00;font-weight:bold">||</span>--<span style="color:#ce5c00;font-weight:bold">||</span> *
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>       <span style="color:#ce5c00;font-weight:bold">=[</span> metasploit v4.9.3-dev <span style="color:#ce5c00;font-weight:bold">[</span>core:4.9 api:1.0<span style="color:#ce5c00;font-weight:bold">]</span>        <span style="color:#ce5c00;font-weight:bold">]</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>+ -- --<span style="color:#ce5c00;font-weight:bold">=[</span> <span style="color:#0000cf;font-weight:bold">1318</span> exploits - <span style="color:#0000cf;font-weight:bold">716</span> auxiliary - <span style="color:#0000cf;font-weight:bold">210</span> post        <span style="color:#ce5c00;font-weight:bold">]</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>+ -- --<span style="color:#ce5c00;font-weight:bold">=[</span> <span style="color:#0000cf;font-weight:bold">341</span> payloads - <span style="color:#0000cf;font-weight:bold">35</span> encoders - <span style="color:#0000cf;font-weight:bold">8</span> nops             <span style="color:#ce5c00;font-weight:bold">]</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>+ -- --<span style="color:#ce5c00;font-weight:bold">=[</span> Free Metasploit Pro trial: http://r-7.co/trymsp <span style="color:#ce5c00;font-weight:bold">]</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>msf &gt;</code></pre></div>
 <p>Seperti yang dapat kita lihat, metasploit masih belum dapat mengakses database yang kita buat. Ini disebabkan karena service postgresql belum kita nyalakan. Hal ini biasa terjadi jika kita memasang postgresql pada sistem yang kurang user friendly. Jangan dibandingkan dengan Kali yang sudah jelas-jelas menyediakan tools ini pada sistemnya.</p>
 
 <p>Hal yang harus kita lakukan selanjutnya adalah menjalankan service postgresql dan mencoba menjalankan lagi metasploit.</p>
-
-<pre><code class="language-shell">~ sudo systemctl start postgresql
-~ msfconsole
-
-       =[ metasploit v4.9.3-dev [core:4.9 api:1.0]        ]
-+ -- --=[ 1318 exploits - 716 auxiliary - 210 post        ]
-+ -- --=[ 341 payloads - 35 encoders - 8 nops             ]
-+ -- --=[ Free Metasploit Pro trial: http://r-7.co/trymsp ]
-
-msf &gt; db_status
-[*] postgresql connected to database_msf
-
-msf &gt;
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>~ sudo systemctl start postgresql
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>~ <span style="color:#000">msfconsole</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>       <span style="color:#ce5c00;font-weight:bold">=[</span> metasploit v4.9.3-dev <span style="color:#ce5c00;font-weight:bold">[</span>core:4.9 api:1.0<span style="color:#ce5c00;font-weight:bold">]</span>        <span style="color:#ce5c00;font-weight:bold">]</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>+ -- --<span style="color:#ce5c00;font-weight:bold">=[</span> <span style="color:#0000cf;font-weight:bold">1318</span> exploits - <span style="color:#0000cf;font-weight:bold">716</span> auxiliary - <span style="color:#0000cf;font-weight:bold">210</span> post        <span style="color:#ce5c00;font-weight:bold">]</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>+ -- --<span style="color:#ce5c00;font-weight:bold">=[</span> <span style="color:#0000cf;font-weight:bold">341</span> payloads - <span style="color:#0000cf;font-weight:bold">35</span> encoders - <span style="color:#0000cf;font-weight:bold">8</span> nops             <span style="color:#ce5c00;font-weight:bold">]</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>+ -- --<span style="color:#ce5c00;font-weight:bold">=[</span> Free Metasploit Pro trial: http://r-7.co/trymsp <span style="color:#ce5c00;font-weight:bold">]</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>msf &gt; db_status
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#ce5c00;font-weight:bold">[</span>*<span style="color:#ce5c00;font-weight:bold">]</span> postgresql connected to database_msf
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>msf &gt;</code></pre></div>
 <p>Daaaaan, metasploit sudah dapat terkoneksi dengan database. Happy hacking… :)</p>
 
   </article>

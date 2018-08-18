@@ -18,7 +18,7 @@
       
       <guid>https://renodesper.com/post/2014-10-15-new-vps-for-node/</guid>
       <description>Kita skip dulu bahasan tentang Vim yang ada di post sebelumnya. Kemarin saya baru saja menyewa sebuah vps yang nantinya akan saya gunakan untuk riset. VPS tersebut saya pasangkan Centos 7 x86_64. Hal pertama yang saya lakukan adalah memasang nodejs dan npm. Berikut langkah - langkah yang saya lakukan.
-Update sistem $ yum update  Instal EPEL (Extra Packages for Enterprise Linux) Repository $ yum install epel-release  Instal Node.</description>
+Update sistem 1$ yum update Instal EPEL (Extra Packages for Enterprise Linux) Repository 1$ yum install epel-release Instal Node.js dan npm 1$ yum install nodejs 2$ yum install npm Dokumentasi di situs Ghost mengatakan bahwa versi Node.</description>
     </item>
     
     <item>

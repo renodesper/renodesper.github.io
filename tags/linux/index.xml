@@ -27,7 +27,7 @@
       
       <guid>https://renodesper.com/post/2015-07-12-starting-screen-in-detach-mode/</guid>
       <description>For a few days I&amp;rsquo;ve been thinking about GNU/screen. I have some scripts that should be run inside screen everytime a reboot happened. I&amp;rsquo;ve been looking in stackoverflow, google, etc but haven&amp;rsquo;t found anything useful. So I&amp;rsquo;ve been stuck with this kind of script:
-$ screen -dmS screen_name some_command  It will create a new screen, run the command inside it and detach the screen. Well, it&amp;rsquo;s pretty good actually. But, when the command is done (finished or killed) then the screen will be terminated.</description>
+1$ screen -dmS screen_name some_command It will create a new screen, run the command inside it and detach the screen. Well, it&amp;rsquo;s pretty good actually. But, when the command is done (finished or killed) then the screen will be terminated.</description>
     </item>
     
     <item>
@@ -38,7 +38,7 @@ $ screen -dmS screen_name some_command  It will create a new screen, run the com
       <guid>https://renodesper.com/post/2015-06-13-untracking-the-tracked-ones/</guid>
       <description>Sudah beberapa hari saya mempunyai keinginan untuk memperbaiki projek yang saya lakukan. Secara tidak sengaja saya memasukkan virtual environment ke dalam repositori yang notabene seharusnya hanya diisi oleh projek yang saya kerjakan. Alhasil banyak sekali perubahan setiap saya mencoba mengerjakan kembali (bahkan) ketika saya tidak mengubah apapun.
 Berikut cara yang saya temukan untuk meng-untrack file / folder yang sudah di-track:
-$ git rm --cached -r env  Setelah itu, folder tersebut bisa kita masukkan ke dalam file .</description>
+1$ git rm --cached -r env Setelah itu, folder tersebut bisa kita masukkan ke dalam file .</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@ $ git rm --cached -r env  Setelah itu, folder tersebut bisa kita masukkan ke dal
       <guid>https://renodesper.com/post/2014-12-09-menghapus-baris-di-vim-2/</guid>
       <description>Case Terkadang kita ingin menghapus baris-baris tertentu yang hanya mengandung kata-kata yang spesifik. Contohnya jika ingin menghapus log tetapi menyisakan baris yang mengandung kata warning atau error atau lainnya.
 Solution Ada 2 ex command yang dapat kita gunakan yang berhubungan dengan masalah tersebut.
-1. :g/{pola yang ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan} 2. :v/{pola yang tidak ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan}  Example 1. Untuk menghapus setiap baris yang mengandung pola &amp;quot;warning&amp;quot; kita bisa menggunakan: :g/warning/d 2.</description>
+11. :g/{pola yang ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan} 22. :v/{pola yang tidak ingin dicari}/{perintah yang ingin dijalankan setelah pola ditemukan} Example 11. Untuk menghapus setiap baris yang mengandung pola &amp;#34;warning&amp;#34; kita bisa menggunakan: 2 :g/warning/d 3 42.</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ Solution Ada 2 ex command yang dapat kita gunakan yang berhubungan dengan masala
       
       <guid>https://renodesper.com/post/2014-12-04-menghapus-baris-di-vim/</guid>
       <description>Case Terkadang kita perlu menghapus beberapa baris secara berurutan dan secara spesifik. Contohnya adalah jika kita ingin menghapus 491 baris dari baris ke 105. Seperti yang kita tahu, kita bisa menggunakan dd untuk menghapus 1 baris di Vim. Tapi bagaimana untuk kasus di atas? Mengutip dari suatu blog, penggunaan Vim itu seperti kita berbahasa (thanks for Daniel Miessler for your awesome post). Caranya seperti berikut:
-Solution 1. 491dd = menghapus 491 baris ke bawah dengan syarat posisi kita harus ada di baris 105 2.</description>
+Solution 11. 491dd = menghapus 491 baris ke bawah dengan syarat posisi kita harus ada di baris 105 22.</description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@ Kita bisa menggunakan parameter -m untuk melakukan merging ataupun langsung meng
       <guid>https://renodesper.com/post/2014-09-18-pairing-logitech-devices-with-solaar/</guid>
       <description>A few minutes ago, a friend of mine shared something good on facebook. He use Solaar to get battery information from his Logitech mouse. So, what is Solaar?
 Quoted from Solaar website:
-&amp;quot;Solaar is a Linux device manager for Logitech&#39;s Unifying Receiver peripherals.&amp;quot;  It gives you information about your device&amp;rsquo;s technical detail like Wireless PID, Protocol, Polling Rate, Serial number, even your device&amp;rsquo;s firmware. And of course, it gives battery information.</description>
+1&amp;#34;Solaar is a Linux device manager for Logitech&amp;#39;s Unifying Receiver peripherals.&amp;#34; It gives you information about your device&amp;rsquo;s technical detail like Wireless PID, Protocol, Polling Rate, Serial number, even your device&amp;rsquo;s firmware. And of course, it gives battery information.</description>
     </item>
     
     <item>
@@ -99,7 +99,7 @@ Quoted from Solaar website:
       
       <guid>https://renodesper.com/post/2014-09-01-menukar-fungsi-tombol-mouse-atau-touchpad/</guid>
       <description>Mungkin ini terdengar aneh, tetapi saya mempunyai kebiasaan untuk menukar fungsi tombol yang ada di mouse walaupun sebetulnya saya bukan left-handed. Untuk menukar fungsi tombol yang ada di mouse kita bisa menggunakan perintah berikut:
-$ xmodmap -e &amp;quot;pointer = 3 2 1&amp;quot;  Ada masalah yang muncul jika kita menggunakan perintah di atas. Masalahnya adalah perintah tersebut akan menukar fungsi mouse secara umum, maksudnya adalah touchpad yang juga bisa digunakan selain mouse akan tertukar.</description>
+1$ xmodmap -e &amp;#34;pointer = 3 2 1&amp;#34; Ada masalah yang muncul jika kita menggunakan perintah di atas. Masalahnya adalah perintah tersebut akan menukar fungsi mouse secara umum, maksudnya adalah touchpad yang juga bisa digunakan selain mouse akan tertukar.</description>
     </item>
     
     <item>
@@ -109,7 +109,7 @@ $ xmodmap -e &amp;quot;pointer = 3 2 1&amp;quot;  Ada masalah yang muncul jika k
       
       <guid>https://renodesper.com/post/2014-08-11-grep-for-the-world/</guid>
       <description>Pernahkah kalian merasa kesulitan saat ingin mencari sebuah file yang kalian tidak tahu nama file-nya tetapi (sedikit) tahu apa isinya? Untuk mencari file yang misterius seperti ini kita bisa menggunakan grep. Berikut adalah contoh grep yang baru saja saya gunakan:
-$ grep -r -i &amp;quot;INSERT INTO news&amp;quot; *.py  Perintah di atas berguna untuk mencari file berakhiran &amp;ldquo;.py&amp;rdquo; yang di dalamnya mengandung kalimat &amp;ldquo;INSERT INTO news&amp;rdquo;. Opsi &amp;ldquo;-r&amp;rdquo; akan membuat grep dapat mencari file tersebut secara rekursif pada folder tersebut.</description>
+1$ grep -r -i &amp;#34;INSERT INTO news&amp;#34; *.py Perintah di atas berguna untuk mencari file berakhiran &amp;ldquo;.py&amp;rdquo; yang di dalamnya mengandung kalimat &amp;ldquo;INSERT INTO news&amp;rdquo;. Opsi &amp;ldquo;-r&amp;rdquo; akan membuat grep dapat mencari file tersebut secara rekursif pada folder tersebut.</description>
     </item>
     
     <item>
@@ -119,7 +119,7 @@ $ grep -r -i &amp;quot;INSERT INTO news&amp;quot; *.py  Perintah di atas berguna
       
       <guid>https://renodesper.com/post/2014-07-21-erasing-partition-table/</guid>
       <description>Well, I always use gparted to erase my partition table and sometimes it fail miserably. The most accurate way is to use sgdisk. We can erase our partition table like this:
-$ sgdisk --zap-all /dev/sda  </description>
+1$ sgdisk --zap-all /dev/sda</description>
     </item>
     
     <item>
@@ -129,7 +129,7 @@ $ sgdisk --zap-all /dev/sda  </description>
       
       <guid>https://renodesper.com/post/2014-04-12-what-should-i-learn-about-linux/</guid>
       <description>Okay, for now I want to list everything which I should learn about GNU/Linux in 2 part. Let&amp;rsquo;s say it for the beginner and advance.
-Beginner 1. Introduction to GNU/Linux 2. GNU/Linux Desktop Environment 3. Unix Command Line 4. Text Editing Tools 5. Shell Scripting 6. TCP/IP Networking Basics 7. X-Windows 8. Native GNU/Linux Compiler, Software ad Services  Advance 1. Filesystem Management 2. Software Management 3. User and Group Management 4.</description>
+Beginner 11. Introduction to GNU/Linux 22. GNU/Linux Desktop Environment 33. Unix Command Line 44. Text Editing Tools 55. Shell Scripting 66. TCP/IP Networking Basics 77. X-Windows 88. Native GNU/Linux Compiler, Software ad Services Advance 11. Filesystem Management 22. Software Management 33. User and Group Management 44.</description>
     </item>
     
   </channel>

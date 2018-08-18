@@ -16,7 +16,7 @@
 
     <link rel="canonical" href="https://renodesper.com/post/2014-07-14-livereload-integration/">
 
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Fira+Mono:400,700" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="https://renodesper.com/css/style.min.css">
 
@@ -29,7 +29,7 @@
 
     
 
-    <meta name="generator" content="Hugo 0.44" />
+    <meta name="generator" content="Hugo 0.46" />
   </head>
 
   <body class="">
@@ -80,19 +80,16 @@ Sublime Text and LiveReload Integration</p>
 <h2 id="any-text-editor-and-livereload-integration">Any Text Editor and LiveReload Integration</h2>
 
 <p>Pilihan selanjutnya yang dapat kita gunakan adalah python-livereload. Jika kita memilih untuk menggunakan python-livereload maka kita dapat menggunakan text editor apapun, contohnya kita bisa menggunakan Vim. Yang perlu kita lakukan hanyalah menjalankan livereload dengan menyertakan directory dimana file-file yang digunakan berada. Berikut adalah isi help dari python-livereload:</p>
-
-<pre><code class="language-shell">usage: livereload [-h] [-p PORT] [directory]
-
-Start a `livereload` server
-
-positional arguments:
-  directory             Directory to watch for changes
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -p PORT, --port PORT  Port to run `livereload` server on
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>usage: livereload <span style="color:#ce5c00;font-weight:bold">[</span>-h<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>-p PORT<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>directory<span style="color:#ce5c00;font-weight:bold">]</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>Start a <span style="color:#4e9a06">`</span>livereload<span style="color:#4e9a06">`</span> server
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>positional arguments:
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  directory             Directory to watch <span style="color:#204a87;font-weight:bold">for</span> changes
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>optional arguments:
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  -h, --help            show this <span style="color:#204a87">help</span> message and <span style="color:#204a87">exit</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  -p PORT, --port PORT  Port to run <span style="color:#4e9a06">`</span>livereload<span style="color:#4e9a06">`</span> server on</code></pre></div>
   </article>
 </section>
 

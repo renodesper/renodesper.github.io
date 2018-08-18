@@ -16,7 +16,7 @@
 
     <link rel="canonical" href="https://renodesper.com/post/2016-12-11-journey-to-functional-programming/">
 
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Fira+Mono:400,700" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="https://renodesper.com/css/style.min.css">
 
@@ -29,7 +29,7 @@
 
     
 
-    <meta name="generator" content="Hugo 0.44" />
+    <meta name="generator" content="Hugo 0.46" />
   </head>
 
   <body class="">
@@ -87,15 +87,12 @@
 <p>Untuk mempelajari Functional Programming saya harus mengubah cara pandang saya tentang bahasa pemrograman. Banyak sekali yang harus saya pelajari seperti apa itu <em>pure function</em>, <em>side effect</em>, <em>lazy evaluation</em>, dan hal-hal baru lainnya. Perjalanan saya masih panjang, semoga saja saya tidak akan menyerah di tengah jalan dan bisa memahami apa itu <em>Functional Programming</em>.</p>
 
 <p>Sebagai penutup, berikut akan saya sertakan kutipan kode haskell yang saya miliki:</p>
-
-<pre><code class="language-haskell">myWorkspaces :: [String]
-myWorkspaces = clickable . (map dzenEscape) $ [&quot; Base &quot;, &quot; Code &quot;, &quot; Chat &quot;, &quot; Office &quot;, &quot; Graphic &quot;, &quot; Game &quot;, &quot; Other &quot;]
-    where clickable l = [ &quot;^ca(1,xdotool key super+&quot;
-                        ++ show (n) ++ &quot;)&quot; ++ ws ++ &quot;^ca()&quot; |
-                        (i,ws) &lt;- zip [1..] l,
-                        let n = i ]
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#000">myWorkspaces</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#204a87;font-weight:bold">String</span><span style="color:#000;font-weight:bold">]</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#000">myWorkspaces</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">clickable</span> <span style="color:#ce5c00;font-weight:bold">.</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">map</span> <span style="color:#000">dzenEscape</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#34; Base &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; Code &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; Chat &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; Office &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; Graphic &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; Game &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; Other &#34;</span><span style="color:#000;font-weight:bold">]</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#204a87;font-weight:bold">where</span> <span style="color:#000">clickable</span> <span style="color:#000">l</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[</span> <span style="color:#4e9a06">&#34;^ca(1,xdotool key super+&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>                        <span style="color:#ce5c00;font-weight:bold">++</span> <span style="color:#000">show</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">n</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">++</span> <span style="color:#4e9a06">&#34;)&#34;</span> <span style="color:#ce5c00;font-weight:bold">++</span> <span style="color:#000">ws</span> <span style="color:#ce5c00;font-weight:bold">++</span> <span style="color:#4e9a06">&#34;^ca()&#34;</span> <span style="color:#ce5c00;font-weight:bold">|</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>                        <span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">ws</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#000">zip</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#ce5c00;font-weight:bold">..</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#000">l</span><span style="color:#000;font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>                        <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">n</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">i</span> <span style="color:#000;font-weight:bold">]</span></code></pre></div>
   </article>
 </section>
 

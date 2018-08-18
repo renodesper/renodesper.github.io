@@ -29,8 +29,8 @@ There is nothing special with solr configuration. The first thing you should do 
       <guid>https://renodesper.com/post/2014-04-30-play-with-apache-solr/</guid>
       <description>Okay, Solr. It&amp;rsquo;s the first time I play with Solr. I will never know about it if I don&amp;rsquo;t join this company. Let&amp;rsquo;s start with selecting index.
 Select We can select an index using this command:
-curl http://localhost:8983/solr/{core}/select?q=id:{id}  Insert / Update There are two commands to insert or update index. Just remember, the structure should be identical.
-Insert / Update with JSON curl http://localhost:8983/solr/{core}/update?commit=true -H &#39;Content-type:application/json&#39; -d &#39;[ { &amp;quot;id&amp;quot;:&amp;quot;{id}&amp;quot;, &amp;quot;desc&amp;quot;:&amp;quot;{description}&amp;quot; } ]&#39;  Insert / Update with XML curl http://localhost:8983/solr/{core}/update?</description>
+1curl http://localhost:8983/solr/{core}/select?q=id:{id} Insert / Update There are two commands to insert or update index. Just remember, the structure should be identical.
+Insert / Update with JSON 1curl http://localhost:8983/solr/{core}/update?commit=true -H &amp;#39;Content-type:application/json&amp;#39; -d 2&amp;#39;[ 3{ 4&amp;#34;id&amp;#34;:&amp;#34;{id}&amp;#34;, 5&amp;#34;desc&amp;#34;:&amp;#34;{description}&amp;#34; 6} 7]&amp;#39; Insert / Update with XML 1curl http://localhost:8983/solr/{core}/update?</description>
     </item>
     
   </channel>

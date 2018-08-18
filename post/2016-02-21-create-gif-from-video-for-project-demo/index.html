@@ -16,7 +16,7 @@
 
     <link rel="canonical" href="https://renodesper.com/post/2016-02-21-create-gif-from-video-for-project-demo/">
 
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Fira+Mono:400,700" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="https://renodesper.com/css/style.min.css">
 
@@ -29,7 +29,7 @@
 
     
 
-    <meta name="generator" content="Hugo 0.44" />
+    <meta name="generator" content="Hugo 0.46" />
   </head>
 
   <body class="">
@@ -84,10 +84,7 @@
 <p>The first thing we need to do is create a video with Simple Screen Recorder / similar software. I make an avi video, but I guess it will work for any kind (but maybe not all kind) of video format. If we use Simple Screen Recorder, we need to specify video input, output format, output location, and frame rate.</p>
 
 <p>The next step is to use ffmpeg to create gif file. Let&rsquo;s assume that the video is rec.avi and we want to create rec.gif, also we want the gif width to be 800px with the appropriate height. Do not forget to specify the frame rate, this time we will use 15 fps. This is the command I use to create the gif:</p>
-
-<pre><code class="language-shell">ffmpeg -i rec.avi -r 15 -vf scale=800:-1 rec.gif
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ffmpeg -i rec.avi -r <span style="color:#0000cf;font-weight:bold">15</span> -vf <span style="color:#000">scale</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">800</span>:-1 rec.gif</code></pre></div>
 <p>Now, we can send that gif to show them the demo.</p>
 
   </article>

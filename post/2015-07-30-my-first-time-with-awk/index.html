@@ -16,7 +16,7 @@
 
     <link rel="canonical" href="https://renodesper.com/post/2015-07-30-my-first-time-with-awk/">
 
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Fira+Mono:400,700" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="https://renodesper.com/css/style.min.css">
 
@@ -29,7 +29,7 @@
 
     
 
-    <meta name="generator" content="Hugo 0.44" />
+    <meta name="generator" content="Hugo 0.46" />
   </head>
 
   <body class="">
@@ -69,10 +69,7 @@
     </header>
 
     <p>Tonight we&rsquo;ll talk about Awk. Actually, I&rsquo;ve know it for a long time but I never had any chance to explore it. A few days ago, I need to remove some duplicate lines from a file BUT it should not be sorted. We can also use sort and uniq, but it will end up sorted before we got an actual result. I&rsquo;m using this kind of script to remove it:</p>
-
-<pre><code class="language-shell">$ awk '!x[$0]++' test_file.log &gt; result_file.log
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ awk <span style="color:#4e9a06">&#39;!x[$0]++&#39;</span> test_file.log &gt; result_file.log</code></pre></div>
 <p>How is it? Interested to learn Awk even more?</p>
 
   </article>

@@ -18,7 +18,7 @@
       
       <guid>https://renodesper.com/post/2014-08-11-grep-for-the-world/</guid>
       <description>Pernahkah kalian merasa kesulitan saat ingin mencari sebuah file yang kalian tidak tahu nama file-nya tetapi (sedikit) tahu apa isinya? Untuk mencari file yang misterius seperti ini kita bisa menggunakan grep. Berikut adalah contoh grep yang baru saja saya gunakan:
-$ grep -r -i &amp;quot;INSERT INTO news&amp;quot; *.py  Perintah di atas berguna untuk mencari file berakhiran &amp;ldquo;.py&amp;rdquo; yang di dalamnya mengandung kalimat &amp;ldquo;INSERT INTO news&amp;rdquo;. Opsi &amp;ldquo;-r&amp;rdquo; akan membuat grep dapat mencari file tersebut secara rekursif pada folder tersebut.</description>
+1$ grep -r -i &amp;#34;INSERT INTO news&amp;#34; *.py Perintah di atas berguna untuk mencari file berakhiran &amp;ldquo;.py&amp;rdquo; yang di dalamnya mengandung kalimat &amp;ldquo;INSERT INTO news&amp;rdquo;. Opsi &amp;ldquo;-r&amp;rdquo; akan membuat grep dapat mencari file tersebut secara rekursif pada folder tersebut.</description>
     </item>
     
   </channel>

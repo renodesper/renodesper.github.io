@@ -18,7 +18,7 @@
       
       <guid>https://renodesper.com/post/2015-07-12-starting-screen-in-detach-mode/</guid>
       <description>For a few days I&amp;rsquo;ve been thinking about GNU/screen. I have some scripts that should be run inside screen everytime a reboot happened. I&amp;rsquo;ve been looking in stackoverflow, google, etc but haven&amp;rsquo;t found anything useful. So I&amp;rsquo;ve been stuck with this kind of script:
-$ screen -dmS screen_name some_command  It will create a new screen, run the command inside it and detach the screen. Well, it&amp;rsquo;s pretty good actually. But, when the command is done (finished or killed) then the screen will be terminated.</description>
+1$ screen -dmS screen_name some_command It will create a new screen, run the command inside it and detach the screen. Well, it&amp;rsquo;s pretty good actually. But, when the command is done (finished or killed) then the screen will be terminated.</description>
     </item>
     
   </channel>
