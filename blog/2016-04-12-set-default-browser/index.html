@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="@renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="https://renodesper.com">
+    <title>
+  Set Default Browser · A Place to Remember
+</title>
+
+    <link rel="canonical" href="https://renodesper.com/blog/2016-04-12-set-default-browser/">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Fira+Mono:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://renodesper.com/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.48" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://renodesper.com">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="blog">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="about">About Me</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Set Default Browser</h1>
+    </header>
+
+    
+
+<p>For a few month after I did a fresh install of Archlinux, I found that when I try to click a link inside any application, it will call google chrome. So, I decide to fix it today. It actually easy. We can set our default browser with <em>xdg-mime</em> which is owned by <em>xdg-utils</em>.</p>
+
+<h2 id="requirement">Requirement</h2>
+
+<ul>
+<li>xdg-utils</li>
+</ul>
+
+<h2 id="what-i-did">What I did</h2>
+
+<p>We can set out default browser with these commands:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ xdg-mime default firefox.desktop x-scheme-handler/http</code></pre></div>
+<p>And for https:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ xdg-mime default firefox.desktop x-scheme-handler/https</code></pre></div>
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

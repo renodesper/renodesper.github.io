@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="@renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="https://renodesper.com">
+    <title>
+  My First Time with Awk · A Place to Remember
+</title>
+
+    <link rel="canonical" href="https://renodesper.com/blog/2015-07-30-my-first-time-with-awk/">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Fira+Mono:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://renodesper.com/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.48" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://renodesper.com">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="blog">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="about">About Me</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>My First Time with Awk</h1>
+    </header>
+
+    <p>Tonight we&rsquo;ll talk about Awk. Actually, I&rsquo;ve know it for a long time but I never had any chance to explore it. A few days ago, I need to remove some duplicate lines from a file BUT it should not be sorted. We can also use sort and uniq, but it will end up sorted before we got an actual result. I&rsquo;m using this kind of script to remove it:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ awk <span style="color:#4e9a06">&#39;!x[$0]++&#39;</span> test_file.log &gt; result_file.log</code></pre></div>
+<p>How is it? Interested to learn Awk even more?</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

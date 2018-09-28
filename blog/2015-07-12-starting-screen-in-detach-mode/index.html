@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="@renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="https://renodesper.com">
+    <title>
+  Starting Screen in Detach Mode · A Place to Remember
+</title>
+
+    <link rel="canonical" href="https://renodesper.com/blog/2015-07-12-starting-screen-in-detach-mode/">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Fira+Mono:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://renodesper.com/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.48" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://renodesper.com">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="blog">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="about">About Me</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Starting Screen in Detach Mode</h1>
+    </header>
+
+    <p>For a few days I&rsquo;ve been thinking about GNU/screen. I have some scripts that should be run inside screen everytime a reboot happened. I&rsquo;ve been looking in stackoverflow, google, etc but haven&rsquo;t found anything useful. So I&rsquo;ve been stuck with this kind of script:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ screen -dmS screen_name some_command</code></pre></div>
+<p>It will create a new screen, run the command inside it and detach the screen. Well, it&rsquo;s pretty good actually. But, when the command is done (finished or killed) then the screen will be terminated. I won&rsquo;t know whether there is an error in my command or not. So, after a bit more googling I found about -X parameter and stuff. And now, my script looks like this:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ screen -dmS screen_name
+$ screen -S screen_name -X stuff <span style="color:#4e9a06">&#39;some_command\n&#39;</span></code></pre></div>
+<p>the first line will create new screen and give it a name &lsquo;screen_name&rsquo; the second line will send &lsquo;some_command\n&rsquo; string to screen which similar with typing some_command and hitting enter</p>
+
+<p>I can even send break (Ctrl-C) into screen with this:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ screen -S screen_name -X stuff <span style="color:#4e9a06">&#39;^C&#39;</span></code></pre></div>
+<p>With this, I can create a script that can modify whatever happen inside the screen. I can combine it with fabric if I want.</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

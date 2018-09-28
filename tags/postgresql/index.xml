@@ -13,10 +13,10 @@
     
     <item>
       <title>Postgresql and Metasploit</title>
-      <link>https://renodesper.com/post/2014-07-12-postgresql-and-metasploit/</link>
+      <link>https://renodesper.com/blog/2014-07-12-postgresql-and-metasploit/</link>
       <pubDate>Sat, 12 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://renodesper.com/post/2014-07-12-postgresql-and-metasploit/</guid>
+      <guid>https://renodesper.com/blog/2014-07-12-postgresql-and-metasploit/</guid>
       <description>Dulu saya selalu penasaran bagaimana caranya menggunakan metasploit dan konfigurasi database-nya. Tetapi ternyata selama ini saya hanya kurang paham dengan alurnya. Berikut saya tuliskan apa yang sudah saya pahami saat ini.
 First Step Hal pertama yang harus diperhatikan adalah database. Database yang digunakan oleh metasploit adalah postgresql. Setelah memasang postgresql di sistem yang kita miliki, kita harus membuat sebuah database yang nantinya akan digunakan oleh metasploit, begitu juga dengan user.</description>
     </item>

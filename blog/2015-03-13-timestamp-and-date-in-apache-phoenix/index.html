@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="@renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="https://renodesper.com">
+    <title>
+  Timestamp and Date in Apache Phoenix · A Place to Remember
+</title>
+
+    <link rel="canonical" href="https://renodesper.com/blog/2015-03-13-timestamp-and-date-in-apache-phoenix/">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Fira+Mono:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://renodesper.com/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.48" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://renodesper.com">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="blog">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="about">About Me</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Timestamp and Date in Apache Phoenix</h1>
+    </header>
+
+    <p>For a several days I&rsquo;ve played with Apache Phoenix. Instead of playing with HBase directly, Phoenix helped me simplify HBase query (well, just a bit). What I want to tell you now is not about Phoenix in general but the difference between Timestamp and Date in Phoenix.</p>
+
+<p>I have 2 column which have different format. I thought that both column should have different data type as well. Those format is like this:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">1. yyyy-MM-dd HH:mm:ss
+2. yyyy-MM-dd</pre></div>
+<p>When I use Date type for the 1st format, it doesn&rsquo;t show me the right result. It only shows me year, month, and day of the data like this: 2015-01-31. But in Timestamp, it shows me the right result. So, my assumption is I should be using Timestamp when I want to include the time (hour, minute, and second) of the data, and the rest should be use Date type.</p>
+
+<p>Unfortunately, I found that my data in HBase is inconsistent. It has 7 hours difference with the actual data. The culprit is the difference of data type. The documentation says that I should include format type and timezone when I want to insert the date with Phoenix (in timestamp). So, instead of <em>to_date(&lsquo;2015-01-31 13:17:14&rsquo;)</em>, I should use <em>to_date(&lsquo;2015-01-31 13:17:14&rsquo;, &lsquo;yyyy-MM-dd HH:mm:ss&rsquo;, &lsquo;GMT+7&rsquo;)</em>. But that is a bit long and there is too many code to change, also I should remember which column have Timestamp and Date type.</p>
+
+<p>At last, after hundreds thousand data insertion (wrong data of course), I found that I can also use Date type in every column as long as I explicitly write the format when I try to get the data with Phoenix.</p>
+
+<p>That&rsquo;s all I wanna share, I hope it&rsquo;s useful.</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

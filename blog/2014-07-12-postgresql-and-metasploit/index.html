@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="@renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="https://renodesper.com">
+    <title>
+  Postgresql and Metasploit · A Place to Remember
+</title>
+
+    <link rel="canonical" href="https://renodesper.com/blog/2014-07-12-postgresql-and-metasploit/">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Fira+Mono:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://renodesper.com/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.48" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://renodesper.com">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="blog">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="about">About Me</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Postgresql and Metasploit</h1>
+    </header>
+
+    
+
+<p>Dulu saya selalu penasaran bagaimana caranya menggunakan metasploit dan konfigurasi database-nya. Tetapi ternyata selama ini saya hanya kurang paham dengan alurnya. Berikut saya tuliskan apa yang sudah saya pahami saat ini.</p>
+
+<h2 id="first-step">First Step</h2>
+
+<p>Hal pertama yang harus diperhatikan adalah database. Database yang digunakan oleh metasploit adalah postgresql. Setelah memasang postgresql di sistem yang kita miliki, kita harus membuat sebuah database yang nantinya akan digunakan oleh metasploit, begitu juga dengan user. Selain itu, hal penting lain yang harus diingat adalah port dimana database tersebut berjalan. Jika melihat di tutorial-tutorial yang sudah ada, maka port tersebut akan berbeda-beda. Oleh karena itu kita harus mencari tahu port yang digunakan oleh postgresql pada sistem yang kita miliki. Berikut contoh konfigurasi database yang saya gunakan.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">production<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>adapter<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>postgresql<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>database<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>database_msf<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>username<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>user_msf<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>password<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>password_msf<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>host<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">127.0</span>.<span style="color:#0000cf;font-weight:bold">0.1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>port<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">5432</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>pool<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">256</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>timeout<span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">5</span></code></pre></div>
+<h2 id="second-step-final-step">Second Step (Final Step?)</h2>
+
+<p>Jika konfigurasi database sudah selesai dilakukan, maka selanjutnya kita cukup mengecek apakah metasploit sudah dapat mengakses database yang sudah kita sediakan.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">~ msfconsole
+<span style="color:#ce5c00;font-weight:bold">[</span>-<span style="color:#ce5c00;font-weight:bold">]</span> Failed to connect to the database: could not connect to server: Connection refused
+    Is the server running on host <span style="color:#4e9a06">&#34;127.0.0.1&#34;</span> and accepting
+    TCP/IP connections on port <span style="color:#0000cf;font-weight:bold">5432</span>?
+
+ ------------
+&lt; metasploit &gt;
+ ------------
+       <span style="color:#4e9a06">\ </span>  ,__,
+        <span style="color:#4e9a06">\ </span> <span style="color:#ce5c00;font-weight:bold">(</span>oo<span style="color:#ce5c00;font-weight:bold">)</span>___
+           <span style="color:#ce5c00;font-weight:bold">(</span>__<span style="color:#ce5c00;font-weight:bold">)</span>    <span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>              <span style="color:#ce5c00;font-weight:bold">||</span>--<span style="color:#ce5c00;font-weight:bold">||</span> *
+
+
+       <span style="color:#ce5c00;font-weight:bold">=[</span> metasploit v4.9.3-dev <span style="color:#ce5c00;font-weight:bold">[</span>core:4.9 api:1.0<span style="color:#ce5c00;font-weight:bold">]</span>        <span style="color:#ce5c00;font-weight:bold">]</span>
++ -- --<span style="color:#ce5c00;font-weight:bold">=[</span> <span style="color:#0000cf;font-weight:bold">1318</span> exploits - <span style="color:#0000cf;font-weight:bold">716</span> auxiliary - <span style="color:#0000cf;font-weight:bold">210</span> post        <span style="color:#ce5c00;font-weight:bold">]</span>
++ -- --<span style="color:#ce5c00;font-weight:bold">=[</span> <span style="color:#0000cf;font-weight:bold">341</span> payloads - <span style="color:#0000cf;font-weight:bold">35</span> encoders - <span style="color:#0000cf;font-weight:bold">8</span> nops             <span style="color:#ce5c00;font-weight:bold">]</span>
++ -- --<span style="color:#ce5c00;font-weight:bold">=[</span> Free Metasploit Pro trial: http://r-7.co/trymsp <span style="color:#ce5c00;font-weight:bold">]</span>
+
+msf &gt;</code></pre></div>
+<p>Seperti yang dapat kita lihat, metasploit masih belum dapat mengakses database yang kita buat. Ini disebabkan karena service postgresql belum kita nyalakan. Hal ini biasa terjadi jika kita memasang postgresql pada sistem yang kurang user friendly. Jangan dibandingkan dengan Kali yang sudah jelas-jelas menyediakan tools ini pada sistemnya.</p>
+
+<p>Hal yang harus kita lakukan selanjutnya adalah menjalankan service postgresql dan mencoba menjalankan lagi metasploit.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">~ sudo systemctl start postgresql
+~ <span style="color:#000">msfconsole</span>
+
+       <span style="color:#ce5c00;font-weight:bold">=[</span> metasploit v4.9.3-dev <span style="color:#ce5c00;font-weight:bold">[</span>core:4.9 api:1.0<span style="color:#ce5c00;font-weight:bold">]</span>        <span style="color:#ce5c00;font-weight:bold">]</span>
++ -- --<span style="color:#ce5c00;font-weight:bold">=[</span> <span style="color:#0000cf;font-weight:bold">1318</span> exploits - <span style="color:#0000cf;font-weight:bold">716</span> auxiliary - <span style="color:#0000cf;font-weight:bold">210</span> post        <span style="color:#ce5c00;font-weight:bold">]</span>
++ -- --<span style="color:#ce5c00;font-weight:bold">=[</span> <span style="color:#0000cf;font-weight:bold">341</span> payloads - <span style="color:#0000cf;font-weight:bold">35</span> encoders - <span style="color:#0000cf;font-weight:bold">8</span> nops             <span style="color:#ce5c00;font-weight:bold">]</span>
++ -- --<span style="color:#ce5c00;font-weight:bold">=[</span> Free Metasploit Pro trial: http://r-7.co/trymsp <span style="color:#ce5c00;font-weight:bold">]</span>
+
+msf &gt; db_status
+<span style="color:#ce5c00;font-weight:bold">[</span>*<span style="color:#ce5c00;font-weight:bold">]</span> postgresql connected to database_msf
+
+msf &gt;</code></pre></div>
+<p>Daaaaan, metasploit sudah dapat terkoneksi dengan database. Happy hacking… :)</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

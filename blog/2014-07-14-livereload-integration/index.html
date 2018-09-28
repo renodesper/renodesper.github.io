@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="@renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="https://renodesper.com">
+    <title>
+  LiveReload Integration · A Place to Remember
+</title>
+
+    <link rel="canonical" href="https://renodesper.com/blog/2014-07-14-livereload-integration/">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Fira+Mono:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://renodesper.com/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.48" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://renodesper.com">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="blog">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="about">About Me</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>LiveReload Integration</h1>
+    </header>
+
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Apa itu livereload? LiveReload adalah sebuah tool yang dapat kita gunakan untuk melakukan reload (refresh) pada browser sesuai dengan trigger tertentu. Misalnya jika sebuah file disimpan, jika ada sebuah GET request, bahkan kita juga bisa menambahkan delay sebelum reload dijalankan. Lalu hal apa saja yang harus kita lakukan untuk dapat menggunakan livereload?
+Sublime Text and LiveReload Integration</p>
+
+<p>Oke, ada 2 pilihan server yang bisa kita (saya sudah coba) gunakan. Yang pertama adalah plugin livereload yang sudah terintegrasi dengan sublime text. Dengan plugin ini, kita bisa menjalankan dan mematikan livereload langsung dari sublime text dan livereload langsung aktif begitu sublime text dinyalakan. Plugin ini bisa didownload di LiveReload.</p>
+
+<h2 id="any-text-editor-and-livereload-integration">Any Text Editor and LiveReload Integration</h2>
+
+<p>Pilihan selanjutnya yang dapat kita gunakan adalah python-livereload. Jika kita memilih untuk menggunakan python-livereload maka kita dapat menggunakan text editor apapun, contohnya kita bisa menggunakan Vim. Yang perlu kita lakukan hanyalah menjalankan livereload dengan menyertakan directory dimana file-file yang digunakan berada. Berikut adalah isi help dari python-livereload:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">usage: livereload <span style="color:#ce5c00;font-weight:bold">[</span>-h<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>-p PORT<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>directory<span style="color:#ce5c00;font-weight:bold">]</span>
+
+Start a <span style="color:#4e9a06">`</span>livereload<span style="color:#4e9a06">`</span> server
+
+positional arguments:
+  directory             Directory to watch <span style="color:#204a87;font-weight:bold">for</span> changes
+
+optional arguments:
+  -h, --help            show this <span style="color:#204a87">help</span> message and <span style="color:#204a87">exit</span>
+  -p PORT, --port PORT  Port to run <span style="color:#4e9a06">`</span>livereload<span style="color:#4e9a06">`</span> server on</code></pre></div>
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>
