@@ -17,7 +17,7 @@
       <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://renodesper.com/blog/2018-06-17-automate-nsq-statistic-reporting-with-haskell/</guid>
-      <description>Several months ago, I was given a task to make a report which consist statistic of several NSQ topics. This job is not really, We just need to check NSQ statistic every hour and write it down into shared excel file. After several times checking manually, I thought that I can automate it easily. So, I made a script to automate most of if using Go. You find my code right here.</description>
+      <description>Several months ago, I was given a task to make a report which consist statistic of several NSQ topics. This job is not really hard, we just need to check NSQ statistic every hour and write it down into shared excel file. After several times checking manually, I thought that I can automate it easily. So, I made a script to automate most of if using Go. You can find my code right here.</description>
     </item>
     
   </channel>

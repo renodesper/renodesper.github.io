@@ -70,17 +70,17 @@
 
     
 
-<p>Several months ago, I was given a task to make a report which consist statistic of several NSQ topics. This job is not really, We just need to check NSQ statistic every hour and write it down into shared excel file. After several times checking manually, I thought that I can automate it easily. So, I made a script to automate most of if using Go. You find my code right <a href="https://gitlab.com/renodesper/nsq-message-checker-go">here</a>. The code is just work, I haven&rsquo;t check it again after I made it, so forgive me if it looks bad.</p>
+<p>Several months ago, I was given a task to make a report which consist statistic of several NSQ topics. This job is not really hard, we just need to check NSQ statistic every hour and write it down into shared excel file. After several times checking manually, I thought that I can automate it easily. So, I made a script to automate most of if using Go. You can find my code right <a href="https://gitlab.com/renodesper/nsq-message-checker-go">here</a>. The code is just work, I haven&rsquo;t check it again after I made it, so forgive me if it looks bad.</p>
 
-<p>Well, the title is about haskell, so let&rsquo;s get into it. After I made that golang project, I thought that maybe I can try to learn another language by making several small project like <a href="https://gitlab.com/renodesper/nsq-message-checker-go">nsq-message-checker-go</a>. Here we go, this is how I made the haskell version of <a href="https://gitlab.com/renodesper/nsq-message-checker-go">nsq-message-checker-go</a>. You can find the the completed code in <a href="https://gitlab.com/renodesper/nsq-message-checker-hs">gitlab</a>.</p>
+<p>Well, the title is about haskell, so let&rsquo;s get into it. After I made that golang project, I thought that maybe I can try to continue learning about Haskell by making several small project like <a href="https://gitlab.com/renodesper/nsq-message-checker-go">nsq-message-checker-go</a>. Here we go, this is how I made the Haskell version of <a href="https://gitlab.com/renodesper/nsq-message-checker-go">nsq-message-checker-go</a>. You can find the the completed code in <a href="https://gitlab.com/renodesper/nsq-message-checker-hs">gitlab</a>.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#000">main</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87">()</span>
-<span style="color:#000">main</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;Let&#39;s code some haskell&#34;</span></code></pre></div>
+<span style="color:#000">main</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;Let&#39;s code some Haskell&#34;</span></code></pre></div>
 <h1 id="what-we-need">What we need</h1>
 
 <ol>
 <li>Stack. I don&rsquo;t know any other way to code haskell without stack, so bear with it.</li>
 <li>Intero. This is the best interactive development for haskell, you can complaint to the one that influence me if you have different opinion.</li>
-<li>Text Editor which can be use Intero painlessly. I use VS Code with Haskero plugin, but you can also use Vim or Emacs. Emacs works out of the box but if you can integrate Vim/NeoVim with Intero, I will really appreciate if you tell me how to do that.</li>
+<li>Text Editor which can use Intero painlessly. I use VS Code with Haskero plugin, but you can also use Vim or Emacs. Emacs works out of the box but if you can integrate Vim/NeoVim with Intero, I will really appreciate if you tell me how to do that.</li>
 </ol>
 
 <h1 id="start-coding">Start Coding</h1>
@@ -462,7 +462,7 @@ Completed 2 action(s).</code></pre></div>
   <span style="color:#000">putStrLn</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">responseBody</span> <span style="color:#000">response</span></code></pre></div>
 <h1 id="how-to-use-it">How to use it?</h1>
 
-<p>I already provide a Make file. So, to use it you can just build the project and execute the <strong>run</strong> section of the Make file. You can also copy the command and use the custom argument which we made before to process a specific topic.</p>
+<p>I already provide a Make file. So, you can just build the project and execute the <strong>run</strong> section of the Makefile. You can also copy the command and use the custom argument which we made before to process a specific topic.</p>
 
 <h2 id="build-the-project">Build the project</h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">❯ make build</code></pre></div>
