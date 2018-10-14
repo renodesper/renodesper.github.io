@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="@renodesper">
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="https://renodesper.com">
+    <title>
+  Automate Everything - Automate NSQ Statistic reporting with Haskell · A Place to Remember
+</title>
+
+    <link rel="canonical" href="https://renodesper.com/blog/2018-06-17-automate-nsq-statistic-reporting-with-haskell/">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Fira+Mono:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://renodesper.com/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://renodesper.com/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.49.2" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://renodesper.com">
+      A Place to Remember
+    </a>
+    
+    <ul class="navigation-list  float-right ">
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="blog">Blog</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="tags">Tags</a>
+      </li>
+      
+      <li class="navigation-item">
+        <a class="navigation-link" href="about">About Me</a>
+      </li>
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Automate Everything - Automate NSQ Statistic reporting with Haskell</h1>
+    </header>
+
+    
+
+<p>Several days ago, I was given a task to make a report which consist statistic of several NSQ topics. This job is not really, We just need to check NSQ statistic every hour and write it down into shared excel file. After several times checking manually, I thought that I can automate it easily. So, I made a script to automate most of if using Go. You find my code right <a href="https://gitlab.com/renodesper/nsq-message-checker-go">here</a>. The code is just work, I haven&rsquo;t check it again after I made it, so forgive me if it looks bad.</p>
+
+<p>Well, the title is about haskell, so let&rsquo;s get into it. After I made that golang project, I thought that maybe I can try to learn another language by making several small project like <a href="https://gitlab.com/renodesper/nsq-message-checker-go">nsq-message-checker-go</a>. Here we go, this is how I made the haskell version of <a href="https://gitlab.com/renodesper/nsq-message-checker-go">nsq-message-checker-go</a>. You can find the the completed code in <a href="https://gitlab.com/renodesper/nsq-message-checker-hs">gitlab</a>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#000">main</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87">()</span>
+<span style="color:#000">main</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;Let&#39;s code some haskell&#34;</span></code></pre></div>
+<h1 id="what-we-need">What we need</h1>
+
+<ol>
+<li>Stack. I don&rsquo;t know any other way to code haskell without stack, so bear with it.</li>
+<li>Intero. This is the best interactive development for haskell, you can complaint to the one that influence me if you have different opinion.</li>
+<li>Text Editor which can be use Intero painlessly. I use VS Code with Haskero plugin, but you can also use Vim or Emacs. Emacs works out of the box but if you can integrate Vim/NeoVim with Intero, I will really appreciate if you tell me how to do that.</li>
+</ol>
+
+<h1 id="start-coding">Start Coding</h1>
+
+<h2 id="project-setup">Project Setup</h2>
+
+<p>Let&rsquo;s create a new project using stack.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">❯ stack new nsq-message-checker</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-comment" data-lang="comment"># output
+Downloading template &#34;new-template&#34; to create project &#34;nsq-message-checker&#34; in nsq-message-checker/ ...
+Looking for .cabal or package.yaml files to use to init the project.
+Using cabal packages:
+- nsq-message-checker/
+
+Selecting the best among 13 snapshots...
+
+Downloaded lts-11.13 build plan.
+* Matches lts-11.13
+
+Selected resolver: lts-11.13
+Initialising configuration using resolver: lts-11.13
+Total number of user packages considered: 1
+Writing configuration to file: nsq-message-checker/stack.yaml
+All done.</code></pre></div>
+<p>After the project successfully created, we should try to build the template project.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Do not forget to run `stack setup` first
+</span><span style="color:#8f5902;font-style:italic"></span>❯ stack setup
+❯ stack build</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-comment" data-lang="comment"># output
+...
+Registering library for nsq-message-checker-0.1.0.0..</code></pre></div>
+<p>If you see that kind of line in the last output, it means that the build is succeed.</p>
+
+<h2 id="intero-setup">Intero Setup</h2>
+
+<p>We should try whether intero can work perfectly. Intero will automatically downloaded and installed if we use emacs with haskell layer, but because we are using VS Code, we should build it first using stack.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">❯ stack build intero</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-comment" data-lang="comment"># output
+haskeline-0.7.4.2: using precompiled package
+intero-0.1.31: download
+intero-0.1.31: configure
+intero-0.1.31: build
+intero-0.1.31: copy/register
+Completed 2 action(s).</code></pre></div>
+<p>After we reload the VS Code, haskero will automatically initialized and run intero in background.</p>
+
+<h2 id="misc-files">Misc. Files</h2>
+
+<p>I also add/update several files manually before I start coding. You can see these files on the repository. These files are:</p>
+
+<ol>
+<li>.editorconfig</li>
+<li>.gitignore</li>
+<li>.env.example</li>
+<li>Makefile</li>
+</ol>
+
+<blockquote>
+<p>I use .env file for the configuration. That&rsquo;s why I also use <strong>dotenv</strong> library to parse it.</p>
+</blockquote>
+
+<h2 id="command-line-argument-s">Command Line Argument[s]</h2>
+
+<p>My idea is to read the topic[s] from command line. So, to make a report for X topic we can use this kind of command:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">❯ stack <span style="color:#204a87">exec</span> nsq-message-checker -- topic X</code></pre></div>
+<p>And we can also make report for all topic at once like this:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">❯ stack <span style="color:#204a87">exec</span> nsq-message-checker -- topic all</code></pre></div>
+<p>To use that kind of style, we will use <strong>turtle</strong> library and put the functions in Main.hs:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#8f5902;font-style:italic">-- Main.hs</span>
+
+<span style="color:#8f5902;font-style:italic">{-# LANGUAGE OverloadedStrings #-}</span>
+
+<span style="color:#204a87;font-weight:bold">module</span> <span style="color:#000">Main</span> <span style="color:#204a87;font-weight:bold">where</span>
+
+<span style="color:#204a87;font-weight:bold">import</span>           <span style="color:#000">NSQ</span>
+<span style="color:#204a87;font-weight:bold">import</span>           <span style="color:#000">Protolude</span>
+<span style="color:#204a87;font-weight:bold">import</span>           <span style="color:#000">Turtle</span>
+
+<span style="color:#8f5902;font-style:italic">-- dotenv</span>
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#204a87;font-weight:bold">qualified</span> <span style="color:#000">Configuration.Dotenv</span>       <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">Dotenv</span>
+<span style="color:#204a87;font-weight:bold">import</span>           <span style="color:#000">Configuration.Dotenv.Types</span>
+
+
+<span style="color:#8f5902;font-style:italic">-- main parser</span>
+<span style="color:#000">parser</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Parser</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87">()</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">parser</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">parseMainCommand</span>
+     <span style="color:#ce5c00;font-weight:bold">&lt;|&gt;</span> <span style="color:#000">parseProcessNsqTopic</span>
+
+<span style="color:#8f5902;font-style:italic">-- main command</span>
+<span style="color:#000">parseMainCommand</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Parser</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87">()</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">parseMainCommand</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">pure</span> <span style="color:#000">mainCommand</span>
+
+<span style="color:#000">mainCommand</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87">()</span>
+<span style="color:#000">mainCommand</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;Use </span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">-h</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06"> argument for help&#34;</span>
+
+<span style="color:#8f5902;font-style:italic">-- topic subcommand</span>
+<span style="color:#8f5902;font-style:italic">-- stack exec nsq-message-checker -- topic all</span>
+<span style="color:#8f5902;font-style:italic">-- stack exec nsq-message-checker -- topic optimization_rule</span>
+<span style="color:#000">parseProcessNsqTopic</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Parser</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87">()</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">parseProcessNsqTopic</span> <span style="color:#204a87;font-weight:bold">=</span>
+  <span style="color:#000">fmap</span>
+    <span style="color:#000">processNsq</span>
+    <span style="color:#000;font-weight:bold">(</span><span style="color:#000">subcommand</span>
+       <span style="color:#4e9a06">&#34;topic&#34;</span>
+       <span style="color:#4e9a06">&#34;Process specified topic&#34;</span>
+       <span style="color:#000;font-weight:bold">(</span><span style="color:#000">argText</span> <span style="color:#4e9a06">&#34;topic_name&#34;</span> <span style="color:#4e9a06">&#34;What topic should be processed? (all for all topics)&#34;</span><span style="color:#000;font-weight:bold">))</span>
+
+<span style="color:#8f5902;font-style:italic">-- main</span>
+<span style="color:#000">main</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87">()</span>
+<span style="color:#000">main</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">do</span>
+  <span style="color:#204a87;font-weight:bold">_</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#204a87;font-weight:bold">Dotenv</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">loadFile</span> <span style="color:#000">defaultConfig</span>
+  <span style="color:#000">cmd</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#000">options</span> <span style="color:#4e9a06">&#34;NSQ Statistic Checker&#34;</span> <span style="color:#000">parser</span>
+  <span style="color:#000">cmd</span></code></pre></div>
+<p>As you can see, the main function is <em>processNsq</em> which accepts <em>topic</em> as topic name.</p>
+
+<h2 id="code-structure">Code Structure</h2>
+
+<p>Honestly, I have not found any best practice code to manage this code, but my mentor said I can just put the code in <strong>src</strong> folder directly as <strong>NSQ.hs</strong>. I also separate type related code in <strong>Types.hs</strong>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">❯ tree
+.
+├── src
+│   ├── NSQ.hs
+│   └── Types.hs
+...</code></pre></div>
+<h2 id="types-hs">Types.hs</h2>
+
+<p>After analyzing the response from NSQ statistic and the output that I expected, I made 5 data type and put it in <strong>Types.hs</strong>. For the record, the output will be written into csv file, that&rsquo;s why I use <strong>cassava</strong> library in this project.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#8f5902;font-style:italic">{-# LANGUAGE DeriveGeneric   #-}</span>
+<span style="color:#8f5902;font-style:italic">{-# LANGUAGE RecordWildCards #-}</span>
+<span style="color:#8f5902;font-style:italic">{-# LANGUAGE TemplateHaskell #-}</span>
+
+<span style="color:#204a87;font-weight:bold">module</span> <span style="color:#000">Types</span> <span style="color:#204a87;font-weight:bold">where</span>
+
+<span style="color:#204a87;font-weight:bold">import</span>           <span style="color:#000">Data.Aeson</span>
+<span style="color:#204a87;font-weight:bold">import</span>           <span style="color:#000">Data.Aeson.Casing</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">aesonPrefix</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">snakeCase</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#204a87;font-weight:bold">import</span>           <span style="color:#000">Data.Text</span>         <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">T</span>
+<span style="color:#204a87;font-weight:bold">import</span>           <span style="color:#000">Protolude</span>
+
+<span style="color:#8f5902;font-style:italic">-- cassava</span>
+<span style="color:#204a87;font-weight:bold">import</span>           <span style="color:#000">Data.Csv</span>          <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">FromRecord</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">ToNamedRecord</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">ToRecord</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#204a87;font-weight:bold">qualified</span> <span style="color:#000">Data.Csv</span>          <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">Cassava</span>
+
+<span style="color:#8f5902;font-style:italic">-- | Client data type.</span>
+<span style="color:#204a87;font-weight:bold">data</span> <span style="color:#204a87;font-weight:bold">Client</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">Client</span>
+  <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">clientClientId</span>                      <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span> <span style="color:#8f5902;font-style:italic">-- ^ Client ID.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientHostname</span>                      <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span> <span style="color:#8f5902;font-style:italic">-- ^ Hostname of the client.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientVersion</span>                       <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span> <span style="color:#8f5902;font-style:italic">-- ^ Client version.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientRemoteAddress</span>                 <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span> <span style="color:#8f5902;font-style:italic">-- ^ Remote address of client.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientState</span>                         <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span> <span style="color:#8f5902;font-style:italic">-- ^ State of client.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientReadyCount</span>                    <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span> <span style="color:#8f5902;font-style:italic">-- ^ Amount of ready messages.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientInFlightCount</span>                 <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span> <span style="color:#8f5902;font-style:italic">-- ^ Amount of flight messages.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientMessageCount</span>                  <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span> <span style="color:#8f5902;font-style:italic">-- ^ Amount of messages.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientFinishCount</span>                   <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span> <span style="color:#8f5902;font-style:italic">-- ^ Amount of finished messages.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientRequeueCount</span>                  <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span> <span style="color:#8f5902;font-style:italic">-- ^ Amount of requeued messages.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientConnectTs</span>                     <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientSampleRate</span>                    <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientDeflate</span>                       <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Bool</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientSnappy</span>                        <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Bool</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientUserAgent</span>                     <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientTls</span>                           <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Bool</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientTlsCipherSuite</span>                <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientTlsVersion</span>                    <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientTlsNegotiatedProtocol</span>         <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">clientTlsNegotiatedProtocolIsMutual</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Bool</span>
+  <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">deriving</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">Show</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">Generic</span><span style="color:#000;font-weight:bold">)</span>
+
+<span style="color:#204a87;font-weight:bold">instance</span> <span style="color:#204a87;font-weight:bold">ToJSON</span> <span style="color:#204a87;font-weight:bold">Client</span> <span style="color:#204a87;font-weight:bold">where</span>
+  <span style="color:#000">toJSON</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">genericToJSON</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">aesonPrefix</span> <span style="color:#000">snakeCase</span>
+
+<span style="color:#204a87;font-weight:bold">instance</span> <span style="color:#204a87;font-weight:bold">FromJSON</span> <span style="color:#204a87;font-weight:bold">Client</span> <span style="color:#204a87;font-weight:bold">where</span>
+  <span style="color:#000">parseJSON</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">genericParseJSON</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">aesonPrefix</span> <span style="color:#000">snakeCase</span>
+
+<span style="color:#8f5902;font-style:italic">-- | Data type for channel.</span>
+<span style="color:#204a87;font-weight:bold">data</span> <span style="color:#204a87;font-weight:bold">Channel</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">Channel</span>
+  <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">channelChannelName</span>   <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span> <span style="color:#8f5902;font-style:italic">-- ^ The name of the channel.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">channelDepth</span>         <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">channelBackendDepth</span>  <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">channelInFlightCount</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span> <span style="color:#8f5902;font-style:italic">-- ^ Amount of flight messages.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">channelDeferredCount</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span> <span style="color:#8f5902;font-style:italic">-- ^ Amount of deferred messages.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">channelMessageCount</span>  <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span> <span style="color:#8f5902;font-style:italic">-- ^ Amount of messages.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">channelRequeueCount</span>  <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span> <span style="color:#8f5902;font-style:italic">-- ^ Amount of requeued messages.</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">channelTimeoutCount</span>  <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">channelClients</span>       <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#204a87;font-weight:bold">Client</span><span style="color:#000;font-weight:bold">]</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">channelPaused</span>        <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Bool</span>
+  <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">deriving</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">Show</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">Generic</span><span style="color:#000;font-weight:bold">)</span>
+
+<span style="color:#204a87;font-weight:bold">instance</span> <span style="color:#204a87;font-weight:bold">ToJSON</span> <span style="color:#204a87;font-weight:bold">Channel</span> <span style="color:#204a87;font-weight:bold">where</span>
+  <span style="color:#000">toJSON</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">genericToJSON</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">aesonPrefix</span> <span style="color:#000">snakeCase</span>
+
+<span style="color:#204a87;font-weight:bold">instance</span> <span style="color:#204a87;font-weight:bold">FromJSON</span> <span style="color:#204a87;font-weight:bold">Channel</span> <span style="color:#204a87;font-weight:bold">where</span>
+  <span style="color:#000">parseJSON</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">genericParseJSON</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">aesonPrefix</span> <span style="color:#000">snakeCase</span>
+
+<span style="color:#204a87;font-weight:bold">data</span> <span style="color:#204a87;font-weight:bold">Topic</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">Topic</span>
+  <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">topicTopicName</span>    <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">topicChannels</span>     <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#204a87;font-weight:bold">Channel</span><span style="color:#000;font-weight:bold">]</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">topicDepth</span>        <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">topicBackendDepth</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">topicMessageCount</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">topicPaused</span>       <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Bool</span>
+  <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">deriving</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">Show</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">Generic</span><span style="color:#000;font-weight:bold">)</span>
+
+<span style="color:#204a87;font-weight:bold">instance</span> <span style="color:#204a87;font-weight:bold">ToJSON</span> <span style="color:#204a87;font-weight:bold">Topic</span> <span style="color:#204a87;font-weight:bold">where</span>
+  <span style="color:#000">toJSON</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">genericToJSON</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">aesonPrefix</span> <span style="color:#000">snakeCase</span>
+
+<span style="color:#204a87;font-weight:bold">instance</span> <span style="color:#204a87;font-weight:bold">FromJSON</span> <span style="color:#204a87;font-weight:bold">Topic</span> <span style="color:#204a87;font-weight:bold">where</span>
+  <span style="color:#000">parseJSON</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">genericParseJSON</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">aesonPrefix</span> <span style="color:#000">snakeCase</span>
+
+<span style="color:#204a87;font-weight:bold">data</span> <span style="color:#204a87;font-weight:bold">Statistic</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">Statistic</span>
+  <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">statisticVersion</span>   <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">statisticHealth</span>    <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">statisticTopics</span>    <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#204a87;font-weight:bold">Topic</span><span style="color:#000;font-weight:bold">]</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">statisticStartTime</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span>
+  <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">deriving</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">Show</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">Generic</span><span style="color:#000;font-weight:bold">)</span>
+
+<span style="color:#204a87;font-weight:bold">instance</span> <span style="color:#204a87;font-weight:bold">ToJSON</span> <span style="color:#204a87;font-weight:bold">Statistic</span> <span style="color:#204a87;font-weight:bold">where</span>
+  <span style="color:#000">toJSON</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">genericToJSON</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">aesonPrefix</span> <span style="color:#000">snakeCase</span>
+
+<span style="color:#204a87;font-weight:bold">instance</span> <span style="color:#204a87;font-weight:bold">FromJSON</span> <span style="color:#204a87;font-weight:bold">Statistic</span> <span style="color:#204a87;font-weight:bold">where</span>
+  <span style="color:#000">parseJSON</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">genericParseJSON</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">aesonPrefix</span> <span style="color:#000">snakeCase</span>
+
+<span style="color:#204a87;font-weight:bold">data</span> <span style="color:#204a87;font-weight:bold">Report</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">Report</span>
+  <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">reportTopicName</span>    <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">reportMessage</span>      <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">reportTotalMessage</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">reportConnection</span>   <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Int</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">reportDate</span>         <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span>
+  <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">reportTime</span>         <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span>
+  <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">deriving</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">Generic</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">Show</span><span style="color:#000;font-weight:bold">)</span>
+
+<span style="color:#204a87;font-weight:bold">instance</span> <span style="color:#204a87;font-weight:bold">FromRecord</span> <span style="color:#204a87;font-weight:bold">Report</span>
+
+<span style="color:#204a87;font-weight:bold">instance</span> <span style="color:#204a87;font-weight:bold">ToRecord</span> <span style="color:#204a87;font-weight:bold">Report</span>
+
+<span style="color:#204a87;font-weight:bold">instance</span> <span style="color:#204a87;font-weight:bold">ToNamedRecord</span> <span style="color:#204a87;font-weight:bold">Report</span> <span style="color:#204a87;font-weight:bold">where</span>
+  <span style="color:#000">toNamedRecord</span> <span style="color:#204a87;font-weight:bold">Report</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#ce5c00;font-weight:bold">..</span><span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">=</span>
+    <span style="color:#204a87;font-weight:bold">Cassava</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">namedRecord</span>
+      <span style="color:#000;font-weight:bold">[</span> <span style="color:#4e9a06">&#34;Topic Name&#34;</span> <span style="color:#204a87;font-weight:bold">Cassava</span><span style="color:#ce5c00;font-weight:bold">..=</span> <span style="color:#000">reportTopicName</span>
+      <span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Message&#34;</span> <span style="color:#204a87;font-weight:bold">Cassava</span><span style="color:#ce5c00;font-weight:bold">..=</span> <span style="color:#000">reportMessage</span>
+      <span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Total Message&#34;</span> <span style="color:#204a87;font-weight:bold">Cassava</span><span style="color:#ce5c00;font-weight:bold">..=</span> <span style="color:#000">reportTotalMessage</span>
+      <span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Connection&#34;</span> <span style="color:#204a87;font-weight:bold">Cassava</span><span style="color:#ce5c00;font-weight:bold">..=</span> <span style="color:#000">reportConnection</span>
+      <span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Date&#34;</span> <span style="color:#204a87;font-weight:bold">Cassava</span><span style="color:#ce5c00;font-weight:bold">..=</span> <span style="color:#000">reportDate</span>
+      <span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Time&#34;</span> <span style="color:#204a87;font-weight:bold">Cassava</span><span style="color:#ce5c00;font-weight:bold">..=</span> <span style="color:#000">reportTime</span>
+      <span style="color:#000;font-weight:bold">]</span></code></pre></div>
+<h2 id="nsq-hs">NSQ.hs</h2>
+
+<p>As I said before, the main function will be put as <em>processNsq</em> function. This function will hold the flow of the application as general as possible.</p>
+
+<h4 id="process-flow">Process Flow</h4>
+
+<ol>
+<li>Prepare the nsq statistic url.</li>
+<li>Lookup the statistic using previous url and decode it.</li>
+<li>Process the decoded statistic.</li>
+<li>Send a notification to slack to notify us about the latest statistic.</li>
+</ol>
+
+<p>Based on the process flow above, I will describe each function and its child function (if it exists) based on the code hierarchy. You can find the final <em>processNsq</em> function that I got below:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#8f5902;font-style:italic">-- NSQ.hs</span>
+
+<span style="color:#8f5902;font-style:italic">-- | Process NSQ `Topic`.</span>
+<span style="color:#000">processNsq</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Text</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87">()</span>
+<span style="color:#000">processNsq</span> <span style="color:#000">topicName</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">do</span>
+  <span style="color:#000">nsqStatisticURL</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#204a87;font-weight:bold">SE</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">getEnv</span> <span style="color:#4e9a06">&#34;NSQ_STAT_URL&#34;</span>
+  <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">statisticURL</span> <span style="color:#000">topic</span> <span style="color:#000">channel</span> <span style="color:#204a87;font-weight:bold">=</span>
+        <span style="color:#000">nsqStatisticURL</span>
+          <span style="color:#ce5c00;font-weight:bold">++</span> <span style="color:#4e9a06">&#34;?format=json&amp;topic=&#34;</span>
+          <span style="color:#ce5c00;font-weight:bold">++</span> <span style="color:#000">topic</span>
+          <span style="color:#ce5c00;font-weight:bold">++</span> <span style="color:#4e9a06">&#34;&amp;channel=&#34;</span>
+          <span style="color:#ce5c00;font-weight:bold">++</span> <span style="color:#000">channel</span>
+  <span style="color:#8f5902;font-style:italic">-- we hardcode the channel name for now (which is &#34;job&#34;), but we can also</span>
+  <span style="color:#8f5902;font-style:italic">-- send it together with topic name as an argument</span>
+  <span style="color:#000">jsonString</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#000">lookupNsqStatistic</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">statisticURL</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">unpack</span> <span style="color:#000">topicName</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#4e9a06">&#34;job&#34;</span>
+  <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">statistic</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">eitherDecode</span> <span style="color:#000">jsonString</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Either</span> <span style="color:#204a87;font-weight:bold">String</span> <span style="color:#204a87;font-weight:bold">Statistic</span>
+  <span style="color:#204a87;font-weight:bold">case</span> <span style="color:#000">statistic</span> <span style="color:#204a87;font-weight:bold">of</span>
+    <span style="color:#204a87;font-weight:bold">Left</span>  <span style="color:#000">err</span>  <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#000">putStrLn</span> <span style="color:#000">err</span>
+    <span style="color:#204a87;font-weight:bold">Right</span> <span style="color:#000">stat</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#000">processTopicStatistic</span> <span style="color:#000">stat</span> <span style="color:#000">topicName</span>
+  <span style="color:#000">sendSlackNotification</span></code></pre></div>
+<p>We prepare the nsq statistic url with <em>statisticURL</em> function. After that, we lookup the statistic using <em>lookupNsqStatistic</em> function:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#8f5902;font-style:italic">-- NSQ.hs</span>
+
+<span style="color:#8f5902;font-style:italic">-- | Lookup `Topic`&#39;s `Statistic`.</span>
+<span style="color:#000">lookupNsqStatistic</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">String</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87;font-weight:bold">BSL</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#204a87;font-weight:bold">ByteString</span>
+<span style="color:#000">lookupNsqStatistic</span> <span style="color:#000">url</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">simpleHttp</span> <span style="color:#000">url</span></code></pre></div>
+<p>We decode the response using <em>eitherDecode</em> from <strong>Aeson</strong> and process it using <em>processTopicStatistic</em> if the response is not an error.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#8f5902;font-style:italic">-- NSQ.hs</span>
+
+<span style="color:#8f5902;font-style:italic">-- | Process `Topic`&#39;s `Statistic` and generate `Report` file.</span>
+<span style="color:#000">processTopicStatistic</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Statistic</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">Text</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87">()</span>
+<span style="color:#000">processTopicStatistic</span> <span style="color:#000">statistic</span> <span style="color:#000">topicName</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">do</span>
+  <span style="color:#000">topicReports</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#000">breakdownTopicReport</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">statisticTopics</span> <span style="color:#000">statistic</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">topicName</span>
+  <span style="color:#000">reportToCSV</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#204a87;font-weight:bold">L</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">foldl&#39;</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">[]</span> <span style="color:#000">topicReports</span></code></pre></div>
+<p>As you can see, we need to break the statistic into our own data type using <em>breakdownTopicReport</em> function before we put it into csv file. <em>breakdownTopicReport</em> will accepts 2 arguments which is an array of <em>Topic</em> and the topic name itself. Based on the topic name, we will iterate the topic names and return a monad as <em>topicReports</em>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#8f5902;font-style:italic">-- NSQ.hs</span>
+
+<span style="color:#8f5902;font-style:italic">-- | Map over `Topic` and return list of `Report`s.</span>
+<span style="color:#000">breakdownTopicReport</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#204a87;font-weight:bold">Topic</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">Text</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#000;font-weight:bold">[[</span><span style="color:#204a87;font-weight:bold">Report</span><span style="color:#000;font-weight:bold">]]</span>
+<span style="color:#000">breakdownTopicReport</span> <span style="color:#000">topics</span> <span style="color:#000">topicName</span>
+  <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000">topicName</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#4e9a06">&#34;all&#34;</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">do</span>
+    <span style="color:#000">mapM</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">iterateTopicName</span> <span style="color:#000">topics</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">topicNames</span>
+  <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000">otherwise</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">do</span>
+    <span style="color:#000">mapM</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">iterateTopicName</span> <span style="color:#000">topics</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#000">topicName</span><span style="color:#000;font-weight:bold">]</span></code></pre></div>
+<p>The <em>iterateTopicName</em> will populate reports for specified topic name and return it as an array of report.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#8f5902;font-style:italic">-- NSQ.hs</span>
+
+<span style="color:#8f5902;font-style:italic">-- | Populate `Report` for specified `Topic`.</span>
+<span style="color:#000">iterateTopicName</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#204a87;font-weight:bold">Topic</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">Text</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#204a87;font-weight:bold">Report</span><span style="color:#000;font-weight:bold">]</span>
+<span style="color:#000">iterateTopicName</span> <span style="color:#000">topics</span> <span style="color:#000">topicName</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">do</span>
+  <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">topic</span>    <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">filterTopicName</span> <span style="color:#000">topics</span> <span style="color:#000">topicName</span>
+      <span style="color:#000">channels</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">case</span> <span style="color:#000">topic</span> <span style="color:#204a87;font-weight:bold">of</span>
+        <span style="color:#204a87;font-weight:bold">Just</span> <span style="color:#000">t</span>  <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#000">topicChannels</span> <span style="color:#000">t</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#204a87;font-weight:bold">Channel</span><span style="color:#000;font-weight:bold">]</span>
+        <span style="color:#204a87;font-weight:bold">Nothing</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">[]</span>
+  <span style="color:#000">reports</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#000">populateReport</span> <span style="color:#000">topic</span> <span style="color:#000">channels</span>
+  <span style="color:#000">return</span> <span style="color:#000">reports</span>
+
+<span style="color:#8f5902;font-style:italic">-- | Get `Topic` from array of `Topic`.</span>
+<span style="color:#000">filterTopicName</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#204a87;font-weight:bold">Topic</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">Text</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">Maybe</span> <span style="color:#204a87;font-weight:bold">Topic</span>
+<span style="color:#000">filterTopicName</span> <span style="color:#000">topics</span> <span style="color:#000">topicName</span> <span style="color:#204a87;font-weight:bold">=</span>
+  <span style="color:#204a87;font-weight:bold">case</span> <span style="color:#204a87;font-weight:bold">L</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">filter</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">\x</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#000">topicTopicName</span> <span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000">topicName</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">topics</span> <span style="color:#204a87;font-weight:bold">of</span>
+    <span style="color:#000">t</span> <span style="color:#204a87;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">_</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">Just</span> <span style="color:#000">t</span>
+    <span style="color:#204a87;font-weight:bold">_</span>     <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">Nothing</span>
+
+<span style="color:#8f5902;font-style:italic">-- | Map over the `Channel`s to get the `Report`s.</span>
+<span style="color:#000">populateReport</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Maybe</span> <span style="color:#204a87;font-weight:bold">Topic</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#204a87;font-weight:bold">Channel</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#204a87;font-weight:bold">Report</span><span style="color:#000;font-weight:bold">]</span>
+<span style="color:#000">populateReport</span> <span style="color:#204a87;font-weight:bold">Nothing</span>      <span style="color:#204a87;font-weight:bold">_</span>     <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">return</span> <span style="color:#204a87;font-weight:bold">[]</span>
+<span style="color:#000">populateReport</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">Just</span> <span style="color:#000">topic</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">chans</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">mapM</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">populRep</span> <span style="color:#000">topic</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">chans</span>
+ <span style="color:#204a87;font-weight:bold">where</span>
+  <span style="color:#000">populRep</span> <span style="color:#000">t</span> <span style="color:#000">channel</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">do</span>
+    <span style="color:#000">formattedDate</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#000">getFormattedDate</span>
+    <span style="color:#000">formattedTime</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#000">getFormattedTime</span>
+    <span style="color:#000">return</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#204a87;font-weight:bold">Report</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">topicTopicName</span> <span style="color:#000">t</span><span style="color:#000;font-weight:bold">)</span>
+                    <span style="color:#000;font-weight:bold">(</span><span style="color:#000">channelDepth</span> <span style="color:#000">channel</span><span style="color:#000;font-weight:bold">)</span>
+                    <span style="color:#000;font-weight:bold">(</span><span style="color:#000">channelMessageCount</span> <span style="color:#000">channel</span><span style="color:#000;font-weight:bold">)</span>
+                    <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">L</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">length</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">channelClients</span> <span style="color:#000">channel</span><span style="color:#000;font-weight:bold">)</span>
+                    <span style="color:#000">formattedDate</span>
+                    <span style="color:#000">formattedTime</span>
+
+<span style="color:#8f5902;font-style:italic">-- | Get date which has been formatted into string.</span>
+<span style="color:#000">getFormattedDate</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87;font-weight:bold">Text</span>
+<span style="color:#000">getFormattedDate</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">do</span>
+  <span style="color:#000">currentLocalTime</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#000">getZonedTime</span>
+  <span style="color:#000">return</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#204a87;font-weight:bold">T</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">pack</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">formatTime</span> <span style="color:#000">defaultTimeLocale</span> <span style="color:#4e9a06">&#34;%Y-%m-%d&#34;</span> <span style="color:#000">currentLocalTime</span>
+
+<span style="color:#8f5902;font-style:italic">-- | Get time which has been formatted into string.</span>
+<span style="color:#000">getFormattedTime</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87;font-weight:bold">Text</span>
+<span style="color:#000">getFormattedTime</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">do</span>
+  <span style="color:#000">currentLocalTime</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#000">getZonedTime</span>
+  <span style="color:#000">return</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#204a87;font-weight:bold">T</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">pack</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">formatTime</span> <span style="color:#000">defaultTimeLocale</span> <span style="color:#4e9a06">&#34;%H:%M&#34;</span> <span style="color:#000">currentLocalTime</span></code></pre></div>
+<p>Back to <em>processTopicStatistic</em> function, we need to prepare the header of the csv file to include it into our <em>reportToCSV</em> function. We can get the file location from our environment.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#8f5902;font-style:italic">-- NSQ.hs</span>
+
+<span style="color:#8f5902;font-style:italic">-- | Put `Report`s into csv file.</span>
+<span style="color:#000">reportToCSV</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#204a87;font-weight:bold">Report</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#204a87;font-weight:bold">-&gt;</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87">()</span>
+<span style="color:#000">reportToCSV</span> <span style="color:#000">reports</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">do</span>
+  <span style="color:#000">csvFile</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#204a87;font-weight:bold">SE</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">getEnv</span> <span style="color:#4e9a06">&#34;CSV_FILE&#34;</span>
+  <span style="color:#204a87;font-weight:bold">BSL</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">appendFile</span> <span style="color:#000">csvFile</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#204a87;font-weight:bold">Cassava</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">encodeByName</span> <span style="color:#000">reportHeader</span> <span style="color:#000">reports</span>
+
+<span style="color:#8f5902;font-style:italic">-- | List of header to be used in `Report`.</span>
+<span style="color:#000">reportHeader</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">Header</span>
+<span style="color:#000">reportHeader</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">Vector</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">fromList</span>
+  <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#34;Topic Name&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Message&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Total Message&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Connection&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Date&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Time&#34;</span><span style="color:#000;font-weight:bold">]</span></code></pre></div>
+<p>So, we already lookup the statistic from NSQ. Decode and map it into our data type. We have also finished writing it into csv file. The last step is sending a notification to slack to notify us about our new csv file. We will use slack webhook to ease the process. To do this, we need to prepare an object to be sent into our webhook url. Do not forget to encode the object beforehand.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#8f5902;font-style:italic">-- NSQ.hs</span>
+
+<span style="color:#8f5902;font-style:italic">-- | Send notification to slack channel using web hook.</span>
+<span style="color:#000">sendSlackNotification</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">IO</span> <span style="color:#204a87">()</span>
+<span style="color:#000">sendSlackNotification</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">do</span>
+  <span style="color:#000">manager</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#000">newManager</span> <span style="color:#000">tlsManagerSettings</span>
+  <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">requestObject</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">object</span>
+        <span style="color:#000;font-weight:bold">[</span> <span style="color:#4e9a06">&#34;name&#34;</span> <span style="color:#ce5c00;font-weight:bold">.=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;NSQ Statistic Checker&#34;</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">String</span><span style="color:#000;font-weight:bold">)</span>
+        <span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;text&#34;</span> <span style="color:#ce5c00;font-weight:bold">.=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;NSQ Statistic Report has been compiled&#34;</span> <span style="color:#204a87;font-weight:bold">::</span> <span style="color:#204a87;font-weight:bold">String</span><span style="color:#000;font-weight:bold">)</span>
+        <span style="color:#000;font-weight:bold">]</span>
+
+  <span style="color:#000">slackURL</span>       <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#204a87;font-weight:bold">SE</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">getEnv</span> <span style="color:#4e9a06">&#34;SLACK_URL&#34;</span>
+  <span style="color:#000">initialRequest</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#000">parseRequest</span> <span style="color:#000">slackURL</span>
+
+  <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">request</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000">initialRequest</span>
+        <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">method</span>         <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;POST&#34;</span>
+        <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">requestHeaders</span> <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[(</span><span style="color:#4e9a06">&#34;Content-Type&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;application/json&#34;</span><span style="color:#000;font-weight:bold">)]</span>
+        <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">requestBody</span>    <span style="color:#204a87;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">RequestBodyLBS</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">encode</span> <span style="color:#000">requestObject</span>
+        <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#000">response</span> <span style="color:#204a87;font-weight:bold">&lt;-</span> <span style="color:#000">httpLbs</span> <span style="color:#000">request</span> <span style="color:#000">manager</span>
+  <span style="color:#000">putStrLn</span> <span style="color:#ce5c00;font-weight:bold">$</span> <span style="color:#000">responseBody</span> <span style="color:#000">response</span></code></pre></div>
+<h1 id="how-to-use-it">How to use it?</h1>
+
+<p>I already provide a Make file. So, to use it you can just build the project and execute the <strong>run</strong> section of the Make file. You can also copy the command and use the custom argument which we made before to process a specific topic.</p>
+
+<h2 id="build-the-project">Build the project</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">❯ make build</code></pre></div>
+<h2 id="run-the-executable">Run the executable</h2>
+
+<p>Run it with <strong>make</strong>:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">❯ make run</code></pre></div>
+<p>Run it with <strong>stack</strong>:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">❯ stack <span style="color:#204a87">exec</span> nsq-message-checker -- topic optimization_rule</code></pre></div>
+<p>That&rsquo;s all that I can share for now. I hope it will benefit anyone who read it in the future. Thank you very much to my mentor and the reader. Forgive me for the crappy post. :D</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

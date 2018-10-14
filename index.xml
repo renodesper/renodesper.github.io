@@ -6,10 +6,19 @@
     <description>Recent content on A Place to Remember</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 11 Dec 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://renodesper.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Automate Everything - Automate NSQ Statistic reporting with Haskell</title>
+      <link>https://renodesper.com/blog/2018-06-17-automate-nsq-statistic-reporting-with-haskell/</link>
+      <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://renodesper.com/blog/2018-06-17-automate-nsq-statistic-reporting-with-haskell/</guid>
+      <description>Several days ago, I was given a task to make a report which consist statistic of several NSQ topics. This job is not really, We just need to check NSQ statistic every hour and write it down into shared excel file. After several times checking manually, I thought that I can automate it easily. So, I made a script to automate most of if using Go. You find my code right here.</description>
+    </item>
     
     <item>
       <title>Journey to Functional Programming</title>
@@ -332,8 +341,8 @@ Here we go, a blog made from ghost with everything about everything. Oh right, I
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://renodesper.com/about/</guid>
-      <description>My name is Boy Sandy Gladies Arriezona. I use this site to document what I did or anything that I thought interesting. As a developer, I have the following qualities:
- I use Archlinux (Debian/Centos on server) I use Vim (VS Code when I was lazy) I code in Python and Golang for backend stuff I code in Vue for frontend stuff  My History To be honest, I&amp;rsquo;m having some trouble remembering right now.</description>
+      <description>My name is Boy Sandy Gladies Arriezona. I use this site to document what I did or anything that I thought interesting. The blog section will using either Indonesian or English, it depends on my mood at the time of the writing. For your information, as a developer I have the following qualities:
+ I use Archlinux which is actually not importan (I also use Debian/Centos for server) I use Vim (VS Code when I was lazy) I code in Python and Golang for backend stuff I code in Vue for frontend stuff  My History To be honest, I&amp;rsquo;m having some trouble remembering right now.</description>
     </item>
     
   </channel>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://renodesper.com/blog/2018-06-17-automate-nsq-statistic-reporting-with-haskell/</loc>
+    <lastmod>2018-10-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://renodesper.com/blog/2016-12-11-journey-to-functional-programming/</loc>
     <lastmod>2016-12-11T00:00:00+00:00</lastmod>
   </url>
@@ -159,7 +164,7 @@
   
   <url>
     <loc>https://renodesper.com/</loc>
-    <lastmod>2016-12-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -186,7 +191,7 @@
   
   <url>
     <loc>https://renodesper.com/blog/</loc>
-    <lastmod>2016-12-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -204,6 +209,12 @@
   <url>
     <loc>https://renodesper.com/tags/centos/</loc>
     <lastmod>2014-10-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://renodesper.com/tags/challenge/</loc>
+    <lastmod>2018-10-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -233,7 +244,7 @@
   
   <url>
     <loc>https://renodesper.com/tags/functional-programming/</loc>
-    <lastmod>2016-12-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -257,7 +268,7 @@
   
   <url>
     <loc>https://renodesper.com/tags/haskell/</loc>
-    <lastmod>2016-12-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
