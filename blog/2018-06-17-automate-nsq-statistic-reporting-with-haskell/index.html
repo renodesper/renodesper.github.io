@@ -323,9 +323,7 @@ Completed 2 action(s).</code></pre></div>
       <span style="color:#000;font-weight:bold">]</span></code></pre></div>
 <h2 id="nsq-hs">NSQ.hs</h2>
 
-<p>As I said before, the main function will be put as <em>processNsq</em> function. This function will hold the flow of the application as general as possible.</p>
-
-<h4 id="process-flow">Process Flow</h4>
+<p>As I said before, the main function will be put as <em>processNsq</em> function. This function will hold the flow of the process as general as possible. This is the process flow:</p>
 
 <ol>
 <li>Prepare the nsq statistic url.</li>
@@ -334,7 +332,7 @@ Completed 2 action(s).</code></pre></div>
 <li>Send a notification to slack to notify us about the latest statistic.</li>
 </ol>
 
-<p>Based on the process flow above, I will describe each function and its child function (if it exists) based on the code hierarchy. You can find the final <em>processNsq</em> function that I got below:</p>
+<p>Based on the process flow above, I will describe each function and its child function (if it exists) based on the code hierarchy. You can find the final <em>processNsq</em> function below:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#8f5902;font-style:italic">-- NSQ.hs</span>
 
 <span style="color:#8f5902;font-style:italic">-- | Process NSQ `Topic`.</span>
