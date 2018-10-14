@@ -139,7 +139,7 @@ Completed 2 action(s).</code></pre></div>
 <p>I use .env file for the configuration. That&rsquo;s why I also use <strong>dotenv</strong> library to parse it.</p>
 </blockquote>
 
-<h2 id="command-line-argument-s">Command Line Argument[s]</h2>
+<h2 id="command-line-argument">Command Line Argument</h2>
 
 <p>My idea is to read the topic[s] from command line. So, to make a report for X topic we can use this kind of command:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">❯ stack <span style="color:#204a87">exec</span> nsq-message-checker -- topic X</code></pre></div>
@@ -195,7 +195,7 @@ Completed 2 action(s).</code></pre></div>
 
 <h2 id="code-structure">Code Structure</h2>
 
-<p>Honestly, I have not found any best practice code to manage this code, but my mentor said I can just put the code in <strong>src</strong> folder directly as <strong>NSQ.hs</strong>. I also separate type related code in <strong>Types.hs</strong>.</p>
+<p>Honestly, I have not found any best practice example to manage this code, but my mentor said that I can just put the code in <strong>src</strong> folder directly as <strong>NSQ.hs</strong>. I also separate type related code in <strong>Types.hs</strong>.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">❯ tree
 .
 ├── src
