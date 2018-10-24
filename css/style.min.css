@@ -345,3 +345,19 @@ img {
 .float-left {
   float: left;
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .navigation > .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .navigation > .container > a {
+    margin-bottom: -1.5em;
+    font-size: 1.8rem;
+  }
+  .navigation > .container > ul {
+    padding-inline-start: 0px;
+  }
+}
